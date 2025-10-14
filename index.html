@@ -466,4 +466,36 @@ Cada disparo está guiado para lograr resultados consistentes, con control de lu
 
 <script>
   // Mobile toggle simple
-  f
+  f  // Mobile toggle simple
+  function toggleMobile(){
+    const nav = document.querySelector('nav');
+    nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
+  }
+
+  // Simple scroll reveal (lightweight)
+  const obsOptions = {threshold: 0.12};
+  const obs = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting) e.target.classList.add('reveal');
+    });
+  }, obsOptions);
+  document.querySelectorAll('.card, .item, .testimonial, .contact-card').forEach(el=>{
+    el.style.opacity = 0;
+    el.style.transform = 'translateY(16px)';
+    el.style.transition = 'opacity .7s ease, transform .7s cubic-bezier(.2,.9,.2,1)';
+    obs.observe(el);
+  });
+  document.addEventListener('scroll', ()=>{document.documentElement.style.setProperty('--scroll', window.scrollY)});
+  window.addEventListener('load', ()=>{document.querySelectorAll('.card, .item, .testimonial, .contact-card').forEach(el=>{el.style.opacity=1;el.style.transform='none'})});
+
+  // Track lead (placeholder)
+  function trackLead(){console.log('Lead enviado')}
+
+  // Accessibility: focus outline visible
+  document.addEventListener('keyup', e=>{
+    if(e.key==='Tab'){document.documentElement.style.setProperty('outline','auto')}
+  })
+</script>
+
+</body>
+</html>

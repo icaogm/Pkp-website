@@ -1,42 +1,469 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Visual Performance - Fotografía para Músicos</title>
-    <style>
-        /* estilos resumidos */
-        body { margin: 0; font-family: 'Poppins', sans-serif; background: #0e0e0e; color: #fff; }
-        section { padding: 100px 20px; text-align: center; }
-        h1, h2 { color: #fff; }
-        a { color: #ff3366; text-decoration: none; }
-        .hero { height: 100vh; background: url('https://images.unsplash.com/photo-1511376777868-611b54f68947?auto=format&fit=crop&w=1400&q=80') center/cover; display: flex; flex-direction: column; justify-content: center; align-items: center; }
-        .hero h1 { font-size: 3rem; }
-        .hero p { font-size: 1.2rem; max-width: 600px; }
-        .btn { background: #ff3366; color: white; padding: 12px 24px; border-radius: 6px; margin-top: 20px; display: inline-block; transition: background 0.3s; }
-        .btn:hover { background: #ff0044; }
-        footer { background: #111; padding: 40px 0; text-align: center; color: #999; }
-    </style>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Angel Sullyvan — Fotografía Estratégica para Músicos</title>
+<meta name="description" content="Fotografía estratégica para músicos y artistas. Retratos pensados para proyectar tu sonido y posicionarte a otro nivel." />
+<!-- Open Graph -->
+<meta property="og:title" content="Angel Sullyvan — Fotografía Estratégica para Músicos" />
+<meta property="og:description" content="Retratos para músicos y creativos que buscan diferenciarse y conectar." />
+<meta property="og:image" content="https://images.unsplash.com/photo-1507874457470-272b3c8d8ee2?auto=format&fit=crop&w=1200&q=80" />
+<meta property="og:type" content="website" />
+<!-- Fonts (preload + swap) -->
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700;900&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#060606;
+    --panel:#0f0f0f;
+    --muted:#9aa0a6;
+    --white:#ffffff;
+    --accent:#ff2e9d; /* pick one accent */
+    --glass: rgba(255,255,255,0.06);
+    --radius:14px;
+    --max-width:1200px;
+  }
+  /* Reset */
+  *{box-sizing:border-box}
+  html,body{height:100%}
+  body{
+    margin:0;
+    font-family:Inter, Outfit, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    background:var(--bg);
+    color:var(--white);
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+    line-height:1.4;
+  }
+
+  /* Layout */
+  .container{max-width:var(--max-width);margin:0 auto;padding:0 24px}
+  header{
+    position:fixed;
+    top:12px;
+    left:0;
+    right:0;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:12px;
+    padding:10px 24px;
+    z-index:40;
+    pointer-events:auto;
+  }
+  .nav-inner{
+    width:100%;
+    max-width:var(--max-width);
+    margin:0 auto;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:16px;
+    background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.02));
+    backdrop-filter: blur(8px);
+    border-radius:12px;
+    padding:8px 14px;
+  }
+
+  /* Logo */
+  .logo{display:flex;gap:12px;align-items:center}
+  .logo svg{height:44px;width:auto;display:block}
+  .brand{font-family:Outfit;font-weight:700;letter-spacing:0.6px;font-size:14px}
+
+  /* Nav */
+  nav{display:flex;gap:18px;align-items:center}
+  nav a{color:var(--white);text-decoration:none;font-weight:600;font-size:14px;opacity:0.9}
+  .cta{
+    background:transparent;
+    border:1px solid rgba(255,255,255,0.12);
+    padding:10px 14px;
+    border-radius:10px;
+    font-weight:700;
+    cursor:pointer;
+    transition:all .22s ease;
+  }
+  .cta:hover{transform:translateY(-4px);box-shadow:0 8px 30px rgba(0,0,0,0.6);border-color:var(--accent);}
+
+  /* Mobile menu */
+  .hamburger{display:none;flex-direction:column;gap:4px;cursor:pointer}
+  .hamburger span{width:22px;height:2px;background:var(--white);display:block;border-radius:2px}
+
+  /* HERO */
+  .hero{
+    min-height:72vh;
+    display:grid;
+    place-items:center;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero .media{
+    position:absolute;inset:0;background:#000;z-index:0;
+  }
+  .hero picture,img{width:100%;height:100%;object-fit:cover;display:block;filter:contrast(.95) saturate(.95);}
+  .hero .overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0.45),rgba(0,0,0,0.6));z-index:1}
+  .hero .content{
+    position:relative;z-index:3;text-align:center;padding:40px 20px;color:var(--white);max-width:980px;margin:0 auto;
+  }
+  .kicker{font-family:Outfit;font-weight:700;color:var(--muted);letter-spacing:2px;font-size:12px;margin-bottom:14px}
+  h1{font-family:Outfit;font-weight:900;font-size: clamp(28px, 6vw, 54px);line-height:1.02;margin:0 0 18px}
+  p.lead{font-size:18px;color:var(--muted);max-width:780px;margin:0 auto 22px}
+  .hero .actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+  .btn-primary{
+    background:linear-gradient(90deg,var(--accent), #ff7ab5 120%);
+    color:#060606;padding:12px 20px;border-radius:12px;border:none;font-weight:800;cursor:pointer;
+    box-shadow:0 8px 30px rgba(255,46,157,0.12),0 2px 6px rgba(0,0,0,0.6);
+    transition:transform .2s ease, box-shadow .2s;
+  }
+  .btn-primary:hover{transform:translateY(-4px);box-shadow:0 18px 50px rgba(255,46,157,0.14)}
+  .btn-ghost{
+    background:transparent;border:1px solid rgba(255,255,255,0.08);padding:12px 18px;border-radius:12px;color:var(--white);font-weight:700;
+  }
+
+  /* Sections */
+  section{padding:84px 0}
+  .section-title{font-size:18px;color:var(--muted);letter-spacing:2px;font-weight:700;margin-bottom:14px}
+  .section-head{display:flex;gap:20px;align-items:end;justify-content:space-between;margin-bottom:24px}
+  .h2{font-family:Outfit;font-weight:800;font-size:28px;margin:0;color:var(--white)}
+
+  /* GRID: servicios / proceso */
+  .grid-3{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+  }
+  .card{
+    background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+    border-radius:12px;padding:20px;border:1px solid rgba(255,255,255,0.04);
+    min-height:140px;display:flex;flex-direction:column;gap:8px;justify-content:center;
+    transition:transform .28s cubic-bezier(.2,.9,.2,1), box-shadow .28s;
+  }
+  .card:hover{transform:translateY(-8px);box-shadow:0 30px 60px rgba(0,0,0,0.6)}
+  .card h3{margin:0;font-weight:800;font-size:16px}
+  .card p{margin:0;color:var(--muted);font-size:14px}
+
+  /* Portfolio */
+  .masonry{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:14px;
+  }
+  .masonry .item{position:relative;border-radius:12px;overflow:hidden;min-height:220px;background:#111;border:1px solid rgba(255,255,255,0.03)}
+  .masonry .item img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s cubic-bezier(.2,.9,.2,1)}
+  .masonry .item:hover img{transform:scale(1.06)}
+  .masonry .meta{position:absolute;left:16px;bottom:16px;color:var(--white);font-weight:700;background:linear-gradient(90deg, rgba(0,0,0,0.6), rgba(0,0,0,0.25));padding:10px;border-radius:8px}
+
+  /* Testimonials */
+  .testimonials{display:flex;gap:12px;flex-wrap:wrap;align-items:stretch}
+  .testimonial{flex:1;background:var(--panel);padding:18px;border-radius:12px;border:1px solid rgba(255,255,255,0.03)}
+  .testimonial p{margin:0;color:var(--muted)}
+
+  /* Contact */
+  .contact-card{max-width:680px;margin:0 auto;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.12));padding:28px;border-radius:12px;border:1px solid rgba(255,255,255,0.04)}
+  .form-row{display:flex;gap:12px;flex-wrap:wrap}
+  input, textarea{width:100%;padding:12px;border-radius:10px;background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--white);outline:none}
+  textarea{min-height:120px;resize:vertical}
+
+  /* Footer */
+  footer{padding:28px 0;color:var(--muted);text-align:center;border-top:1px solid rgba(255,255,255,0.03);}
+
+  /* Sticky WhatsApp */
+
+  .whatsapp {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: radial-gradient(circle at 10% 10%, #3CFF90, #25D366 70%, #1EBE5D 100%);
+  box-shadow:
+    0 0 10px rgba(37, 211, 102, 0.25),
+    inset 0 0 8px rgba(255, 255, 255, 0.15);
+  z-index: 99;
+  cursor: pointer;
+  animation: pulse-green 3s infinite ease-in-out;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.whatsapp:hover {
+  transform: scale(1.08);
+  box-shadow:
+    0 0 35px rgba(37, 211, 102, 0.45),
+    inset 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+.whatsapp img {
+  width: 28px;
+  height: 28px;
+  filter: brightness(0) invert(1); /* logo blanco limpio */
+}
+
+/* Pulso elegante tipo respiración */
+@keyframes pulse-green {
+  0% {
+    box-shadow:
+      0 0 10px rgba(37, 211, 102, 0.25),
+      inset 0 0 8px rgba(255, 255, 255, 0.15);
+  }
+  50% {
+    box-shadow:
+      0 0 25px rgba(37, 211, 102, 0.5),
+      inset 0 0 12px rgba(255, 255, 255, 0.25);
+  }
+  100% {
+    box-shadow:
+      0 0 10px rgba(37, 211, 102, 0.25),
+      inset 0 0 8px rgba(255, 255, 255, 0.15);
+  }
+}
+
+
+  /* Responsive */
+  @media (max-width:992px){
+    .masonry{grid-template-columns:repeat(2,1fr)}
+    .grid-3{grid-template-columns:repeat(2,1fr)}
+  }
+  @media (max-width:680px){
+    nav{display:none}
+    .hamburger{display:flex}
+    .grid-3{grid-template-columns:1fr}
+    .masonry{grid-template-columns:1fr}
+    header{padding:8px}
+    .nav-inner{padding:8px}
+    .logo svg{height:36px}
+  }
+
+  /* Small utilities */
+  .muted{color:var(--muted)}
+  .split{display:flex;gap:18px;align-items:center}
+</style>
 </head>
 <body>
-    <section class="hero">
-        <h1>Visual Performance</h1>
-        <p>Fotografía estratégica para músicos que buscan construir una imagen potente y coherente con su sonido.</p>
-        <a href="#contacto" class="btn">Agenda tu sesión</a>
-    </section>
 
-    <section id="servicios">
-        <h2>Servicios</h2>
-        <p>Sesiones de retrato artístico, fotografía promocional y contenido visual para proyectos musicales.</p>
-    </section>
+<header aria-hidden="false">
+  <div class="nav-inner container">
+    <div class="logo">
+      <!-- SVG minimal logo: reemplaza por tu SVG real -->
+      <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+        <rect x="10" y="10" width="80" height="80" rx="12" fill="none" stroke="#fff" stroke-width="4"/>
+        <path d="M28 68 L50 32 L72 68" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <div>
+        <div class="brand">Angel Sullyvan</div>
+        <div class="muted" style="font-size:12px">Fotografía estratégica · Músicos</div>
+      </div>
+    </div>
 
-    <section id="contacto">
-        <h2>Contacto</h2>
-        <p>Escríbeme a <a href="mailto:contacto@visualperformance.mx">contacto@visualperformance.mx</a></p>
-    </section>
+    <nav aria-label="Menú principal">
+      <a href="#portfolio">Portafolio</a>
+      <a href="#servicios">Servicios</a>
+      <a href="#backstage">Backstage</a>
+      <a href="#testimonios">Testimonios</a>
+      <a href="#contacto" class="cta">Agendar sesión</a>
+    </nav>
 
-    <footer>
-        <p>© 2025 Visual Performance. Todos los derechos reservados.</p>
-    </footer>
-</body>
-</html>
+    <button class="hamburger" aria-label="Abrir menú" id="burger" onclick="toggleMobile()">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main>
+  <!-- HERO -->
+  <section class="hero" id="inicio">
+    <div class="media" aria-hidden="true">
+      <picture>
+        <!-- Reemplaza srcset con tu imagen WebP/AVIF de alta calidad -->
+        <source srcset="https://images.unsplash.com/photo-1507874457470-272b3c8d8ee2?auto=format&fit=crop&w=1600&q=80" type="image/webp">
+        <img src="https://images.unsplash.com/photo-1507874457470-272b3c8d8ee2?auto=format&fit=crop&w=1600&q=80" alt="Fotografía corporativa de artista en estudio">
+      </picture>
+    </div>
+    <div class="overlay" aria-hidden="true"></div>
+
+    <div class="content container" role="hero">
+      <div class="kicker">BRANDING • RETRATOS • DIRECCIÓN</div>
+       <h1>Retratos que amplifican tu sonido <br><span style="color:var(--accent)">Imágenes para que te recuerden.</span></h1>
+      <p class="lead">Trabajo con músicos y creativos para transformar la identidad visual en una herramienta de carrera: portada, prensa, redes y booking — todo con intención estratégica.</p>
+      <div class="actions">
+        <button class="btn-primary" onclick="document.getElementById('portfolio').scrollIntoView({behavior:'smooth'})">Ver portafolio</button>
+        <button class="btn-ghost" onclick="document.getElementById('contacto').scrollIntoView({behavior:'smooth'})">Agendar sesión</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICIOS / PROCESO -->
+  <section id="servicios" class="container">
+    <div class="section-head">
+      <div>
+        <div class="section-title">SERVICIOS</div>
+        <h2 class="h2">Qué ofrezco</h2>
+      </div>
+      <div class="muted"> Dirección visual con propósito.
+Cada sesión combina estrategia, técnica y narrativa para crear imágenes que comunican quién eres y hacia dónde vas como artista.</div>
+    </div>
+
+    <div class="grid-3" aria-hidden="false">
+      <div class="card">
+        <h3>Exploración y planificación</h3>
+        <p> Antes de disparar una sola foto, exploramos tu proyecto: qué sonido tienes, qué mensaje quieres proyectar y a quién quieres llegar.
+Definimos el enfoque visual, las referencias estéticas y el propósito de la sesión para asegurar que cada imagen tenga coherencia con tu visión musical y tu etapa artística.</p>
+      </div>
+      <div class="card">
+        <h3>Dirección creativa</h3>
+        <p>En esta fase definimos el concepto visual completo: iluminación, color, actitud, vestuario y locaciones.
+Cada elemento se elige con intención para construir una narrativa coherente entre tu imagen, tu música y el público que quieres atraer.</p>
+      </div>
+      <div class="card">
+        <h3>Producción</h3>
+        <p>Organizamos los detalles técnicos y logísticos de la sesión: scouting de espacios, montaje de iluminación, dirección durante la toma y flujo de trabajo en set.
+Cada disparo está guiado para lograr resultados consistentes, con control de luz, postura y expresión que refuercen el mensaje de tu proyecto.</p>
+      </div>
+       <div class="card">
+        <h3>Entrega</h3>
+        <p>Entrego una selección curada de imágenes con retoque profesional y acabado editorial. Listas para redes, portadas, prensa o tu EPK, con la calidad técnica y narrativa que tu proyecto necesita para destacar.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PORTFOLIO -->
+  <section id="portfolio" style="padding-top:40px;padding-bottom:40px">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <div class="section-title">PORTAFOLIO</div>
+          <h2 class="h2">Selección reciente</h2>
+        </div>
+        <div class="muted">Ejemplos de dirección visual y look editorial</div>
+      </div>
+
+      <div class="masonry" id="masonry">
+        <!-- Reemplaza las imágenes por tus proyectos (usar webp/avif preferible) -->
+        <a class="item" href="#" aria-label="Proyecto 1">
+          <img loading="lazy" src="https://images.unsplash.com/photo-1511379938547-c1f69419868d?auto=format&fit=crop&w=1200&q=80" alt="Proyecto 1">
+          <div class="meta">Proyecto 1 · Portada</div>
+        </a>
+        <a class="item" href="#" aria-label="Proyecto 2">
+          <img loading="lazy" src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=1200&q=80" alt="Proyecto 2">
+          <div class="meta">Proyecto 2 · Editorial</div>
+        </a>
+        <a class="item" href="#" aria-label="Proyecto 3">
+          <img loading="lazy" src="https://images.unsplash.com/photo-1520975910124-7e7f9b7b7f2b?auto=format&fit=crop&w=1200&q=80" alt="Proyecto 3">
+          <div class="meta">Proyecto 3 · Press Kit</div>
+        </a>
+        <a class="item" href="#" aria-label="Proyecto 4">
+          <img loading="lazy" src="https://images.unsplash.com/photo-1504198453319-5ce911bafcde?auto=format&fit=crop&w=1200&q=80" alt="Proyecto 4">
+          <div class="meta">Proyecto 4 · Single Art</div>
+        </a>
+        <a class="item" href="#" aria-label="Proyecto 5">
+          <img loading="lazy" src="https://images.unsplash.com/photo-1514512364185-1f7a2b8f2a1f?auto=format&fit=crop&w=1200&q=80" alt="Proyecto 5">
+          <div class="meta">Proyecto 5 · Backstage</div>
+        </a>
+        <a class="item" href="#" aria-label="Proyecto 6">
+          <img loading="lazy" src="https://images.unsplash.com/photo-1517433456452-f9633a875f6f?auto=format&fit=crop&w=1200&q=80" alt="Proyecto 6">
+          <div class="meta">Proyecto 6 · Retrato</div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- BACKSTAGE -->
+  <section id="backstage">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <div class="section-title">BACKSTAGE</div>
+          <h2 class="h2">Detrás del proceso</h2>
+        </div>
+        <div class="muted">Tomas reales, dirección en acción</div>
+      </div>
+
+      <div class="masonry">
+        <div class="item"><img loading="lazy" src="https://images.unsplash.com/photo-1526178614670-9f1b2b0d6b2f?auto=format&fit=crop&w=1200&q=80" alt="Backstage 1"></div>
+        <div class="item"><img loading="lazy" src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?auto=format&fit=crop&w=1200&q=80" alt="Backstage 2"></div>
+        <div class="item"><img loading="lazy" src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1200&q=80" alt="Backstage 3"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIOS -->
+  <section id="testimonios">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <div class="section-title">TESTIMONIOS</div>
+          <h2 class="h2">Lo que dicen</h2>
+        </div>
+        <div class="muted">Opiniones que suman credibilidad</div>
+      </div>
+
+      <div class="testimonials">
+        <div class="testimonial">
+          <strong>“No solo entendió mi visión; la elevó.”</strong>
+          <p class="muted">— Mara Cruz · Cantautora</p>
+        </div>
+        <div class="testimonial">
+          <strong>“Las fotos parecían sacadas de la portada de mi sueño.”</strong>
+          <p class="muted">— Javi Torres · Productor</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section id="contacto">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <div class="section-title">CONTACTO</div>
+          <h2 class="h2">¿Listo para empezar?</h2>
+        </div>
+        <div class="muted">Rápido, directo y profesional</div>
+      </div>
+
+      <div class="contact-card">
+        <form action="mailto:tu-email@dominio.com" method="post" enctype="text/plain" onsubmit="trackLead();">
+          <div class="form-row">
+            <input type="text" name="name" placeholder="Nombre" required aria-label="Nombre">
+            <input type="email" name="email" placeholder="Correo electrónico" required aria-label="Correo electrónico">
+          </div>
+          <div style="margin-top:12px">
+            <input type="text" name="project" placeholder="Nombre del proyecto / banda" aria-label="Proyecto">
+          </div>
+          <div style="margin-top:12px">
+            <textarea name="message" placeholder="Cuéntame en 2 líneas qué necesitas" aria-label="Mensaje"></textarea>
+          </div>
+
+          <div style="display:flex;gap:12px;align-items:center;margin-top:14px">
+            <button type="submit" class="btn-primary">Enviar solicitud</button>
+            <a class="btn-ghost" href="mailto:angelsullyvan@angelsullyvan.com">O escríbeme</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
+      <div class="muted">© 2025 Angel Sullyvan</div>
+      <div class="muted">Hecho para músicos que quieren ser vistos</div>
+    </div>
+  </div>
+</footer>
+
+<!-- WhatsApp fijo: reemplaza el número por tu número (formato internacional sin espacios) -->
+<a class="whatsapp" href="https://wa.me/524499049326" target="_blank" rel="noopener" aria-label="Enviar WhatsApp">
+  <!-- ícono simple -->
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+    <path d="M20.52 3.48A11.9 11.9 0 0 0 12 0C5.373 0 .028 4.9.028 11.1c0 1.95.53 3.78 1.52 5.36L0 24l8.07-2.14A11.9 11.9 0 0 0 12 22.2c6.627 0 11.972-4.9 11.972-11.1 0-1.93-.55-3.77-1.452-5.62z" fill="#050505"/>
+    <path d="M17.2 14.2c-.4-.2-2.2-1.1-2.6-1.2-.4-.1-.6-.2-1 .2l-.6.6c-.2.2-.6.2-1 .1-.8-.2-2.5-1.1-4-2.9-.6-.7.6-1 .9-1.1.2-.1.5-.1.8.1.34.2 1 .6 1.6 1 .5.2 1 .1 1.4 0 .4-.1.9-.3 1.3.2.7.9 1.8 2.5 2.1 2.9.3.4.2.7.1.8-.1.1-.4.1-.9-.1z" fill="#fff"/>
+  </svg>
+</a>
+
+<script>
+  // Mobile toggle simple
+  f

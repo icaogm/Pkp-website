@@ -134,8 +134,17 @@
   align-items: center;
   justify-content: center;
   min-height: 40vh;
+  height: 40vh;
+  box-sizing: border-box;
 }
-.statement h2.glitch {
+@media (max-width: 680px) {
+  .statement {
+    padding: 60px 10px;
+    min-height: 28vh;
+    height: auto;
+  }
+}
+  .statement h2.glitch {
   font-family: 'Space Grotesk', sans-serif;
   font-size: clamp(26px, 5vw, 48px);
   color: var(--white);

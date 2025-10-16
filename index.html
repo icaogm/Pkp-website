@@ -345,6 +345,17 @@
     margin-bottom: 6px;
   }
 }
+.interactive-services{background:#0a0a0a;padding:100px 0;}
+.service-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;}
+.service-card{background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));border:1px solid rgba(255,255,255,0.05);border-radius:16px;padding:32px;position:relative;cursor:pointer;overflow:hidden;transition:all 0.4s ease;}
+.service-card:hover{transform:translateY(-6px);border-color:rgba(255,46,157,0.3);}
+.service-card::before{content:"";position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transition:opacity 0.5s ease;z-index:0;}
+.service-card:hover::before{opacity:0.2;}
+.service-title{display:flex;align-items:center;gap:10px;position:relative;z-index:2;}
+.service-card h3{font-size:20px;}
+.service-card p{font-size:15px;color:#9aa0a6;margin-top:12px;opacity:0;transform:translateY(12px);transition:all 0.4s ease;position:relative;z-index:2;}
+.service-card:hover p{opacity:1;transform:translateY(0);}
+
 </style>
 </head>
 <body>
@@ -405,6 +416,44 @@
     <h2 class="glitch" data-text="BRANDING PHOTOGRAPHY FOR ARTISTS.">BRANDING PHOTOGRAPHY FOR ARTISTS.</h2>
   </section>
 
+
+<!-- NUEVA SECCIÓN SERVICIOS -->  
+<section id="servicios" class="interactive-services">
+  <div class="container">
+          <div>
+        <div class="section-title">SERVICIOS</div>
+        <h2 class="h2">Qué ofrezco</h2>
+      </div>
+            <div class="muted"> Dirección visual con propósito.
+Cada sesión combina estrategia, técnica y narrativa para crear imágenes que comunican quién eres y hacia dónde vas como artista.</div>
+<br></br>
+    <h2>El proceso que transforma tu imagen</h2>
+    <div class="service-grid">
+      <div class="service-card" data-bg="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1200&q=80">
+        <div class="service-title">
+          <h3>1. Exploración y planificación</h3>
+        </div>
+        <p>Antes de disparar una sola foto, exploramos tu proyecto: qué sonido tienes, qué mensaje quieres proyectar y a quién quieres llegar.
+Definimos el enfoque visual, las referencias estéticas y el propósito de la sesión para asegurar que cada imagen tenga coherencia con tu visión musical y tu etapa artística.</p>
+      </div>
+      <div class="service-card" data-bg="https://images.unsplash.com/photo-1607706189992-eae578626c86?auto=format&fit=crop&w=1200&q=80">
+        <div class="service-title"><h3>2. Dirección creativa</h3></div>
+        <p>En esta fase definimos el concepto visual completo: iluminación, color, actitud, vestuario y locaciones.
+Cada elemento se elige con intención para construir una narrativa coherente entre tu imagen, tu música y el público que quieres atraer.</p>
+      </div>
+      <div class="service-card" data-bg="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?auto=format&fit=crop&w=1200&q=80">
+        <div class="service-title"><h3>3. Producción</h3></div>
+        <p>Organizamos los detalles técnicos y logísticos de la sesión: scouting de espacios, montaje de iluminación, dirección durante la toma y flujo de trabajo en set.
+Cada disparo está guiado para lograr resultados consistentes, con control de luz, postura y expresión que refuercen el mensaje de tu proyecto.</p>
+      </div>
+      <div class="service-card" data-bg="https://images.unsplash.com/photo-1520975910124-7e7f9b7b7f2b?auto=format&fit=crop&w=1200&q=80">
+        <div class="service-title"><h3>4. Entrega</h3></div>
+        <p>Entrego una selección curada de imágenes con retoque profesional y acabado editorial. Listas para redes, portadas, prensa o tu EPK, con la calidad técnica y narrativa que tu proyecto necesita para destacar.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
   <!-- SERVICIOS / PROCESO -->
   <section id="servicios" class="container">
     <div class="section-head">
@@ -419,22 +468,22 @@ Cada sesión combina estrategia, técnica y narrativa para crear imágenes que c
 
     <div class="grid-3" aria-hidden="false">
       <div class="card">
-        <h3>Exploración y planificación</h3>
+        <h3>1. Exploración y planificación</h3>
         <p> Antes de disparar una sola foto, exploramos tu proyecto: qué sonido tienes, qué mensaje quieres proyectar y a quién quieres llegar.
 Definimos el enfoque visual, las referencias estéticas y el propósito de la sesión para asegurar que cada imagen tenga coherencia con tu visión musical y tu etapa artística.</p>
       </div>
       <div class="card">
-        <h3>Dirección creativa</h3>
+        <h3>2. Dirección creativa</h3>
         <p>En esta fase definimos el concepto visual completo: iluminación, color, actitud, vestuario y locaciones.
 Cada elemento se elige con intención para construir una narrativa coherente entre tu imagen, tu música y el público que quieres atraer.</p>
       </div>
       <div class="card">
-        <h3>Producción</h3>
+        <h3>3. Producción</h3>
         <p>Organizamos los detalles técnicos y logísticos de la sesión: scouting de espacios, montaje de iluminación, dirección durante la toma y flujo de trabajo en set.
 Cada disparo está guiado para lograr resultados consistentes, con control de luz, postura y expresión que refuercen el mensaje de tu proyecto.</p>
       </div>
        <div class="card">
-        <h3>Entrega</h3>
+        <h3>4. Entrega</h3>
         <p>Entrego una selección curada de imágenes con retoque profesional y acabado editorial. Listas para redes, portadas, prensa o tu EPK, con la calidad técnica y narrativa que tu proyecto necesita para destacar.</p>
       </div>
     </div>

@@ -41,56 +41,40 @@
 
   /* Layout */
   .container{max-width:var(--max-width);margin:0 auto;padding:0 24px}
-  header{
-    position:fixed;
-    top:12px;
-    left:0;
-    right:0;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:12px;
-    padding:10px 24px;
-    z-index:40;
-    pointer-events:auto;
-  }
-  .nav-inner{
-    width:90%;
-    max-width:90%;
-    margin:0 auto;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:16px;
-    background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.02));
-    backdrop-filter: blur(8px);
-    border-radius:12px;
-    padding:8px 14px;
-  }
 
+  /* ===== Header (restaurado a estilo original) ===== */
+header{
+  position:fixed; top:12px; left:0; right:0;
+  padding:10px 24px; z-index:100;
+  background:transparent; /* como el original */
+}
+.nav-inner{
+  width:90%; max-width:90%; margin:0 auto;
+  display:flex; align-items:center; justify-content:space-between; gap:16px;
+  background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.02));
+  backdrop-filter: blur(8px);
+  border-radius:12px; padding:8px 14px;
+}
+.logo{display:flex;gap:12px;align-items:center}
+.logo svg{height:44px;width:auto;display:block}
+.brand{font-family:Outfit;font-weight:700;letter-spacing:0.6px;font-size:14px}
 
-  /* Logo */
-  .logo{display:flex;gap:12px;align-items:center}
-  .logo svg{height:44px;width:auto;display:block}
-  .brand{font-family:Outfit;font-weight:700;letter-spacing:0.6px;font-size:14px}
+nav{display:flex;gap:18px;align-items:center}
+nav a{color:var(--white);text-decoration:none;font-weight:600;font-size:14px;opacity:0.9;transition:color .2s ease}
+nav a:hover{color:var(--accent)}
+.cta{
+  background:transparent; border:1px solid rgba(255,255,255,0.12);
+  padding:10px 14px; border-radius:10px; font-weight:700; cursor:pointer;
+  transition:transform .22s ease, box-shadow .22s ease, border-color .22s ease;
+}
+.cta:hover{transform:translateY(-4px);box-shadow:0 8px 30px rgba(0,0,0,0.6);border-color:var(--accent);}
 
-  /* Nav */
-  nav{display:flex;gap:18px;align-items:center}
-  nav a{color:var(--white);text-decoration:none;font-weight:600;font-size:14px;opacity:0.9}
-  .cta{
-    background:transparent;
-    border:1px solid rgba(255,255,255,0.12);
-    padding:10px 14px;
-    border-radius:10px;
-    font-weight:700;
-    cursor:pointer;
-    transition:all .22s ease;
-  }
-  .cta:hover{transform:translateY(-4px);box-shadow:0 8px 30px rgba(0,0,0,0.6);border-color:var(--accent);}
-
-  /* Mobile menu */
-  .hamburger{display:none;flex-direction:column;gap:4px;cursor:pointer}
-  .hamburger span{width:22px;height:2px;background:var(--white);display:block;border-radius:2px}
+/* Botón hamburguesa (solo móvil) */
+.hamburger{display:none;flex-direction:column;gap:4px;cursor:pointer;background:none;border:none}
+.hamburger span{width:22px;height:2px;background:var(--white);display:block;border-radius:2px;transition:.3s}
+.hamburger.active span:nth-child(1){transform:rotate(45deg) translate(4px, 4px)}
+.hamburger.active span:nth-child(2){opacity:0}
+.hamburger.active span:nth-child(3){transform:rotate(-45deg) translate(4px, -4px)}
 
   /* HERO */
   .hero{
@@ -233,6 +217,23 @@
 
   /* Footer */
   footer{padding:28px 0;color:var(--muted);text-align:center;border-top:1px solid rgba(255,255,255,0.03);}
+
+  /* ===== Menú móvil (como el original, desplegable bajo el header) ===== */
+@media (max-width: 680px){
+  nav{
+    display:none; flex-direction:column; position:absolute; top:56px; left:0; width:100vw;
+    background: linear-gradient(180deg, rgba(30,30,30,0.65), rgba(0,0,0,0.45));
+    backdrop-filter: blur(12px); border-radius: 0 0 14px 14px; box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+    z-index: 100; padding: 18px 0; align-items: center;
+  }
+  nav.open{ display:flex; }
+  .hamburger{display:flex}
+  /* mantener proporciones del header original en móvil */
+  header{padding:8px}
+  .nav-inner{padding:8px}
+  .logo svg{height:36px}
+  .masonry{grid-template-columns:1fr}
+}
 
   /* Sticky WhatsApp */
 
@@ -482,13 +483,14 @@
       </div>
     </div>
 
-    <nav aria-label="Menú principal">
-      <a href="#portfolio">Portafolio</a>
-      <a href="#servicios">Servicios</a>
-      <a href="#backstage">Backstage</a>
-      <a href="#testimonios">Testimonios</a>
-      <a href="#contacto" class="cta">Agendar sesión</a>
-    </nav>
+   <nav aria-label="Menú principal" id="main-nav">
+  <a href="index.html">Inicio</a>
+  <a href="servicios.html">Servicios</a>
+  <a href="portafolio.html">Portafolio</a>
+  <a href="index.html#backstage">Backstage</a>
+  <a href="index.html#testimonios">Testimonios</a>
+  <a href="index.html#contacto" class="cta">Agendar sesión</a>
+  </nav>
 
     <button class="hamburger" aria-label="Abrir menú" id="burger" onclick="toggleMobile()">
       <span></span><span></span><span></span>
@@ -529,7 +531,8 @@
 <section id="servicios" class="interactive-services">
   <div class="container">
           <div>
-<a class="section-title" href="servicios.html" data-text="SERVICIOS">SERVICIOS</a>
+<a class="section-title" href="servicios.html" data-text="SERVICIOS">SERVICIOS</a>
+
         <h2 class="h2">Qué ofrezco</h2>
       </div>
             <div class="muted"> Dirección visual con propósito.
@@ -631,7 +634,8 @@ Cada disparo está guiado para lograr resultados consistentes, con control de lu
     <div class="container">
       <div class="section-head">
         <div>
-<a class="section-title" href="backstage.html" data-text="BACKSTAGE">BACKSTAGE</a>
+<a class="section-title" href="backstage.html" data-text="BACKSTAGE">BACKSTAGE</a>
+
           <h2 class="h2">Detrás del proceso</h2>
         </div>
         <div class="muted">Tomas reales, dirección en acción</div>
@@ -650,7 +654,8 @@ Cada disparo está guiado para lograr resultados consistentes, con control de lu
     <div class="container">
       <div class="section-head">
         <div>
-<a class="section-title" href="testimonios.html" data-text="TESTIMONIOS">TESTIMONIOS</a>
+<a class="section-title" href="testimonios.html" data-text="TESTIMONIOS">TESTIMONIOS</a>
+
           <h2 class="h2">Lo que dicen</h2>
         </div>
         <div class="muted">Opiniones que suman credibilidad</div>
@@ -674,7 +679,8 @@ Cada disparo está guiado para lograr resultados consistentes, con control de lu
     <div class="container">
       <div class="section-head">
         <div>
-<a class="section-title" href="contacto.html" data-text="CONTACTO">CONTACTO</a>
+<a class="section-title" href="contacto.html" data-text="CONTACTO">CONTACTO</a>
+
           <h2 class="h2">¿Listo para empezar?</h2>
         </div>
         <div class="muted">Rápido, directo y profesional</div>

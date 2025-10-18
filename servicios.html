@@ -536,6 +536,67 @@ services-page .formats{max-width:950px;margin:0 auto 80px}
   }
 }
 
+
+/* ====== TITULO GLITCH ACTIVO ====== */
+.glitch-title {
+  position: relative;
+  display: inline-block;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 900;
+  font-size: clamp(2rem, 6vw, 4rem);
+  text-transform: uppercase;
+  color: var(--white);
+  letter-spacing: 2px;
+  text-align: center;
+  animation: flicker 2.4s infinite alternate;
+}
+
+.glitch-title::before,
+.glitch-title::after {
+  content: attr(data-text);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  overflow: hidden;
+}
+
+.glitch-title::before {
+  left: 2px;
+  text-shadow: -2px 0 var(--accent);
+  animation: glitchTop 2s infinite linear alternate-reverse;
+}
+
+.glitch-title::after {
+  left: -2px;
+  text-shadow: -2px 0 cyan;
+  animation: glitchBottom 2s infinite linear alternate;
+}
+
+/* Animaciones base */
+@keyframes flicker {
+  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% { opacity: 1; }
+  20%, 22%, 24%, 55% { opacity: 0.7; }
+}
+
+@keyframes glitchTop {
+  0% { clip: rect(2px, 9999px, 44px, 0); }
+  50% { clip: rect(12px, 9999px, 35px, 0); }
+  100% { clip: rect(2px, 9999px, 44px, 0); }
+}
+
+@keyframes glitchBottom {
+  0% { clip: rect(45px, 9999px, 80px, 0); }
+  50% { clip: rect(55px, 9999px, 75px, 0); }
+  100% { clip: rect(45px, 9999px, 80px, 0); }
+}
+
+@media (max-width: 680px) {
+  .glitch-title {
+    font-size: clamp(1.6rem, 5vw, 2.6rem);
+  }
+}
+
 </style>
 </head>
 
@@ -580,7 +641,9 @@ services-page .formats{max-width:950px;margin:0 auto 80px}
     </div>
     <div class="overlay" aria-hidden="true"></div>
     <div class="content container">
-      <h1><br><span style="color:var(--accent)">SERVICIOS.</span></h1>
+<section class="titulo-principal">
+  <h1 class="glitch-title" data-text="SERVICIOS">SERVICIOS</h1>
+</section>
     </div>
   </section>
 

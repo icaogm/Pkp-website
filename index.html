@@ -356,7 +356,46 @@
 .service-card p{font-size:15px;color:#9aa0a6;margin-top:12px;opacity:0;transform:translateY(12px);transition:all 0.4s ease;position:relative;z-index:2;}
 .service-card:hover p{opacity:1;transform:translateY(0);}
 
-</style>
+.click-hint {
+    width:18px;
+    height:18px;
+    color:var(--muted, #9aa0a6);
+    opacity:0.8;
+    transition:color 0.4s ease, transform 0.3s ease;
+  }
+  .service-card:hover .click-hint {
+    color:var(--accent);
+    transform:rotate(10deg);
+  }
+
+  .service-card::after{
+    content:"Haz clic para ver más";
+    position:absolute;
+    bottom:12px;
+    right:16px;
+    font-size:13px;
+    color:var(--muted, #9aa0a6);
+    opacity:0;
+    letter-spacing:0.4px;
+    transition:opacity .4s ease, transform .4s ease;
+    transform:translateY(6px);
+    font-weight:400;
+  }
+  .service-card:hover::after{
+    opacity:.85;
+    transform:translateY(0);
+  }
+
+  .service-card:not(.clicked){
+    box-shadow:0 0 0 0 rgba(255,46,157,0.4);
+    animation:pulseBorder 3s infinite;
+  }
+  @keyframes pulseBorder{
+    0%{box-shadow:0 0 0 0 rgba(255,46,157,0.4);}
+    70%{box-shadow:0 0 0 8px rgba(255,46,157,0);}
+    100%{box-shadow:0 0 0 0 rgba(255,46,157,0);}
+  }
+  </style>
 </head>
 <body>
 
@@ -432,62 +471,50 @@ Cada sesión combina estrategia, técnica y narrativa para crear imágenes que c
       <div class="service-card" data-bg="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1200&q=80">
         <div class="service-title">
           <h3>1. Exploración y planificación</h3>
+          <svg class="click-hint" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5" fill="none"/>
+              <line x1="12" y1="10" x2="12" y2="16" stroke="currentColor" stroke-width="1.5"/>
+              <circle cx="12" cy="7" r="1" fill="currentColor"/>
+            </svg>
         </div>
         <p>Antes de disparar una sola foto, exploramos tu proyecto: qué sonido tienes, qué mensaje quieres proyectar y a quién quieres llegar.
 Definimos el enfoque visual, las referencias estéticas y el propósito de la sesión para asegurar que cada imagen tenga coherencia con tu visión musical y tu etapa artística.</p>
       </div>
       <div class="service-card" data-bg="https://images.unsplash.com/photo-1607706189992-eae578626c86?auto=format&fit=crop&w=1200&q=80">
-        <div class="service-title"><h3>2. Dirección creativa</h3></div>
+        <div class="service-title"><h3>2. Dirección creativa</h3>
+          <svg class="click-hint" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5" fill="none"/>
+              <line x1="12" y1="10" x2="12" y2="16" stroke="currentColor" stroke-width="1.5"/>
+              <circle cx="12" cy="7" r="1" fill="currentColor"/>
+            </svg>
+        </div>
         <p>En esta fase definimos el concepto visual completo: iluminación, color, actitud, vestuario y locaciones.
 Cada elemento se elige con intención para construir una narrativa coherente entre tu imagen, tu música y el público que quieres atraer.</p>
       </div>
       <div class="service-card" data-bg="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?auto=format&fit=crop&w=1200&q=80">
-        <div class="service-title"><h3>3. Producción</h3></div>
+        <div class="service-title"><h3>3. Producción</h3>
+          <svg class="click-hint" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5" fill="none"/>
+              <line x1="12" y1="10" x2="12" y2="16" stroke="currentColor" stroke-width="1.5"/>
+              <circle cx="12" cy="7" r="1" fill="currentColor"/>
+            </svg>
+        </div>
         <p>Organizamos los detalles técnicos y logísticos de la sesión: scouting de espacios, montaje de iluminación, dirección durante la toma y flujo de trabajo en set.
 Cada disparo está guiado para lograr resultados consistentes, con control de luz, postura y expresión que refuercen el mensaje de tu proyecto.</p>
       </div>
       <div class="service-card" data-bg="https://images.unsplash.com/photo-1520975910124-7e7f9b7b7f2b?auto=format&fit=crop&w=1200&q=80">
-        <div class="service-title"><h3>4. Entrega</h3></div>
+        <div class="service-title"><h3>4. Entrega final</h3>
+          <svg class="click-hint" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5" fill="none"/>
+              <line x1="12" y1="10" x2="12" y2="16" stroke="currentColor" stroke-width="1.5"/>
+              <circle cx="12" cy="7" r="1" fill="currentColor"/>
+            </svg>
+        </div>
         <p>Entrego una selección curada de imágenes con retoque profesional y acabado editorial. Listas para redes, portadas, prensa o tu EPK, con la calidad técnica y narrativa que tu proyecto necesita para destacar.</p>
       </div>
     </div>
   </div>
 </section>
-
-  <!-- SERVICIOS / PROCESO -->
-  <section id="servicios" class="container">
-    <div class="section-head">
-      <div>
-        <div class="section-title">SERVICIOS</div>
-        <h2 class="h2">Qué ofrezco</h2>
-      </div>
-      <div class="muted"> Dirección visual con propósito.
-Cada sesión combina estrategia, técnica y narrativa para crear imágenes que comunican quién eres y hacia dónde vas como artista.</div>
-<br></br>
-</div>
-
-    <div class="grid-3" aria-hidden="false">
-      <div class="card">
-        <h3>1. Exploración y planificación</h3>
-        <p> Antes de disparar una sola foto, exploramos tu proyecto: qué sonido tienes, qué mensaje quieres proyectar y a quién quieres llegar.
-Definimos el enfoque visual, las referencias estéticas y el propósito de la sesión para asegurar que cada imagen tenga coherencia con tu visión musical y tu etapa artística.</p>
-      </div>
-      <div class="card">
-        <h3>2. Dirección creativa</h3>
-        <p>En esta fase definimos el concepto visual completo: iluminación, color, actitud, vestuario y locaciones.
-Cada elemento se elige con intención para construir una narrativa coherente entre tu imagen, tu música y el público que quieres atraer.</p>
-      </div>
-      <div class="card">
-        <h3>3. Producción</h3>
-        <p>Organizamos los detalles técnicos y logísticos de la sesión: scouting de espacios, montaje de iluminación, dirección durante la toma y flujo de trabajo en set.
-Cada disparo está guiado para lograr resultados consistentes, con control de luz, postura y expresión que refuercen el mensaje de tu proyecto.</p>
-      </div>
-       <div class="card">
-        <h3>4. Entrega</h3>
-        <p>Entrego una selección curada de imágenes con retoque profesional y acabado editorial. Listas para redes, portadas, prensa o tu EPK, con la calidad técnica y narrativa que tu proyecto necesita para destacar.</p>
-      </div>
-    </div>
-  </section>
 
   <!-- PORTFOLIO -->
   <section id="portfolio" style="padding-top:40px;padding-bottom:40px">
@@ -660,6 +687,11 @@ Cada disparo está guiado para lograr resultados consistentes, con control de lu
   document.addEventListener('keyup', e=>{
     if(e.key==='Tab'){document.documentElement.style.setProperty('outline','auto')}
   })
+
+  // Quita el halo al hacer clic (solo estética)
+  document.querySelectorAll('.service-card').forEach(card=>{
+    card.addEventListener('click',()=>card.classList.add('clicked'));
+  });
 </script>
 
 </body>

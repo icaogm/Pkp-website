@@ -399,6 +399,71 @@
     70%{box-shadow:0 0 0 8px rgba(255,46,157,0);}
     100%{box-shadow:0 0 0 0 rgba(255,46,157,0);}
   }
+
+/* ====== LINKS GLITCH PREMIUM ====== */
+.section-title {
+  position: relative;
+  display: inline-block;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 900;
+  font-size: clamp(1.8rem, 5vw, 2.4rem);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--accent);
+  text-decoration: none;
+  transition: color 0.25s ease;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.section-title::before,
+.section-title::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+}
+
+.section-title:hover::before {
+  clip: rect(0, 900px, 100%, 0);
+  left: 2px;
+  text-shadow: -2px 0 cyan;
+  animation: glitchShift 0.3s infinite linear alternate;
+}
+
+.section-title:hover::after {
+  clip: rect(0, 900px, 100%, 0);
+  left: -2px;
+  text-shadow: -2px 0 magenta;
+  animation: glitchShift 0.3s infinite linear alternate-reverse;
+}
+
+.section-title:hover {
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+@keyframes glitchShift {
+  0% { clip: rect(0, 9999px, 0, 0); }
+  20% { clip: rect(5px, 9999px, 10px, 0); }
+  40% { clip: rect(15px, 9999px, 25px, 0); }
+  60% { clip: rect(30px, 9999px, 45px, 0); }
+  80% { clip: rect(10px, 9999px, 50px, 0); }
+  100% { clip: rect(0, 9999px, 60px, 0); }
+}
+
+/* efecto responsivo */
+@media (max-width: 680px) {
+  .section-title {
+    font-size: 1.4rem;
+    letter-spacing: 1px;
+  }
+}
+
+
   </style>
 </head>
 <body>
@@ -464,7 +529,7 @@
 <section id="servicios" class="interactive-services">
   <div class="container">
           <div>
-        <a class="section-title" href="servicios.html" title="Ir a la página de servicios">SERVICIOS</a>
+<a class="section-title" href="servicios.html" data-text="SERVICIOS">SERVICIOS</a>
         <h2 class="h2">Qué ofrezco</h2>
       </div>
             <div class="muted"> Dirección visual con propósito.

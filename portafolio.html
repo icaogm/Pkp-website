@@ -31,7 +31,7 @@
     --radius:14px;
     --max-width:1200px;
   }
-
+/* Reset */
   *{box-sizing:border-box}
   html,body{height:100%}
   body{
@@ -44,34 +44,42 @@
     line-height:1.4;
   }
 
+  /* Layout */
   .container{max-width:var(--max-width);margin:0 auto;padding:0 24px}
 
-  header{
-    position:fixed; top:12px; left:0; right:0;
-    display:flex; align-items:center; justify-content:space-between; gap:12px;
-    padding:10px 24px; z-index:40; pointer-events:auto;
-  }
-  .nav-inner{
-    width:90%; max-width:90%; margin:0 auto;
-    display:flex; align-items:center; justify-content:space-between; gap:16px;
-    background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.02));
-    backdrop-filter: blur(8px);
-    border-radius:12px; padding:8px 14px;
-  }
+  /* ===== Header (restaurado a estilo original) ===== */
+header{
+  position:fixed; top:12px; left:0; right:0;
+  padding:10px 24px; z-index:100;
+  background:transparent; /* como el original */
+}
+.nav-inner{
+  width:90%; max-width:90%; margin:0 auto;
+  display:flex; align-items:center; justify-content:space-between; gap:16px;
+  background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.02));
+  backdrop-filter: blur(8px);
+  border-radius:12px; padding:8px 14px;
+}
+.logo{display:flex;gap:12px;align-items:center}
+.logo svg{height:44px;width:auto;display:block}
+.brand{font-family:Outfit;font-weight:700;letter-spacing:0.6px;font-size:14px}
 
-  .logo{display:flex;gap:12px;align-items:center}
-  .logo svg{height:44px;width:auto;display:block}
-  .brand{font-family:Outfit;font-weight:700;letter-spacing:0.6px;font-size:14px}
-  nav{display:flex;gap:18px;align-items:center}
-  nav a{color:var(--white);text-decoration:none;font-weight:600;font-size:14px;opacity:0.9}
-  .cta{
-    background:transparent; border:1px solid rgba(255,255,255,0.12);
-    padding:10px 14px; border-radius:10px; font-weight:700; cursor:pointer;
-    transition:all .22s ease;
-  }
-  .cta:hover{transform:translateY(-4px);box-shadow:0 8px 30px rgba(0,0,0,0.6);border-color:var(--accent);}
-  .hamburger{display:none;flex-direction:column;gap:4px;cursor:pointer}
-  .hamburger span{width:22px;height:2px;background:var(--white);display:block;border-radius:2px}
+nav{display:flex;gap:18px;align-items:center}
+nav a{color:var(--white);text-decoration:none;font-weight:600;font-size:14px;opacity:0.9;transition:color .2s ease}
+nav a:hover{color:var(--accent)}
+.cta{
+  background:transparent; border:1px solid rgba(255,255,255,0.12);
+  padding:10px 14px; border-radius:10px; font-weight:700; cursor:pointer;
+  transition:transform .22s ease, box-shadow .22s ease, border-color .22s ease;
+}
+.cta:hover{transform:translateY(-4px);box-shadow:0 8px 30px rgba(0,0,0,0.6);border-color:var(--accent);}
+
+/* Botón hamburguesa (solo móvil) */
+.hamburger{display:none;flex-direction:column;gap:4px;cursor:pointer;background:none;border:none}
+.hamburger span{width:22px;height:2px;background:var(--white);display:block;border-radius:2px;transition:.3s}
+.hamburger.active span:nth-child(1){transform:rotate(45deg) translate(4px, 4px)}
+.hamburger.active span:nth-child(2){opacity:0}
+.hamburger.active span:nth-child(3){transform:rotate(-45deg) translate(4px, -4px)}
 
   /* HERO Portafolio */
   .portfolio-hero{
@@ -156,26 +164,85 @@
   /* Footer */
   footer{padding:28px 0;color:var(--muted);text-align:center;border-top:1px solid rgba(255,255,255,0.03);}
 
-  /* WhatsApp (igual que servicios) */
+/* ===== Menú móvil (como el original, desplegable bajo el header) ===== */
+@media (max-width: 680px){
+  nav{
+    display:none; flex-direction:column; position:absolute; top:56px; left:0; width:100vw;
+    background: linear-gradient(180deg, rgba(30,30,30,0.65), rgba(0,0,0,0.45));
+    backdrop-filter: blur(12px); border-radius: 0 0 14px 14px; box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+    z-index: 100; padding: 18px 0; align-items: center;
+  }
+  nav.open{ display:flex; }
+  .hamburger{display:flex}
+  /* mantener proporciones del header original en móvil */
+  header{padding:8px}
+  .nav-inner{padding:8px}
+  .logo svg{height:36px}
+  .masonry{grid-template-columns:1fr}
+}
+
+/* Sticky WhatsApp */
+
+/* ===== Botón flotante de WhatsApp (versión full responsive + safe-area) ===== */
+.whatsapp {
+  position: fixed;
+  bottom: calc(env(safe-area-inset-bottom, 0px) + clamp(16px, 3vh, 28px));
+  right: calc(env(safe-area-inset-right, 0px) + clamp(16px, 3vw, 28px));
+  width: clamp(48px, 5vw, 60px);
+  height: clamp(48px, 5vw, 60px);
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: radial-gradient(circle at 10% 10%, #3CFF90, #25D366 70%, #1EBE5D 100%);
+  box-shadow: 0 0 10px rgba(37,211,102,.25),
+              inset 0 0 8px rgba(255,255,255,.15);
+  animation: pulse-green 3s infinite ease-in-out;
+  z-index: 99;
+  transition: all .3s ease;
+  backdrop-filter: blur(4px);
+}
+
+/* Efecto hover */
+.whatsapp:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(37,211,102,.4),
+              inset 0 0 12px rgba(255,255,255,.25);
+}
+
+/* Tamaños y márgenes específicos para móviles pequeños */
+@media (max-width: 480px) {
   .whatsapp {
-    position: fixed;
-    bottom: calc(env(safe-area-inset-bottom, 0px) + clamp(16px, 3vh, 28px));
-    right: calc(env(safe-area-inset-right, 0px) + clamp(16px, 3vw, 28px));
-    width: clamp(48px, 5vw, 60px);
-    height: clamp(48px, 5vw, 60px);
-    display: grid; place-items: center;
-    border-radius: 50%;
-    background: radial-gradient(circle at 10% 10%, #3CFF90, #25D366 70%, #1EBE5D 100%);
-    box-shadow: 0 0 10px rgba(37,211,102,.25), inset 0 0 8px rgba(255,255,255,.15);
-    animation: pulse-green 3s infinite ease-in-out; z-index: 99; transition: all .3s ease;
-    backdrop-filter: blur(4px);
+    bottom: calc(env(safe-area-inset-bottom, 0px) + 4vh);
+    right: calc(env(safe-area-inset-right, 0px) + 5vw);
+    width: 52px;
+    height: 52px;
+    box-shadow: 0 0 8px rgba(37,211,102,.2);
   }
-  .whatsapp:hover { transform: scale(1.05); box-shadow: 0 0 20px rgba(37,211,102,.4), inset 0 0 12px rgba(255,255,255,.25); }
-  @keyframes pulse-green {
-    0% { box-shadow: 0 0 10px rgba(37,211,102,.25), inset 0 0 8px rgba(255,255,255,.15); }
-    50%{ box-shadow: 0 0 25px rgba(37,211,102,.5), inset 0 0 12px rgba(255,255,255,.25); }
-    100%{box-shadow: 0 0 10px rgba(37,211,102,.25), inset 0 0 8px rgba(255,255,255,.15); }
+}
+.whatsapp img {
+  width: 28px;
+  height: 28px;
+  filter: brightness(0) invert(1); /* logo blanco limpio */
+}
+
+/* Pulso elegante tipo respiración */
+@keyframes pulse-green {
+  0% {
+    box-shadow:
+      0 0 10px rgba(37, 211, 102, 0.25),
+      inset 0 0 8px rgba(255, 255, 255, 0.15);
   }
+  50% {
+    box-shadow:
+      0 0 25px rgba(37, 211, 102, 0.5),
+      inset 0 0 12px rgba(255, 255, 255, 0.25);
+  }
+  100% {
+    box-shadow:
+      0 0 10px rgba(37, 211, 102, 0.25),
+      inset 0 0 8px rgba(255, 255, 255, 0.15);
+  }
+}
 
   /* Responsive */
   @media (max-width:992px){
@@ -203,7 +270,7 @@
 <header aria-hidden="false">
   <div class="nav-inner container">
     <div class="logo">
-      <!-- SVG minimal logo -->
+      <!-- SVG minimal logo: reemplaza por tu SVG real -->
       <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
         <rect x="10" y="10" width="80" height="80" rx="12" fill="none" stroke="#fff" stroke-width="4"/>
         <path d="M28 68 L50 32 L72 68" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
@@ -214,9 +281,10 @@
       </div>
     </div>
 
-    <nav aria-label="Menú principal">
-      <a href="index.html#portfolio" aria-current="page">Portafolio</a>
+   <nav aria-label="Menú principal" id="main-nav">
+      <a href="index.html">Inicio</a>
       <a href="servicios.html">Servicios</a>
+      <a href="portafolio.html">Portafolio</a>
       <a href="index.html#backstage">Backstage</a>
       <a href="index.html#testimonios">Testimonios</a>
       <a href="index.html#contacto" class="cta">Agendar sesión</a>
@@ -229,7 +297,6 @@
 </header>
 
 <main>
-
   <!-- HERO -->
   <section class="portfolio-hero" aria-label="Hero Portafolio">
     <div class="media" aria-hidden="true">
@@ -264,9 +331,34 @@
            data-gallery="set1"
            data-title="Proyecto 1 — Portada"
            data-description="Dirección visual y look editorial para lanzamiento.">
-          <img loading="lazy" src="https://images.unsplash.com/photo-1511379938547-c1f69419868d?auto=format&fit=crop&w=1200&q=80" alt="Proyecto 1 — Portada">
+          <img loading="lazy" 
+                src="https://images.unsplash.com/photo-1511379938547-c1f69419868d?auto=format&fit=crop&w=1200&q=80" 
+                alt="Proyecto 1 — Portada">
           <div class="meta">Proyecto 1 · Portada</div>
         </a>
+
+                <!-- Imágenes internas ocultas del mismo proyecto -->
+                <a class="glightbox"
+                    href="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1800&q=90"
+                    data-gallery="korn-session"
+                    data-title="KORN SESSION — Detalle 1"
+                    style="display:none">
+                </a>
+
+                <a class="glightbox"
+                  href="https://images.unsplash.com/photo-1504198453319-5ce911bafcde?auto=format&fit=crop&w=1800&q=90"
+                  data-gallery="korn-session"
+                  data-title="KORN SESSION — Detalle 2"
+                  style="display:none">
+                </a>
+
+                <a class="glightbox"
+                  href="https://images.unsplash.com/photo-1517433456452-f9633a875f6f?auto=format&fit=crop&w=1800&q=90"
+                  data-gallery="korn-session"
+                  data-title="KORN SESSION — Final Edit"
+                  style="display:none">
+                </a>
+                <!-- Fin de Imágenes internas ocultas del mismo proyecto -->
 
         <a class="item glightbox" href="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=1800&q=90"
            data-gallery="set1"
@@ -329,7 +421,7 @@
   </div>
 </footer>
 
-<!-- WhatsApp -->
+<!-- WhatsApp fijo: reemplaza el número por tu número (formato internacional sin espacios) -->
 <a class="whatsapp" href="https://wa.me/524464086741" target="_blank" rel="noopener" aria-label="Enviar WhatsApp">
   <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
     <path d="M20.52 3.48A11.9 11.9 0 0 0 12 0C5.373 0 .028 4.9.028 11.5c0 2 .523 3.9 1.51 5.6L0 24l7.07-1.5c1.63.9 3.46 1.4 5.36 1.4 6.627 0 12-4.9 12-11.5 0-3.07-1.37-5.95-3.91-8.02z" fill="#25D366"/>
@@ -342,7 +434,7 @@
 <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
 
 <script>
-  // Toggle mobile menu
+  // Mobile toggle simple
   function toggleMobile(){
     const nav = document.querySelector('nav');
     nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';

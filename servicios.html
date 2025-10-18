@@ -36,59 +36,43 @@
     line-height:1.4;
   }
 
-
-  /* Layout */
+/* Layout */
   .container{max-width:var(--max-width);margin:0 auto;padding:0 24px}
-  header{
-    position:fixed;
-    top:12px;
-    left:0;
-    right:0;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:12px;
-    padding:10px 24px;
-    z-index:40;
-    pointer-events:auto;
-  }
-  .nav-inner{
-    width:90%;
-    max-width:90%;
-    margin:0 auto;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:16px;
-    background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.02));
-    backdrop-filter: blur(8px);
-    border-radius:12px;
-    padding:8px 14px;
-  }
 
+  /* ===== Header (restaurado a estilo original) ===== */
+header{
+  position:fixed; top:12px; left:0; right:0;
+  padding:10px 24px; z-index:100;
+  background:transparent; /* como el original */
+}
+.nav-inner{
+  width:90%; max-width:90%; margin:0 auto;
+  display:flex; align-items:center; justify-content:space-between; gap:16px;
+  background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.02));
+  backdrop-filter: blur(8px);
+  border-radius:12px; padding:8px 14px;
+}
+.logo{display:flex;gap:12px;align-items:center}
+.logo svg{height:44px;width:auto;display:block}
+.brand{font-family:Outfit;font-weight:700;letter-spacing:0.6px;font-size:14px}
 
-  /* Logo */
-  .logo{display:flex;gap:12px;align-items:center}
-  .logo svg{height:44px;width:auto;display:block}
-  .brand{font-family:Outfit;font-weight:700;letter-spacing:0.6px;font-size:14px}
+nav{display:flex;gap:18px;align-items:center}
+nav a{color:var(--white);text-decoration:none;font-weight:600;font-size:14px;opacity:0.9;transition:color .2s ease}
+nav a:hover{color:var(--accent)}
+.cta{
+  background:transparent; border:1px solid rgba(255,255,255,0.12);
+  padding:10px 14px; border-radius:10px; font-weight:700; cursor:pointer;
+  transition:transform .22s ease, box-shadow .22s ease, border-color .22s ease;
+}
+.cta:hover{transform:translateY(-4px);box-shadow:0 8px 30px rgba(0,0,0,0.6);border-color:var(--accent);}
 
-  /* Nav */
-  nav{display:flex;gap:18px;align-items:center}
-  nav a{color:var(--white);text-decoration:none;font-weight:600;font-size:14px;opacity:0.9}
-  .cta{
-    background:transparent;
-    border:1px solid rgba(255,255,255,0.12);
-    padding:10px 14px;
-    border-radius:10px;
-    font-weight:700;
-    cursor:pointer;
-    transition:all .22s ease;
-  }
-  .cta:hover{transform:translateY(-4px);box-shadow:0 8px 30px rgba(0,0,0,0.6);border-color:var(--accent);}
+/* Botón hamburguesa (solo móvil) */
+.hamburger{display:none;flex-direction:column;gap:4px;cursor:pointer;background:none;border:none}
+.hamburger span{width:22px;height:2px;background:var(--white);display:block;border-radius:2px;transition:.3s}
+.hamburger.active span:nth-child(1){transform:rotate(45deg) translate(4px, 4px)}
+.hamburger.active span:nth-child(2){opacity:0}
+.hamburger.active span:nth-child(3){transform:rotate(-45deg) translate(4px, -4px)}
 
-  /* Mobile menu */
-  .hamburger{display:none;flex-direction:column;gap:4px;cursor:pointer}
-  .hamburger span{width:22px;height:2px;background:var(--white);display:block;border-radius:2px}
 
   /* HERO */
   .hero{
@@ -162,6 +146,23 @@
 
   /* Footer */
   footer{padding:28px 0;color:var(--muted);text-align:center;border-top:1px solid rgba(255,255,255,0.03);}
+
+  /* ===== Menú móvil (como el original, desplegable bajo el header) ===== */
+@media (max-width: 680px){
+  nav{
+    display:none; flex-direction:column; position:absolute; top:56px; left:0; width:100vw;
+    background: linear-gradient(180deg, rgba(30,30,30,0.65), rgba(0,0,0,0.45));
+    backdrop-filter: blur(12px); border-radius: 0 0 14px 14px; box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+    z-index: 100; padding: 18px 0; align-items: center;
+  }
+  nav.open{ display:flex; }
+  .hamburger{display:flex}
+  /* mantener proporciones del header original en móvil */
+  header{padding:8px}
+  .nav-inner{padding:8px}
+  .logo svg{height:36px}
+  .masonry{grid-template-columns:1fr}
+  }
 
   /* Sticky WhatsApp */
 
@@ -269,6 +270,8 @@
 
   /* TITULOS DE SECCIÓN */
   .section-title {
+  display: block;
+  width: 100%;
   font-size: 2.2rem;
   font-weight: 900;
   color: var(--accent);
@@ -280,6 +283,8 @@
 }
 @media (max-width:680px) {
   .section-title {
+    display: block;
+    width: 100%;
     font-size: 1.4rem;
     margin-bottom: 6px;
   }
@@ -605,7 +610,8 @@ services-page .formats{max-width:950px;margin:0 auto 80px}
 <header aria-hidden="false">
   <div class="nav-inner container">
     <div class="logo">
-      <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+      <!-- SVG minimal logo: reemplaza por tu SVG real -->
+        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
         <rect x="10" y="10" width="80" height="80" rx="12" fill="none" stroke="#fff" stroke-width="4"/>
         <path d="M28 68 L50 32 L72 68" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
       </svg>
@@ -615,13 +621,14 @@ services-page .formats{max-width:950px;margin:0 auto 80px}
       </div>
     </div>
 
-    <nav aria-label="Menú principal">
-      <a href="index.html#portfolio">Portafolio</a>
-      <a href="servicios.html" class="cta" aria-current="page">Servicios</a>
-      <a href="index.html#backstage">Backstage</a>
-      <a href="index.html#testimonios">Testimonios</a>
-      <a href="index.html#contacto" class="cta">Agendar sesión</a>
-    </nav>
+   <nav aria-label="Menú principal" id="main-nav">
+  <a href="index.html">Inicio</a>
+  <a href="servicios.html">Servicios</a>
+  <a href="portafolio.html">Portafolio</a>
+  <a href="index.html#backstage">Backstage</a>
+  <a href="index.html#testimonios">Testimonios</a>
+  <a href="index.html#contacto" class="cta">Agendar sesión</a>
+  </nav>
 
     <button class="hamburger" aria-label="Abrir menú" id="burger" onclick="toggleMobile()">
       <span></span><span></span><span></span>
@@ -630,7 +637,7 @@ services-page .formats{max-width:950px;margin:0 auto 80px}
 </header>
 
 <main>
-
+  <!-- HERO -->
   <section class="services-hero" aria-label="Hero Servicios">
     <div class="media" aria-hidden="true">
       <picture>
@@ -640,10 +647,11 @@ services-page .formats{max-width:950px;margin:0 auto 80px}
       </picture>
     </div>
     <div class="overlay" aria-hidden="true"></div>
+
     <div class="content container">
-<section class="titulo-principal">
-  <h1 class="glitch-title" data-text="SERVICIOS">SERVICIOS</h1>
-</section>
+      <section class="titulo-principal">
+      <h1 class="glitch-title" data-text="SERVICIOS">SERVICIOS</h1>
+      </section>
     </div>
   </section>
 

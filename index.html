@@ -5,15 +5,18 @@
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>Angel Sullyvan — Fotografía Estratégica para Músicos</title>
 <meta name="description" content="Fotografía estratégica para músicos y artistas. Retratos pensados para proyectar tu sonido y posicionarte a otro nivel." />
+
 <!-- Open Graph -->
 <meta property="og:title" content="Angel Sullyvan — Fotografía Estratégica para Músicos" />
 <meta property="og:description" content="Retratos para músicos y creativos que buscan diferenciarse y conectar." />
 <meta property="og:image" content="https://images.unsplash.com/photo-1507874457470-272b3c8d8ee2?auto=format&fit=crop&w=1200&q=80" />
 <meta property="og:type" content="website" />
+
 <!-- Fonts (preload + swap) -->
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700;900&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
 <style>
   :root{
     --bg:#060606;
@@ -237,32 +240,41 @@ nav a:hover{color:var(--accent)}
 
   /* Sticky WhatsApp */
 
-  .whatsapp {
+.whatsapp {
   position: fixed;
-  bottom: 20px;
-  right: 20px;
-  width: 60px;
-  height: 60px;
+  bottom: calc(env(safe-area-inset-bottom, 0px) + clamp(16px, 3vh, 28px));
+  right: calc(env(safe-area-inset-right, 0px) + clamp(16px, 3vw, 28px));
+  width: clamp(48px, 5vw, 60px);
+  height: clamp(48px, 5vw, 60px);
   display: grid;
   place-items: center;
   border-radius: 50%;
   background: radial-gradient(circle at 10% 10%, #3CFF90, #25D366 70%, #1EBE5D 100%);
-  box-shadow:
-    0 0 10px rgba(37, 211, 102, 0.25),
-    inset 0 0 8px rgba(255, 255, 255, 0.15);
-  z-index: 99;
-  cursor: pointer;
+  box-shadow: 0 0 10px rgba(37,211,102,.25),
+              inset 0 0 8px rgba(255,255,255,.15);
   animation: pulse-green 3s infinite ease-in-out;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  z-index: 99;
+  transition: all .3s ease;
+  backdrop-filter: blur(4px);
 }
 
+/* Efecto hover */
 .whatsapp:hover {
-  transform: scale(1.08);
-  box-shadow:
-    0 0 35px rgba(37, 211, 102, 0.45),
-    inset 0 0 10px rgba(255, 255, 255, 0.2);
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(37,211,102,.4),
+              inset 0 0 12px rgba(255,255,255,.25);
 }
 
+/* Tamaños y márgenes específicos para móviles pequeños */
+@media (max-width: 480px) {
+  .whatsapp {
+    bottom: calc(env(safe-area-inset-bottom, 0px) + 4vh);
+    right: calc(env(safe-area-inset-right, 0px) + 5vw);
+    width: 52px;
+    height: 52px;
+    box-shadow: 0 0 8px rgba(37,211,102,.2);
+  }
+}
 .whatsapp img {
   width: 28px;
   height: 28px;

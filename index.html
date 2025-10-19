@@ -241,6 +241,9 @@ nav a:hover{color:var(--accent)}
     transition: transform 0.35s ease, opacity 0.35s ease;
     transform: translateY(-100%);
     opacity: 0;
+header {
+  z-index: 998; /* un nivel debajo del menú */
+}
   }
   nav.open {
     display: flex;
@@ -830,9 +833,9 @@ Cada elemento se elige con intención para construir una narrativa coherente ent
 <script>
   // Mobile toggle simple
   function toggleMobile(){
-    const nav = document.querySelector('nav');
-    nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
-  }
+  const nav = document.querySelector('nav');
+  nav.classList.toggle('open');
+}
 
   // Simple scroll reveal (lightweight)
   const obsOptions = {threshold: 0.12};

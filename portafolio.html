@@ -16,8 +16,6 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700;900&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-
-<!-- GLightbox (estilos) -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css"/>
 
 <style>
@@ -26,12 +24,12 @@
     --panel:#0f0f0f;
     --muted:#9aa0a6;
     --white:#ffffff;
-    --accent:#ff2e9d; /* pick one accent */
+    --accent:#ff2e9d;
     --glass: rgba(255,255,255,0.06);
     --radius:14px;
     --max-width:1200px;
   }
-/* Reset */
+
   *{box-sizing:border-box}
   html,body{height:100%}
   body{
@@ -44,259 +42,176 @@
     line-height:1.4;
   }
 
-  /* Layout */
   .container{max-width:var(--max-width);margin:0 auto;padding:0 24px}
 
-  /* ===== Header (restaurado a estilo original) ===== */
-header{
-  position:fixed; top:12px; left:0; right:0;
-  padding:10px 24px; z-index:100;
-  background:transparent; /* como el original */
-}
-.nav-inner{
-  width:90%; max-width:90%; margin:0 auto;
-  display:flex; align-items:center; justify-content:space-between; gap:16px;
-  background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.02));
-  backdrop-filter: blur(8px);
-  border-radius:12px; padding:8px 14px;
-}
-.logo{display:flex;gap:12px;align-items:center}
-.logo svg{height:44px;width:auto;display:block}
-.brand{font-family:Outfit;font-weight:700;letter-spacing:0.6px;font-size:14px}
-
-nav{display:flex;gap:18px;align-items:center}
-nav a{color:var(--white);text-decoration:none;font-weight:600;font-size:14px;opacity:0.9;transition:color .2s ease}
-nav a:hover{color:var(--accent)}
-.cta{
-  background:transparent; border:1px solid rgba(255,255,255,0.12);
-  padding:10px 14px; border-radius:10px; font-weight:700; cursor:pointer;
-  transition:transform .22s ease, box-shadow .22s ease, border-color .22s ease;
-}
-.cta:hover{transform:translateY(-4px);box-shadow:0 8px 30px rgba(0,0,0,0.6);border-color:var(--accent);}
-
-/* ====== MENÚ FIJO (ESCRITORIO) Y DESPLEGABLE (MÓVIL) ====== */
-
-/* ——— Escritorio por defecto ——— */
-nav {
-  display:flex;
-  position:static;
-  transform:none;
-  opacity:1;
-  pointer-events:auto;
-  align-items:center;
-  gap:18px;
-}
-nav a {
-  color:#fff;
-  opacity:0.9;
-  text-decoration:none;
-  font-weight:600;
-  font-size:14px;
-  transition:color .2s ease;
-}
-nav a:hover { color:#ff2e9d; }
-.hamburger { display:none; }
-
-/* ——— Solo para pantallas móviles ——— */
-@media (max-width:680px){
-  nav {
-    display:flex;
-    flex-direction:column;
-    position:fixed;
-    top:70px; left:0; right:0;
-    width:100vw;
-    background:linear-gradient(180deg, rgba(20,20,20,0.95), rgba(0,0,0,0.85));
-    backdrop-filter:blur(12px);
-    border-radius:0 0 14px 14px;
-    box-shadow:0 8px 32px rgba(0,0,0,0.4);
-    z-index:999;
-    padding:20px 0;
-    align-items:center;
-    gap:16px;
-    transform:translateY(-110%);
-    opacity:0;
-    pointer-events:none;
-    transition:transform .35s ease, opacity .35s ease;
+  /* ===== HEADER (igual que servicios.html) ===== */
+  header{
+    position:fixed;top:12px;left:0;right:0;
+    padding:10px 24px;z-index:100;
+    background:transparent;
   }
-  nav.open {
-    transform:translateY(0);
-    opacity:1;
-    pointer-events:auto;
+  .nav-inner{
+    width:90%;max-width:90%;margin:0 auto;
+    display:flex;align-items:center;justify-content:space-between;gap:16px;
+    background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(0,0,0,0.02));
+    backdrop-filter:blur(8px);
+    border-radius:12px;padding:8px 14px;
+  }
+  .logo{display:flex;gap:12px;align-items:center}
+  .logo svg{height:44px;width:auto;display:block}
+  .brand{font-family:Outfit;font-weight:700;letter-spacing:0.6px;font-size:14px}
+
+  nav{display:flex;gap:18px;align-items:center}
+  nav a{color:var(--white);text-decoration:none;font-weight:600;font-size:14px;opacity:0.9;transition:color .2s ease}
+  nav a:hover{color:var(--accent)}
+  .cta{
+    background:transparent;border:1px solid rgba(255,255,255,0.12);
+    padding:10px 14px;border-radius:10px;font-weight:700;cursor:pointer;
+    transition:transform .22s ease, box-shadow .22s ease, border-color .22s ease;
+  }
+  .cta:hover{transform:translateY(-4px);box-shadow:0 8px 30px rgba(0,0,0,0.6);border-color:var(--accent);}
+
+  /* Botón hamburguesa */
+  .hamburger{display:none;flex-direction:column;gap:4px;cursor:pointer;background:none;border:none}
+  .hamburger span{width:22px;height:2px;background:var(--white);display:block;border-radius:2px;transition:.3s}
+  .hamburger.active span:nth-child(1){transform:rotate(45deg) translate(4px,4px)}
+  .hamburger.active span:nth-child(2){opacity:0}
+  .hamburger.active span:nth-child(3){transform:rotate(-45deg) translate(4px,-4px)}
+
+  /* ===== Menú móvil ===== */
+  @media (max-width:680px){
+    nav{
+      display:flex;
+      flex-direction:column;
+      position:fixed;
+      top:70px;left:0;right:0;
+      width:100vw;
+      background:linear-gradient(180deg,rgba(20,20,20,0.95),rgba(0,0,0,0.85));
+      backdrop-filter:blur(12px);
+      border-radius:0 0 14px 14px;
+      box-shadow:0 8px 32px rgba(0,0,0,0.4);
+      z-index:999;
+      padding:20px 0;
+      align-items:center;
+      gap:16px;
+      transform:translateY(-110%);
+      opacity:0;
+      pointer-events:none;
+      transition:transform .35s ease,opacity .35s ease;
+    }
+    nav.open{
+      transform:translateY(0);
+      opacity:1;
+      pointer-events:auto;
+    }
+    .hamburger{display:flex}
+    header{z-index:998;}
+    .logo svg{height:36px}
   }
 
-  .hamburger {
-    display:flex;
-    flex-direction:column;
-    gap:4px;
-    cursor:pointer;
-    background:none;
-    border:none;
-    z-index:1000;
-  }
-  .hamburger span {
-    width:24px; height:2px;
-    background:#fff; border-radius:2px;
-    transition:all .3s ease;
-  }
-  .hamburger.active span:nth-child(1){ transform:rotate(45deg) translate(4px,4px); }
-  .hamburger.active span:nth-child(2){ opacity:0; }
-  .hamburger.active span:nth-child(3){ transform:rotate(-45deg) translate(4px,-4px); }
-
-  header { z-index:998; }
-}
-
-
-  /* HERO Portafolio */
+  /* ===== HERO PORTAFOLIO ===== */
   .portfolio-hero{
-    min-height:56vh; display:grid; place-items:center;
-    position:relative; overflow:hidden;
+    min-height:56vh;display:grid;place-items:center;position:relative;overflow:hidden;
   }
-  .portfolio-hero .media{position:absolute; inset:0; background:#000;}
-  .portfolio-hero picture,img{width:100%; height:100%; object-fit:cover; filter:contrast(.95) saturate(.95);}
-  .portfolio-hero .overlay{position:absolute; inset:0; background:linear-gradient(180deg, rgba(0,0,0,.45), rgba(0,0,0,.7));}
-  .portfolio-hero .content{position:relative; z-index:3; text-align:center; padding:60px 20px; max-width:980px; margin:0 auto;}
+  .portfolio-hero .media{position:absolute;inset:0;background:#000;}
+  .portfolio-hero picture,img{width:100%;height:100%;object-fit:cover;filter:contrast(.95)saturate(.95);}
+  .portfolio-hero .overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.45),rgba(0,0,0,.7));}
+  .portfolio-hero .content{position:relative;z-index:3;text-align:center;padding:60px 20px;max-width:980px;margin:0 auto;}
 
-  /* ====== TITULO GLITCH ACTIVO (Space Grotesk) ====== */
   .glitch-title {
-    position: relative;
-    display: inline-block;
-    font-family: 'Space Grotesk', sans-serif;
-    font-weight: 700;
-    font-size: clamp(2rem, 6vw, 4rem);
-    text-transform: uppercase;
-    color: var(--white);
-    letter-spacing: 2px;
-    text-align: center;
-    animation: flicker 2.4s infinite alternate;
+    position:relative;
+    display:inline-block;
+    font-family:'Space Grotesk',sans-serif;
+    font-weight:700;
+    font-size:clamp(2rem,6vw,4rem);
+    text-transform:uppercase;
+    color:var(--white);
+    letter-spacing:2px;
+    text-align:center;
+    animation:flicker 2.4s infinite alternate;
   }
-  .glitch-title::before,
-  .glitch-title::after {
-    content: attr(data-text);
-    position: absolute; left: 0; top: 0; width: 100%; overflow: hidden;
+  .glitch-title::before,.glitch-title::after{
+    content:attr(data-text);
+    position:absolute;left:0;top:0;width:100%;overflow:hidden;
   }
-  .glitch-title::before { left: 2px; text-shadow: -2px 0 var(--accent); animation: glitchTop 2s infinite linear alternate-reverse; }
-  .glitch-title::after  { left:-2px; text-shadow: -2px 0 cyan;       animation: glitchBottom 2s infinite linear alternate; }
+  .glitch-title::before{left:2px;text-shadow:-2px 0 var(--accent);animation:glitchTop 2s infinite linear alternate-reverse;}
+  .glitch-title::after{left:-2px;text-shadow:-2px 0 cyan;animation:glitchBottom 2s infinite linear alternate;}
+  @keyframes flicker{0%,19%,21%,23%,25%,54%,56%,100%{opacity:1;}20%,22%,24%,55%{opacity:.7;}}
+  @keyframes glitchTop{0%{clip:rect(2px,9999px,44px,0);}50%{clip:rect(12px,9999px,35px,0);}100%{clip:rect(2px,9999px,44px,0);}}
+  @keyframes glitchBottom{0%{clip:rect(45px,9999px,80px,0);}50%{clip:rect(55px,9999px,75px,0);}100%{clip:rect(45px,9999px,80px,0);}}
 
-  @keyframes flicker { 0%,19%,21%,23%,25%,54%,56%,100%{opacity:1;} 20%,22%,24%,55%{opacity:.7;} }
-  @keyframes glitchTop { 0%{clip:rect(2px,9999px,44px,0);} 50%{clip:rect(12px,9999px,35px,0);} 100%{clip:rect(2px,9999px,44px,0);} }
-  @keyframes glitchBottom { 0%{clip:rect(45px,9999px,80px,0);} 50%{clip:rect(55px,9999px,75px,0);} 100%{clip:rect(45px,9999px,80px,0);} }
-
-  /* Intro breve */
-  .portfolio-intro{background:#0a0a0a; padding:60px 0 20px}
+  .portfolio-intro{background:#0a0a0a;padding:60px 0 20px}
   .portfolio-intro .lead{
-    max-width:920px; margin:0 auto; text-align:center; color:#b0b0b0; line-height:1.6;
-    font-size: clamp(1rem, 2.4vw, 1.15rem);
+    max-width:920px;margin:0 auto;text-align:center;color:#b0b0b0;line-height:1.6;
+    font-size:clamp(1rem,2.4vw,1.15rem);
   }
-
-  /* Masonry */
+  /* ===== MASONRY ===== */
   .masonry{
     display:grid;
     grid-template-columns:repeat(3,1fr);
     gap:14px;
-    padding: 30px 0 10px;
+    padding:30px 0 10px;
   }
   .masonry .item{
-    position:relative; border-radius:12px; overflow:hidden; min-height:240px; background:#111;
+    position:relative;border-radius:12px;overflow:hidden;min-height:240px;background:#111;
     border:1px solid rgba(255,255,255,0.03);
-    transition:transform .5s cubic-bezier(.2,.9,.2,1), box-shadow .5s;
+    transition:transform .5s cubic-bezier(.2,.9,.2,1),box-shadow .5s;
   }
-  .masonry .item img{width:100%; height:100%; object-fit:cover; display:block; transition:transform .8s cubic-bezier(.2,.9,.2,1); }
-  .masonry .item:hover{transform:translateY(-4px); box-shadow:0 24px 60px rgba(0,0,0,0.6);}
-  .masonry .item:hover img{transform:scale(1.06)}
+  .masonry .item img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .8s cubic-bezier(.2,.9,.2,1);}
+  .masonry .item:hover{transform:translateY(-4px);box-shadow:0 24px 60px rgba(0,0,0,0.6);}
+  .masonry .item:hover img{transform:scale(1.06);}
   .masonry .meta{
-    position:absolute; left:12px; bottom:12px; color:var(--white); font-weight:700;
-    background:linear-gradient(90deg, rgba(0,0,0,0.6), rgba(0,0,0,0.25));
-    padding:10px 12px; border-radius:8px; letter-spacing:.3px;
+    position:absolute;left:12px;bottom:12px;color:var(--white);font-weight:700;
+    background:linear-gradient(90deg,rgba(0,0,0,0.6),rgba(0,0,0,0.25));
+    padding:10px 12px;border-radius:8px;letter-spacing:.3px;
   }
 
-  /* CTA final */
+  /* ===== CTA FINAL ===== */
   .portfolio-cta{
-    background: linear-gradient(180deg,#0a0a0a 0%,#0c0c0c 100%);
-    padding: 80px 0; margin-top: 10px;
+    background:linear-gradient(180deg,#0a0a0a 0%,#0c0c0c 100%);
+    padding:80px 0;margin-top:10px;
   }
-  .portfolio-cta .wrap{max-width:920px; margin:0 auto; text-align:center}
-  .portfolio-cta h3{font-family:"Outfit",sans-serif; font-size:clamp(1.6rem,3.6vw,2rem); font-weight:800; margin:0 0 8px; color:#fff}
-  .portfolio-cta p{color:#b0b0b0; margin:0 0 16px}
+  .portfolio-cta .wrap{max-width:920px;margin:0 auto;text-align:center}
+  .portfolio-cta h3{font-family:"Outfit",sans-serif;font-size:clamp(1.6rem,3.6vw,2rem);font-weight:800;margin:0 0 8px;color:#fff}
+  .portfolio-cta p{color:#b0b0b0;margin:0 0 16px}
   .btn-primary{
-    background:linear-gradient(90deg,var(--accent), #ff7ab5 120%);
-    color:#060606; padding:12px 20px; border-radius:12px; border:none; font-weight:800; cursor:pointer;
+    background:linear-gradient(90deg,var(--accent),#ff7ab5 120%);
+    color:#060606;padding:12px 20px;border-radius:12px;border:none;font-weight:800;cursor:pointer;
     box-shadow:0 8px 30px rgba(255,46,157,0.12),0 2px 6px rgba(0,0,0,0.6);
-    transition:transform .2s ease, box-shadow .2s;
-    text-decoration:none; display:inline-block;
+    transition:transform .2s ease,box-shadow .2s;
+    text-decoration:none;display:inline-block;
   }
-  .btn-primary:hover{transform:translateY(-4px);box-shadow:0 18px 50px rgba(255,46,157,0.14)}
+  .btn-primary:hover{transform:translateY(-4px);box-shadow:0 18px 50px rgba(255,46,157,0.14);}
 
-  /* Footer */
+  /* ===== FOOTER ===== */
   footer{padding:28px 0;color:var(--muted);text-align:center;border-top:1px solid rgba(255,255,255,0.03);}
 
-/* Sticky WhatsApp */
-
-/* ===== Botón flotante de WhatsApp (versión full responsive + safe-area) ===== */
-.whatsapp {
-  position: fixed;
-  bottom: calc(env(safe-area-inset-bottom, 0px) + clamp(16px, 3vh, 28px));
-  right: calc(env(safe-area-inset-right, 0px) + clamp(16px, 3vw, 28px));
-  width: clamp(48px, 5vw, 60px);
-  height: clamp(48px, 5vw, 60px);
-  display: grid;
-  place-items: center;
-  border-radius: 50%;
-  background: radial-gradient(circle at 10% 10%, #3CFF90, #25D366 70%, #1EBE5D 100%);
-  box-shadow: 0 0 10px rgba(37,211,102,.25),
-              inset 0 0 8px rgba(255,255,255,.15);
-  animation: pulse-green 3s infinite ease-in-out;
-  z-index: 99;
-  transition: all .3s ease;
-  backdrop-filter: blur(4px);
-}
-
-/* Efecto hover */
-.whatsapp:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 20px rgba(37,211,102,.4),
-              inset 0 0 12px rgba(255,255,255,.25);
-}
-
-/* Tamaños y márgenes específicos para móviles pequeños */
-@media (max-width: 480px) {
+  /* ===== WHATSAPP ===== */
   .whatsapp {
-    bottom: calc(env(safe-area-inset-bottom, 0px) + 4vh);
-    right: calc(env(safe-area-inset-right, 0px) + 5vw);
-    width: 52px;
-    height: 52px;
-    box-shadow: 0 0 8px rgba(37,211,102,.2);
+    position:fixed;
+    bottom:calc(env(safe-area-inset-bottom,0px)+clamp(16px,3vh,28px));
+    right:calc(env(safe-area-inset-right,0px)+clamp(16px,3vw,28px));
+    width:clamp(48px,5vw,60px);
+    height:clamp(48px,5vw,60px);
+    display:grid;place-items:center;
+    border-radius:50%;
+    background:radial-gradient(circle at 10% 10%,#3CFF90,#25D366 70%,#1EBE5D 100%);
+    box-shadow:0 0 10px rgba(37,211,102,.25),inset 0 0 8px rgba(255,255,255,.15);
+    animation:pulse-green 3s infinite ease-in-out;
+    z-index:99;
+    transition:all .3s ease;
+    backdrop-filter:blur(4px);
   }
-}
-.whatsapp img {
-  width: 28px;
-  height: 28px;
-  filter: brightness(0) invert(1); /* logo blanco limpio */
-}
-
-/* Pulso elegante tipo respiración */
-@keyframes pulse-green {
-  0% {
-    box-shadow:
-      0 0 10px rgba(37, 211, 102, 0.25),
-      inset 0 0 8px rgba(255, 255, 255, 0.15);
-  }
-  50% {
-    box-shadow:
-      0 0 25px rgba(37, 211, 102, 0.5),
-      inset 0 0 12px rgba(255, 255, 255, 0.25);
-  }
-  100% {
-    box-shadow:
-      0 0 10px rgba(37, 211, 102, 0.25),
-      inset 0 0 8px rgba(255, 255, 255, 0.15);
-  }
-}
-
-  /* Responsive */
-  @media (max-width:992px){
-    .masonry{grid-template-columns:repeat(2,1fr)}
+  .whatsapp:hover{transform:scale(1.05);box-shadow:0 0 20px rgba(37,211,102,.4),inset 0 0 12px rgba(255,255,255,.25);}
+  .whatsapp img{width:28px;height:28px;filter:brightness(0) invert(1);}
+  @keyframes pulse-green{
+    0%{box-shadow:0 0 10px rgba(37,211,102,0.25),inset 0 0 8px rgba(255,255,255,0.15);}
+    50%{box-shadow:0 0 25px rgba(37,211,102,0.5),inset 0 0 12px rgba(255,255,255,0.25);}
+    100%{box-shadow:0 0 10px rgba(37,211,102,0.25),inset 0 0 8px rgba(255,255,255,0.15);}
   }
 
+  @media (max-width:992px){.masonry{grid-template-columns:repeat(2,1fr);}}
+  @media (max-width:680px){.masonry{grid-template-columns:1fr;}}
 </style>
 </head>
 
@@ -305,7 +220,6 @@ nav a:hover { color:#ff2e9d; }
 <header aria-hidden="false">
   <div class="nav-inner container">
     <div class="logo">
-      <!-- SVG minimal logo: reemplaza por tu SVG real -->
       <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
         <rect x="10" y="10" width="80" height="80" rx="12" fill="none" stroke="#fff" stroke-width="4"/>
         <path d="M28 68 L50 32 L72 68" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
@@ -331,9 +245,7 @@ nav a:hover { color:#ff2e9d; }
   </div>
 </header>
 
-
 <main>
-  <!-- HERO -->
   <section class="portfolio-hero" aria-label="Hero Portafolio">
     <div class="media" aria-hidden="true">
       <picture>
@@ -347,7 +259,6 @@ nav a:hover { color:#ff2e9d; }
     </div>
   </section>
 
-  <!-- Intro breve -->
   <section class="portfolio-intro">
     <div class="container">
       <p class="lead">
@@ -357,12 +268,11 @@ nav a:hover { color:#ff2e9d; }
     </div>
   </section>
 
-  <!-- Galería Masonry con GLightbox -->
+  <!-- GALERÍA -->
   <section class="portfolio-grid">
     <div class="container">
       <div class="masonry">
-
-        <!-- Proyecto con galería interna -->
+        <!-- Proyecto 1 -->
         <a class="item glightbox"
            href="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?auto=format&fit=crop&w=1800&q=90"
            data-gallery="korn-session"
@@ -374,69 +284,21 @@ nav a:hover { color:#ff2e9d; }
           <div class="meta">KORN SESSION · Editorial</div>
         </a>
 
-                <!-- Imágenes internas ocultas del mismo proyecto -->
-                <a class="glightbox"
-                    href="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1800&q=90"
-                    data-gallery="korn-session"
-                    data-title="KORN SESSION — Detalle 1"
-                    style="display:none">
-                </a>
+        <!-- Internas -->
+        <a class="glightbox" href="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1800&q=90" data-gallery="korn-session" style="display:none"></a>
+        <a class="glightbox" href="https://images.unsplash.com/photo-1504198453319-5ce911bafcde?auto=format&fit=crop&w=1800&q=90" data-gallery="korn-session" style="display:none"></a>
+        <a class="glightbox" href="https://images.unsplash.com/photo-1517433456452-f9633a875f6f?auto=format&fit=crop&w=1800&q=90" data-gallery="korn-session" style="display:none"></a>
 
-                <a class="glightbox"
-                  href="https://images.unsplash.com/photo-1504198453319-5ce911bafcde?auto=format&fit=crop&w=1800&q=90"
-                  data-gallery="korn-session"
-                  data-title="KORN SESSION — Detalle 2"
-                  style="display:none">
-                </a>
-
-                <a class="glightbox"
-                  href="https://images.unsplash.com/photo-1517433456452-f9633a875f6f?auto=format&fit=crop&w=1800&q=90"
-                  data-gallery="korn-session"
-                  data-title="KORN SESSION — Final Edit"
-                  style="display:none">
-                </a>
-                <!-- Fin de Imágenes internas ocultas del mismo proyecto -->
-
-        <a class="item glightbox" href="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=1800&q=90"
-           data-gallery="set1"
-           data-title="Proyecto 2 — Editorial"
-           data-description="Concepto con estética cromática y actitud definida.">
-          <img loading="lazy" src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=1200&q=80" alt="Proyecto 2 — Editorial">
-          <div class="meta">Proyecto 2 · Editorial</div>
-        </a>
-
-        <a class="item" href="#" aria-label="Proyecto 3 (sin lightbox)">
-          <img loading="lazy" src="https://images.unsplash.com/photo-1520975910124-7e7f9b7b7f2b?auto=format&fit=crop&w=1200&q=80" alt="Proyecto 3 — Press Kit">
-          <div class="meta">Proyecto 3 · Press Kit</div>
-        </a>
-
-        <a class="item glightbox" href="https://images.unsplash.com/photo-1504198453319-5ce911bafcde?auto=format&fit=crop&w=1800&q=90"
-           data-gallery="set2"
-           data-title="Proyecto 4 — Single Art"
-           data-description="Iluminación dramática y composición para arte de sencillo.">
-          <img loading="lazy" src="https://images.unsplash.com/photo-1504198453319-5ce911bafcde?auto=format&fit=crop&w=1200&q=80" alt="Proyecto 4 — Single Art">
-          <div class="meta">Proyecto 4 · Single Art</div>
-        </a>
-
-        <a class="item" href="#" aria-label="Proyecto 5 (sin lightbox)">
-          <img loading="lazy" src="https://images.unsplash.com/photo-1514512364185-1f7a2b8f2a1f?auto=format&fit=crop&w=1200&q=80" alt="Proyecto 5 — Backstage">
-          <div class="meta">Proyecto 5 · Backstage</div>
-        </a>
-
-        <a class="item glightbox" href="https://images.unsplash.com/photo-1517433456452-f9633a875f6f?auto=format&fit=crop&w=1800&q=90"
-           data-gallery="set2"
-           data-title="Proyecto 6 — Retrato"
-           data-description="Retrato con dirección de actitud y control de luz.">
-          <img loading="lazy" src="https://images.unsplash.com/photo-1517433456452-f9633a875f6f?auto=format&fit=crop&w=1200&q=80" alt="Proyecto 6 — Retrato">
-          <div class="meta">Proyecto 6 · Retrato</div>
-        </a>
-
-        <!-- Puedes duplicar/editar los bloques anteriores para más proyectos -->
+        <!-- Más proyectos -->
+        <a class="item glightbox" href="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=1800&q=90" data-gallery="set1" data-title="Proyecto 2 — Editorial"><img loading="lazy" src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=1200&q=80"><div class="meta">Proyecto 2 · Editorial</div></a>
+        <a class="item" href="#"><img loading="lazy" src="https://images.unsplash.com/photo-1520975910124-7e7f9b7b7f2b?auto=format&fit=crop&w=1200&q=80"><div class="meta">Proyecto 3 · Press Kit</div></a>
+        <a class="item glightbox" href="https://images.unsplash.com/photo-1504198453319-5ce911bafcde?auto=format&fit=crop&w=1800&q=90" data-gallery="set2" data-title="Proyecto 4 — Single Art"><img loading="lazy" src="https://images.unsplash.com/photo-1504198453319-5ce911bafcde?auto=format&fit=crop&w=1200&q=80"><div class="meta">Proyecto 4 · Single Art</div></a>
+        <a class="item" href="#"><img loading="lazy" src="https://images.unsplash.com/photo-1514512364185-1f7a2b8f2a1f?auto=format&fit=crop&w=1200&q=80"><div class="meta">Proyecto 5 · Backstage</div></a>
+        <a class="item glightbox" href="https://images.unsplash.com/photo-1517433456452-f9633a875f6f?auto=format&fit=crop&w=1800&q=90" data-gallery="set2" data-title="Proyecto 6 — Retrato"><img loading="lazy" src="https://images.unsplash.com/photo-1517433456452-f9633a875f6f?auto=format&fit=crop&w=1200&q=80"><div class="meta">Proyecto 6 · Retrato</div></a>
       </div>
     </div>
   </section>
 
-  <!-- CTA final -->
   <section class="portfolio-cta">
     <div class="container">
       <div class="wrap">
@@ -446,7 +308,6 @@ nav a:hover { color:#ff2e9d; }
       </div>
     </div>
   </section>
-
 </main>
 
 <footer>
@@ -458,7 +319,6 @@ nav a:hover { color:#ff2e9d; }
   </div>
 </footer>
 
-<!-- WhatsApp fijo: reemplaza el número por tu número (formato internacional sin espacios) -->
 <a class="whatsapp" href="https://wa.me/524464086741" target="_blank" rel="noopener" aria-label="Enviar WhatsApp">
   <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
     <path d="M20.52 3.48A11.9 11.9 0 0 0 12 0C5.373 0 .028 4.9.028 11.5c0 2 .523 3.9 1.51 5.6L0 24l7.07-1.5c1.63.9 3.46 1.4 5.36 1.4 6.627 0 12-4.9 12-11.5 0-3.07-1.37-5.95-3.91-8.02z" fill="#25D366"/>
@@ -467,63 +327,35 @@ nav a:hover { color:#ff2e9d; }
 </a>
 
 <!-- Scripts -->
-<!-- GLightbox (script) -->
 <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
-
 <script>
 function toggleMobile(){
-  const nav = document.querySelector('nav');
-  const burger = document.getElementById('burger');
-  if (!nav) return;
+  const nav=document.querySelector('nav');
+  const burger=document.getElementById('burger');
+  if(!nav)return;
   nav.classList.toggle('open');
-  if (burger) burger.classList.toggle('active');
+  if(burger)burger.classList.toggle('active');
 }
-
-// Resetea el menú al volver a escritorio
 (function(){
-  const mq = window.matchMedia('(max-width: 680px)');
+  const mq=window.matchMedia('(max-width: 680px)');
   function handleMQ(e){
-    const nav = document.querySelector('nav');
-    const burger = document.getElementById('burger');
-    if (!nav) return;
+    const nav=document.querySelector('nav');
+    const burger=document.getElementById('burger');
+    if(!nav)return;
     if(!e.matches){
       nav.classList.remove('open');
-      if (burger) burger.classList.remove('active');
+      if(burger)burger.classList.remove('active');
+      nav.style.removeProperty('display');
+      nav.style.removeProperty('transform');
+      nav.style.removeProperty('opacity');
+      nav.style.removeProperty('pointer-events');
+      nav.style.removeProperty('position');
     }
   }
-  mq.addEventListener ? mq.addEventListener('change', handleMQ) : mq.addListener(handleMQ);
+  mq.addEventListener?mq.addEventListener('change',handleMQ):mq.addListener(handleMQ);
   handleMQ(mq);
 })();
+const lightbox=GLightbox({selector:'.glightbox',touchNavigation:true,loop:true,zoomable:true,autoplayVideos:false});
 </script>
-
-
-<script>
-   
-  // Iniciar GLightbox
-  const lightbox = GLightbox({
-    selector: '.glightbox',
-    touchNavigation: true,
-    loop: true,
-    zoomable: true,
-    autoplayVideos: false,
-    plyr: { css: '', js: '' }
-  });
-
-  // Simple scroll reveal (consistente con tu estilo)
-  const obsOptions = {threshold: 0.12};
-  const obs = new IntersectionObserver((entries)=>{
-    entries.forEach(e=>{
-      if(e.isIntersecting){ e.target.style.opacity = 1; e.target.style.transform = 'none'; }
-    });
-  }, obsOptions);
-
-  document.querySelectorAll('.item').forEach(el=>{
-    el.style.opacity = 0;
-    el.style.transform = 'translateY(16px)';
-    el.style.transition = 'opacity .7s ease, transform .7s cubic-bezier(.2,.9,.2,1)';
-    obs.observe(el);
-  });
-</script>
-
 </body>
 </html>

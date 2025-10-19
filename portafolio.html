@@ -43,78 +43,79 @@
   }
 
   .container{max-width:var(--max-width);margin:0 auto;padding:0 24px}
+  .muted{color:var(--muted)}
 
-  /* ===== HEADER (ajustado para igualar versión original portafolio) ===== */
-header{
-  position:fixed;top:12px;left:0;right:0;
-  padding:12px 20px;z-index:100;
-  background:transparent;
-}
-.nav-inner{
-  width:92%;max-width:92%;margin:0 auto;
-  display:flex;align-items:center;justify-content:space-between;gap:16px;
-  background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(0,0,0,0.02));
-  backdrop-filter:blur(8px);
-  border-radius:12px;padding:10px 16px;
-}
-.logo{display:flex;gap:12px;align-items:center}
-.logo svg{height:44px;width:auto;display:block}
-.brand{font-family:Outfit;font-weight:700;letter-spacing:0.6px;font-size:14px}
-.logo .muted{
-  font-size:12px;
-  color:#b0b0b0; /* igual al tono anterior */
-  margin-top:2px;
-  letter-spacing:.2px;
-}
-
-nav{display:flex;gap:18px;align-items:center}
-nav a{color:var(--white);text-decoration:none;font-weight:600;font-size:14px;opacity:0.9;transition:color .2s ease}
-nav a:hover{color:var(--accent)}
-.cta{
-  background:transparent;border:1px solid rgba(255,255,255,0.12);
-  padding:10px 14px;border-radius:10px;font-weight:700;cursor:pointer;
-  transition:transform .22s ease, box-shadow .22s ease, border-color .22s ease;
-}
-.cta:hover{transform:translateY(-4px);box-shadow:0 8px 30px rgba(0,0,0,0.6);border-color:var(--accent);}
-
-/* Botón hamburguesa */
-.hamburger{display:none;flex-direction:column;gap:4px;cursor:pointer;background:none;border:none}
-.hamburger span{width:22px;height:2px;background:var(--white);display:block;border-radius:2px;transition:.3s}
-.hamburger.active span:nth-child(1){transform:rotate(45deg) translate(4px,4px)}
-.hamburger.active span:nth-child(2){opacity:0}
-.hamburger.active span:nth-child(3){transform:rotate(-45deg) translate(4px,-4px)}
-
-/* ===== Menú móvil ===== */
-@media (max-width:680px){
-  nav{
-    display:flex;
-    flex-direction:column;
-    position:fixed;
-    top:64px;left:0;right:0;
-    width:100vw;
-    background:linear-gradient(180deg,rgba(18,18,18,0.95),rgba(0,0,0,0.85));
-    backdrop-filter:blur(12px);
-    border-radius:0 0 14px 14px;
-    box-shadow:0 8px 32px rgba(0,0,0,0.4);
-    z-index:999;
-    padding:22px 0;
-    align-items:center;
-    gap:16px;
-    transform:translateY(-110%);
-    opacity:0;
-    pointer-events:none;
-    transition:transform .35s ease,opacity .35s ease;
+  /* ===== HEADER (idéntico a servicios.html) ===== */
+  header{
+    position:fixed; top:12px; left:0; right:0;
+    padding:10px 24px; z-index:100;
+    background:transparent;
   }
-  nav.open{
-    transform:translateY(0);
-    opacity:1;
-    pointer-events:auto;
+  .nav-inner{
+    width:90%; max-width:90%; margin:0 auto;
+    display:flex; align-items:center; justify-content:space-between; gap:16px;
+    background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.02));
+    backdrop-filter:blur(8px);
+    border-radius:12px; padding:8px 14px;
   }
-  .hamburger{display:flex}
-  header{z-index:998;padding:10px 14px;}
-  .logo svg{height:40px}
-  .logo .muted{font-size:11px;color:#b0b0b0;} /* color y tamaño coherente */
-}
+  .logo{display:flex;gap:12px;align-items:center}
+  .logo svg{height:44px;width:auto;display:block}
+  .brand{font-family:Outfit;font-weight:700;letter-spacing:0.6px;font-size:14px}
+  .logo .muted{
+    font-size:12px;
+    color:var(--muted);
+    margin-top:2px;
+    letter-spacing:.2px;
+  }
+
+  nav{display:flex;gap:18px;align-items:center}
+  nav a{color:var(--white);text-decoration:none;font-weight:600;font-size:14px;opacity:0.9;transition:color .2s ease}
+  nav a:hover{color:var(--accent)}
+  .cta{
+    background:transparent;border:1px solid rgba(255,255,255,0.12);
+    padding:10px 14px;border-radius:10px;font-weight:700;cursor:pointer;
+    transition:transform .22s ease, box-shadow .22s ease, border-color .22s ease;
+  }
+  .cta:hover{transform:translateY(-4px);box-shadow:0 8px 30px rgba(0,0,0,0.6);border-color:var(--accent);}
+
+  /* Botón hamburguesa */
+  .hamburger{display:none;flex-direction:column;gap:4px;cursor:pointer;background:none;border:none}
+  .hamburger span{width:22px;height:2px;background:var(--white);display:block;border-radius:2px;transition:.3s}
+  .hamburger.active span:nth-child(1){transform:rotate(45deg) translate(4px,4px)}
+  .hamburger.active span:nth-child(2){opacity:0}
+  .hamburger.active span:nth-child(3){transform:rotate(-45deg) translate(4px,-4px)}
+
+  /* ===== Menú móvil ===== */
+  @media (max-width:680px){
+    nav{
+      display:flex;
+      flex-direction:column;
+      position:fixed;
+      top:70px; left:0; right:0;
+      width:100vw;
+      background:linear-gradient(180deg, rgba(20,20,20,0.95), rgba(0,0,0,0.85));
+      backdrop-filter:blur(12px);
+      border-radius:0 0 14px 14px;
+      box-shadow:0 8px 32px rgba(0,0,0,0.4);
+      z-index:999;
+      padding:20px 0;
+      align-items:center;
+      gap:16px;
+      transform:translateY(-110%);
+      opacity:0;
+      pointer-events:none;
+      transition:transform .35s ease,opacity .35s ease;
+    }
+    nav.open{
+      transform:translateY(0);
+      opacity:1;
+      pointer-events:auto;
+    }
+    .hamburger{display:flex}
+    header{z-index:998;padding:8px}
+    .nav-inner{padding:8px;width:100vw;max-width:100vw}
+    .logo svg{height:36px}
+  }
 
   /* ===== HERO PORTAFOLIO ===== */
   .portfolio-hero{
@@ -152,73 +153,64 @@ nav a:hover{color:var(--accent)}
     max-width:920px;margin:0 auto;text-align:center;color:#b0b0b0;line-height:1.6;
     font-size:clamp(1rem,2.4vw,1.15rem);
   }
-  /* ===== MASONRY ===== */
-  .masonry{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:14px;
-    padding:30px 0 10px;
-  }
-  .masonry .item{
-    position:relative;border-radius:12px;overflow:hidden;min-height:240px;background:#111;
-    border:1px solid rgba(255,255,255,0.03);
-    transition:transform .5s cubic-bezier(.2,.9,.2,1),box-shadow .5s;
-  }
-  .masonry .item img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .8s cubic-bezier(.2,.9,.2,1);}
-  .masonry .item:hover{transform:translateY(-4px);box-shadow:0 24px 60px rgba(0,0,0,0.6);}
-  .masonry .item:hover img{transform:scale(1.06);}
-  .masonry .meta{
-    position:absolute;left:12px;bottom:12px;color:var(--white);font-weight:700;
-    background:linear-gradient(90deg,rgba(0,0,0,0.6),rgba(0,0,0,0.25));
-    padding:10px 12px;border-radius:8px;letter-spacing:.3px;
-  }
+</style>
 
-  /* ===== CTA FINAL ===== */
-  .portfolio-cta{
-    background:linear-gradient(180deg,#0a0a0a 0%,#0c0c0c 100%);
-    padding:80px 0;margin-top:10px;
-  }
-  .portfolio-cta .wrap{max-width:920px;margin:0 auto;text-align:center}
-  .portfolio-cta h3{font-family:"Outfit",sans-serif;font-size:clamp(1.6rem,3.6vw,2rem);font-weight:800;margin:0 0 8px;color:#fff}
-  .portfolio-cta p{color:#b0b0b0;margin:0 0 16px}
-  .btn-primary{
-    background:linear-gradient(90deg,var(--accent),#ff7ab5 120%);
-    color:#060606;padding:12px 20px;border-radius:12px;border:none;font-weight:800;cursor:pointer;
-    box-shadow:0 8px 30px rgba(255,46,157,0.12),0 2px 6px rgba(0,0,0,0.6);
-    transition:transform .2s ease,box-shadow .2s;
-    text-decoration:none;display:inline-block;
-  }
-  .btn-primary:hover{transform:translateY(-4px);box-shadow:0 18px 50px rgba(255,46,157,0.14);}
-
-  /* ===== FOOTER ===== */
-  footer{padding:28px 0;color:var(--muted);text-align:center;border-top:1px solid rgba(255,255,255,0.03);}
-
-  /* ===== WHATSAPP ===== */
-  .whatsapp {
+<!-- Bloque de corrección móvil -->
+<style id="mobile-nav-fix">
+nav{
+  display:flex;
+  position:static;
+  transform:none;
+  opacity:1;
+  pointer-events:auto;
+  align-items:center;
+  gap:18px;
+}
+.hamburger{display:none;}
+@media (max-width:680px){
+  nav{
+    display:flex;
+    flex-direction:column;
     position:fixed;
-    bottom:calc(env(safe-area-inset-bottom,0px)+clamp(16px,3vh,28px));
-    right:calc(env(safe-area-inset-right,0px)+clamp(16px,3vw,28px));
-    width:clamp(48px,5vw,60px);
-    height:clamp(48px,5vw,60px);
-    display:grid;place-items:center;
-    border-radius:50%;
-    background:radial-gradient(circle at 10% 10%,#3CFF90,#25D366 70%,#1EBE5D 100%);
-    box-shadow:0 0 10px rgba(37,211,102,.25),inset 0 0 8px rgba(255,255,255,.15);
-    animation:pulse-green 3s infinite ease-in-out;
-    z-index:99;
+    top:70px; left:0; right:0;
+    width:100vw;
+    background:linear-gradient(180deg, rgba(20,20,20,0.95), rgba(0,0,0,0.85));
+    backdrop-filter:blur(12px);
+    border-radius:0 0 14px 14px;
+    box-shadow:0 8px 32px rgba(0,0,0,0.4);
+    z-index:999;
+    padding:20px 0;
+    align-items:center;
+    gap:16px;
+    transform:translateY(-110%);
+    opacity:0;
+    pointer-events:none;
+    transition:transform .35s ease,opacity .35s ease;
+  }
+  nav.open{
+    transform:translateY(0);
+    opacity:1;
+    pointer-events:auto;
+  }
+  .hamburger{
+    display:flex;
+    flex-direction:column;
+    gap:4px;
+    cursor:pointer;
+    background:none;
+    border:none;
+    z-index:1000;
+  }
+  .hamburger span{
+    width:24px; height:2px;
+    background:#fff; border-radius:2px;
     transition:all .3s ease;
-    backdrop-filter:blur(4px);
   }
-  .whatsapp:hover{transform:scale(1.05);box-shadow:0 0 20px rgba(37,211,102,.4),inset 0 0 12px rgba(255,255,255,.25);}
-  .whatsapp img{width:28px;height:28px;filter:brightness(0) invert(1);}
-  @keyframes pulse-green{
-    0%{box-shadow:0 0 10px rgba(37,211,102,0.25),inset 0 0 8px rgba(255,255,255,0.15);}
-    50%{box-shadow:0 0 25px rgba(37,211,102,0.5),inset 0 0 12px rgba(255,255,255,0.25);}
-    100%{box-shadow:0 0 10px rgba(37,211,102,0.25),inset 0 0 8px rgba(255,255,255,0.15);}
-  }
-
-  @media (max-width:992px){.masonry{grid-template-columns:repeat(2,1fr);}}
-  @media (max-width:680px){.masonry{grid-template-columns:1fr;}}
+  .hamburger.active span:nth-child(1){ transform:rotate(45deg) translate(4px,4px);}
+  .hamburger.active span:nth-child(2){opacity:0;}
+  .hamburger.active span:nth-child(3){ transform:rotate(-45deg) translate(4px,-4px);}
+  header{z-index:998;}
+}
 </style>
 </head>
 
@@ -233,7 +225,7 @@ nav a:hover{color:var(--accent)}
       </svg>
       <div>
         <div class="brand">Angel Sullyvan</div>
-        <div class="muted" style="font-size:12px">Fotografía estratégica · Músicos · Artistas · Creativos</div>
+        <div class="muted">Fotografía estratégica · Músicos · Artistas · Creativos</div>
       </div>
     </div>
 
@@ -269,12 +261,11 @@ nav a:hover{color:var(--accent)}
   <section class="portfolio-intro">
     <div class="container">
       <p class="lead">
-        Selección curada de trabajos recientes — dirección visual, iluminación y acabado editorial al servicio de tu proyecto musical. 
+        Selección curada de trabajos recientes — dirección visual, iluminación y acabado editorial al servicio de tu proyecto musical.
         Cada sesión está diseñada para comunicar con intención, diferenciarte y generar memorabilidad.
       </p>
     </div>
   </section>
-
   <!-- GALERÍA -->
   <section class="portfolio-grid">
     <div class="container">
@@ -291,17 +282,36 @@ nav a:hover{color:var(--accent)}
           <div class="meta">KORN SESSION · Editorial</div>
         </a>
 
-        <!-- Internas -->
+        <!-- Internas ocultas -->
         <a class="glightbox" href="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1800&q=90" data-gallery="korn-session" style="display:none"></a>
         <a class="glightbox" href="https://images.unsplash.com/photo-1504198453319-5ce911bafcde?auto=format&fit=crop&w=1800&q=90" data-gallery="korn-session" style="display:none"></a>
         <a class="glightbox" href="https://images.unsplash.com/photo-1517433456452-f9633a875f6f?auto=format&fit=crop&w=1800&q=90" data-gallery="korn-session" style="display:none"></a>
 
         <!-- Más proyectos -->
-        <a class="item glightbox" href="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=1800&q=90" data-gallery="set1" data-title="Proyecto 2 — Editorial"><img loading="lazy" src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=1200&q=80"><div class="meta">Proyecto 2 · Editorial</div></a>
-        <a class="item" href="#"><img loading="lazy" src="https://images.unsplash.com/photo-1520975910124-7e7f9b7b7f2b?auto=format&fit=crop&w=1200&q=80"><div class="meta">Proyecto 3 · Press Kit</div></a>
-        <a class="item glightbox" href="https://images.unsplash.com/photo-1504198453319-5ce911bafcde?auto=format&fit=crop&w=1800&q=90" data-gallery="set2" data-title="Proyecto 4 — Single Art"><img loading="lazy" src="https://images.unsplash.com/photo-1504198453319-5ce911bafcde?auto=format&fit=crop&w=1200&q=80"><div class="meta">Proyecto 4 · Single Art</div></a>
-        <a class="item" href="#"><img loading="lazy" src="https://images.unsplash.com/photo-1514512364185-1f7a2b8f2a1f?auto=format&fit=crop&w=1200&q=80"><div class="meta">Proyecto 5 · Backstage</div></a>
-        <a class="item glightbox" href="https://images.unsplash.com/photo-1517433456452-f9633a875f6f?auto=format&fit=crop&w=1800&q=90" data-gallery="set2" data-title="Proyecto 6 — Retrato"><img loading="lazy" src="https://images.unsplash.com/photo-1517433456452-f9633a875f6f?auto=format&fit=crop&w=1200&q=80"><div class="meta">Proyecto 6 · Retrato</div></a>
+        <a class="item glightbox" href="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=1800&q=90" data-gallery="set1" data-title="Proyecto 2 — Editorial">
+          <img loading="lazy" src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=1200&q=80">
+          <div class="meta">Proyecto 2 · Editorial</div>
+        </a>
+
+        <a class="item" href="#">
+          <img loading="lazy" src="https://images.unsplash.com/photo-1520975910124-7e7f9b7b7f2b?auto=format&fit=crop&w=1200&q=80">
+          <div class="meta">Proyecto 3 · Press Kit</div>
+        </a>
+
+        <a class="item glightbox" href="https://images.unsplash.com/photo-1504198453319-5ce911bafcde?auto=format&fit=crop&w=1800&q=90" data-gallery="set2" data-title="Proyecto 4 — Single Art">
+          <img loading="lazy" src="https://images.unsplash.com/photo-1504198453319-5ce911bafcde?auto=format&fit=crop&w=1200&q=80">
+          <div class="meta">Proyecto 4 · Single Art</div>
+        </a>
+
+        <a class="item" href="#">
+          <img loading="lazy" src="https://images.unsplash.com/photo-1514512364185-1f7a2b8f2a1f?auto=format&fit=crop&w=1200&q=80">
+          <div class="meta">Proyecto 5 · Backstage</div>
+        </a>
+
+        <a class="item glightbox" href="https://images.unsplash.com/photo-1517433456452-f9633a875f6f?auto=format&fit=crop&w=1800&q=90" data-gallery="set2" data-title="Proyecto 6 — Retrato">
+          <img loading="lazy" src="https://images.unsplash.com/photo-1517433456452-f9633a875f6f?auto=format&fit=crop&w=1200&q=80">
+          <div class="meta">Proyecto 6 · Retrato</div>
+        </a>
       </div>
     </div>
   </section>
@@ -335,23 +345,24 @@ nav a:hover{color:var(--accent)}
 
 <!-- Scripts -->
 <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
-<script>
+<script id="mobile-nav-fix-js">
 function toggleMobile(){
-  const nav=document.querySelector('nav');
-  const burger=document.getElementById('burger');
-  if(!nav)return;
+  const nav = document.querySelector('nav');
+  const burger = document.getElementById('burger');
+  if (!nav) return;
   nav.classList.toggle('open');
-  if(burger)burger.classList.toggle('active');
+  if (burger) burger.classList.toggle('active');
 }
+// Reset al salir de móvil
 (function(){
-  const mq=window.matchMedia('(max-width: 680px)');
+  const mq = window.matchMedia('(max-width: 680px)');
   function handleMQ(e){
-    const nav=document.querySelector('nav');
-    const burger=document.getElementById('burger');
-    if(!nav)return;
-    if(!e.matches){
+    const nav = document.querySelector('nav');
+    const burger = document.getElementById('burger');
+    if (!nav) return;
+    if(!e.matches){ // desktop
       nav.classList.remove('open');
-      if(burger)burger.classList.remove('active');
+      if (burger) burger.classList.remove('active');
       nav.style.removeProperty('display');
       nav.style.removeProperty('transform');
       nav.style.removeProperty('opacity');
@@ -359,10 +370,55 @@ function toggleMobile(){
       nav.style.removeProperty('position');
     }
   }
-  mq.addEventListener?mq.addEventListener('change',handleMQ):mq.addListener(handleMQ);
+  if (mq.addEventListener) mq.addEventListener('change', handleMQ);
+  else if (mq.addListener) mq.addListener(handleMQ);
   handleMQ(mq);
 })();
 const lightbox=GLightbox({selector:'.glightbox',touchNavigation:true,loop:true,zoomable:true,autoplayVideos:false});
 </script>
+
+<style>
+  /* ===== Masonry, CTA, Footer ===== */
+  .masonry{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;padding:30px 0 10px;}
+  .masonry .item{position:relative;border-radius:12px;overflow:hidden;min-height:240px;background:#111;border:1px solid rgba(255,255,255,0.03);transition:transform .5s cubic-bezier(.2,.9,.2,1),box-shadow .5s;}
+  .masonry .item img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .8s cubic-bezier(.2,.9,.2,1);}
+  .masonry .item:hover{transform:translateY(-4px);box-shadow:0 24px 60px rgba(0,0,0,0.6);}
+  .masonry .item:hover img{transform:scale(1.06);}
+  .masonry .meta{position:absolute;left:12px;bottom:12px;color:var(--white);font-weight:700;background:linear-gradient(90deg,rgba(0,0,0,0.6),rgba(0,0,0,0.25));padding:10px 12px;border-radius:8px;letter-spacing:.3px;}
+  @media (max-width:992px){.masonry{grid-template-columns:repeat(2,1fr);}}
+  @media (max-width:680px){.masonry{grid-template-columns:1fr;}}
+
+  .portfolio-cta{background:linear-gradient(180deg,#0a0a0a 0%,#0c0c0c 100%);padding:80px 0;margin-top:10px;}
+  .portfolio-cta .wrap{max-width:920px;margin:0 auto;text-align:center}
+  .portfolio-cta h3{font-family:"Outfit",sans-serif;font-size:clamp(1.6rem,3.6vw,2rem);font-weight:800;margin:0 0 8px;color:#fff}
+  .portfolio-cta p{color:#b0b0b0;margin:0 0 16px}
+  .btn-primary{background:linear-gradient(90deg,var(--accent),#ff7ab5 120%);color:#060606;padding:12px 20px;border-radius:12px;border:none;font-weight:800;cursor:pointer;box-shadow:0 8px 30px rgba(255,46,157,0.12),0 2px 6px rgba(0,0,0,0.6);transition:transform .2s ease,box-shadow .2s;text-decoration:none;display:inline-block;}
+  .btn-primary:hover{transform:translateY(-4px);box-shadow:0 18px 50px rgba(255,46,157,0.14);}
+
+  footer{padding:28px 0;color:var(--muted);text-align:center;border-top:1px solid rgba(255,255,255,0.03);}
+
+  .whatsapp {
+    position:fixed;
+    bottom:calc(env(safe-area-inset-bottom,0px)+clamp(16px,3vh,28px));
+    right:calc(env(safe-area-inset-right,0px)+clamp(16px,3vw,28px));
+    width:clamp(48px,5vw,60px);
+    height:clamp(48px,5vw,60px);
+    display:grid;place-items:center;
+    border-radius:50%;
+    background:radial-gradient(circle at 10% 10%,#3CFF90,#25D366 70%,#1EBE5D 100%);
+    box-shadow:0 0 10px rgba(37,211,102,.25),inset 0 0 8px rgba(255,255,255,.15);
+    animation:pulse-green 3s infinite ease-in-out;
+    z-index:99;
+    transition:all .3s ease;
+    backdrop-filter:blur(4px);
+  }
+  .whatsapp:hover{transform:scale(1.05);box-shadow:0 0 20px rgba(37,211,102,.4),inset 0 0 12px rgba(255,255,255,.25);}
+  .whatsapp img{width:28px;height:28px;filter:brightness(0) invert(1);}
+  @keyframes pulse-green{
+    0%{box-shadow:0 0 10px rgba(37,211,102,0.25),inset 0 0 8px rgba(255,255,255,0.15);}
+    50%{box-shadow:0 0 25px rgba(37,211,102,0.5),inset 0 0 12px rgba(255,255,255,0.25);}
+    100%{box-shadow:0 0 10px rgba(37,211,102,0.25),inset 0 0 8px rgba(255,255,255,0.15);}
+  }
+</style>
 </body>
 </html>

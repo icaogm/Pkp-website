@@ -4,7 +4,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>Portafolio — Angel Sullyvan</title>
-<meta name="description" content="Selección curada de trabajos recientes. Fotografía estratégica y dirección visual para músicos y creativos." />
+<meta name="description" content="Selección curada de trabajos recientes." />
 
 <!-- Open Graph -->
 <meta property="og:title" content="Portafolio — Angel Sullyvan" />
@@ -74,12 +74,77 @@ nav a:hover{color:var(--accent)}
 }
 .cta:hover{transform:translateY(-4px);box-shadow:0 8px 30px rgba(0,0,0,0.6);border-color:var(--accent);}
 
-/* Botón hamburguesa (solo móvil) */
-.hamburger{display:none;flex-direction:column;gap:4px;cursor:pointer;background:none;border:none}
-.hamburger span{width:22px;height:2px;background:var(--white);display:block;border-radius:2px;transition:.3s}
-.hamburger.active span:nth-child(1){transform:rotate(45deg) translate(4px, 4px)}
-.hamburger.active span:nth-child(2){opacity:0}
-.hamburger.active span:nth-child(3){transform:rotate(-45deg) translate(4px, -4px)}
+/* ====== MENÚ FIJO (ESCRITORIO) Y DESPLEGABLE (MÓVIL) ====== */
+
+/* ——— Escritorio por defecto ——— */
+nav {
+  display:flex;
+  position:static;
+  transform:none;
+  opacity:1;
+  pointer-events:auto;
+  align-items:center;
+  gap:18px;
+}
+nav a {
+  color:#fff;
+  opacity:0.9;
+  text-decoration:none;
+  font-weight:600;
+  font-size:14px;
+  transition:color .2s ease;
+}
+nav a:hover { color:#ff2e9d; }
+.hamburger { display:none; }
+
+/* ——— Solo para pantallas móviles ——— */
+@media (max-width:680px){
+  nav {
+    display:flex;
+    flex-direction:column;
+    position:fixed;
+    top:70px; left:0; right:0;
+    width:100vw;
+    background:linear-gradient(180deg, rgba(20,20,20,0.95), rgba(0,0,0,0.85));
+    backdrop-filter:blur(12px);
+    border-radius:0 0 14px 14px;
+    box-shadow:0 8px 32px rgba(0,0,0,0.4);
+    z-index:999;
+    padding:20px 0;
+    align-items:center;
+    gap:16px;
+    transform:translateY(-110%);
+    opacity:0;
+    pointer-events:none;
+    transition:transform .35s ease, opacity .35s ease;
+  }
+  nav.open {
+    transform:translateY(0);
+    opacity:1;
+    pointer-events:auto;
+  }
+
+  .hamburger {
+    display:flex;
+    flex-direction:column;
+    gap:4px;
+    cursor:pointer;
+    background:none;
+    border:none;
+    z-index:1000;
+  }
+  .hamburger span {
+    width:24px; height:2px;
+    background:#fff; border-radius:2px;
+    transition:all .3s ease;
+  }
+  .hamburger.active span:nth-child(1){ transform:rotate(45deg) translate(4px,4px); }
+  .hamburger.active span:nth-child(2){ opacity:0; }
+  .hamburger.active span:nth-child(3){ transform:rotate(-45deg) translate(4px,-4px); }
+
+  header { z-index:998; }
+}
+
 
   /* HERO Portafolio */
   .portfolio-hero{
@@ -164,23 +229,6 @@ nav a:hover{color:var(--accent)}
   /* Footer */
   footer{padding:28px 0;color:var(--muted);text-align:center;border-top:1px solid rgba(255,255,255,0.03);}
 
-/* ===== Menú móvil (como el original, desplegable bajo el header) ===== */
-@media (max-width: 680px){
-  nav{
-    display:none; flex-direction:column; position:absolute; top:56px; left:0; width:100vw;
-    background: linear-gradient(180deg, rgba(30,30,30,0.65), rgba(0,0,0,0.45));
-    backdrop-filter: blur(12px); border-radius: 0 0 14px 14px; box-shadow: 0 8px 32px rgba(0,0,0,0.18);
-    z-index: 100; padding: 18px 0; align-items: center;
-  }
-  nav.open{ display:flex; }
-  .hamburger{display:flex}
-  /* mantener proporciones del header original en móvil */
-  header{padding:8px}
-  .nav-inner{padding:8px}
-  .logo svg{height:36px}
-  .masonry{grid-template-columns:1fr}
-}
-
 /* Sticky WhatsApp */
 
 /* ===== Botón flotante de WhatsApp (versión full responsive + safe-area) ===== */
@@ -248,20 +296,7 @@ nav a:hover{color:var(--accent)}
   @media (max-width:992px){
     .masonry{grid-template-columns:repeat(2,1fr)}
   }
-  @media (max-width:680px){
-    nav {
-      display: none; flex-direction: column; position: absolute; top: 56px; left: 0; width: 100vw;
-      background: linear-gradient(180deg, rgba(30,30,30,0.65), rgba(0,0,0,0.45));
-      backdrop-filter: blur(12px); border-radius: 0 0 14px 14px; box-shadow: 0 8px 32px rgba(0,0,0,0.18);
-      z-index: 100; padding: 18px 0; align-items: center;
-    }
-    .nav-inner { padding: 8px; width: 100vw; max-width: 100vw; }
-    .hamburger{display:flex}
-    header{padding:8px}
-    .nav-inner{padding:8px}
-    .logo svg{height:36px}
-    .masonry{grid-template-columns:1fr}
-  }
+
 </style>
 </head>
 
@@ -277,7 +312,7 @@ nav a:hover{color:var(--accent)}
       </svg>
       <div>
         <div class="brand">Angel Sullyvan</div>
-        <div class="muted" style="font-size:12px">Fotografía estratégica · Músicos</div>
+        <div class="muted" style="font-size:12px">Fotografía estratégica · Músicos· Artistas · Creativos</div>
       </div>
     </div>
 
@@ -290,9 +325,10 @@ nav a:hover{color:var(--accent)}
       <a href="index.html#contacto" class="cta">Agendar sesión</a>
     </nav>
 
-    <button class="hamburger" aria-label="Abrir menú" id="burger" onclick="toggleMobile()">
-      <span></span><span></span><span></span>
-    </button>
+<button class="hamburger" id="burger" onclick="toggleMobile()" aria-label="Abrir menú">
+  <span></span><span></span><span></span>
+</button>
+
   </div>
 </header>
 
@@ -435,12 +471,34 @@ nav a:hover{color:var(--accent)}
 <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
 
 <script>
-  // Mobile toggle simple
-  function toggleMobile(){
-    const nav = document.querySelector('nav');
-    nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
-  }
+function toggleMobile(){
+  const nav = document.querySelector('nav');
+  const burger = document.getElementById('burger');
+  if (!nav) return;
+  nav.classList.toggle('open');
+  if (burger) burger.classList.toggle('active');
+}
 
+// Resetea el menú al volver a escritorio
+(function(){
+  const mq = window.matchMedia('(max-width: 680px)');
+  function handleMQ(e){
+    const nav = document.querySelector('nav');
+    const burger = document.getElementById('burger');
+    if (!nav) return;
+    if(!e.matches){
+      nav.classList.remove('open');
+      if (burger) burger.classList.remove('active');
+    }
+  }
+  mq.addEventListener ? mq.addEventListener('change', handleMQ) : mq.addListener(handleMQ);
+  handleMQ(mq);
+})();
+</script>
+
+
+<script>
+   
   // Iniciar GLightbox
   const lightbox = GLightbox({
     selector: '.glightbox',

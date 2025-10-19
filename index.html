@@ -4,11 +4,11 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>Angel Sullyvan — Fotografía Estratégica para Músicos</title>
-<meta name="description" content="Fotografía estratégica para músicos, artistas y creativos. Retratos pensados para proyectar tu sonido y posicionarte a otro nivel." />
+<meta name="description" content="Fotografía estratégica para músicos y artistas. Retratos pensados para proyectar tu sonido y posicionarte a otro nivel." />
 
 <!-- Open Graph -->
-<meta property="og:title" content="Angel Sullyvan — Fotografía Estratégica para Músicos, Artistas y Creativos" />
-<meta property="og:description" content="Retratos para músicos, artistas y creativos que buscan diferenciarse y conectar." />
+<meta property="og:title" content="Angel Sullyvan — Fotografía Estratégica para Músicos" />
+<meta property="og:description" content="Retratos para músicos y creativos que buscan diferenciarse y conectar." />
 <meta property="og:image" content="https://images.unsplash.com/photo-1507874457470-272b3c8d8ee2?auto=format&fit=crop&w=1200&q=80" />
 <meta property="og:type" content="website" />
 
@@ -41,43 +41,42 @@
     line-height:1.4;
   }
 
-
   /* Layout */
   .container{max-width:var(--max-width);margin:0 auto;padding:0 24px}
 
   /* ===== Header (restaurado a estilo original) ===== */
-header{
-  position:fixed; top:12px; left:0; right:0;
-  padding:10px 24px; z-index:100;
-  background:transparent; /* como el original */
-}
-.nav-inner{
-  width:90%; max-width:90%; margin:0 auto;
-  display:flex; align-items:center; justify-content:space-between; gap:16px;
-  background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.02));
-  backdrop-filter: blur(8px);
-  border-radius:12px; padding:8px 14px;
-}
-.logo{display:flex;gap:12px;align-items:center}
-.logo svg{height:44px;width:auto;display:block}
-.brand{font-family:Outfit;font-weight:700;letter-spacing:0.6px;font-size:14px}
+  header{
+    position:fixed; top:12px; left:0; right:0;
+    padding:10px 24px; z-index:100;
+    background:transparent; /* como el original */
+  }
+  .nav-inner{
+    width:90%; max-width:90%; margin:0 auto;
+    display:flex; align-items:center; justify-content:space-between; gap:16px;
+    background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.02));
+    backdrop-filter: blur(8px);
+    border-radius:12px; padding:8px 14px;
+  }
+  .logo{display:flex;gap:12px;align-items:center}
+  .logo svg{height:44px;width:auto;display:block}
+  .brand{font-family:Outfit;font-weight:700;letter-spacing:0.6px;font-size:14px}
 
-nav{display:flex;gap:18px;align-items:center}
-nav a{color:var(--white);text-decoration:none;font-weight:600;font-size:14px;opacity:0.9;transition:color .2s ease}
-nav a:hover{color:var(--accent)}
-.cta{
-  background:transparent; border:1px solid rgba(255,255,255,0.12);
-  padding:10px 14px; border-radius:10px; font-weight:700; cursor:pointer;
-  transition:transform .22s ease, box-shadow .22s ease, border-color .22s ease;
-}
-.cta:hover{transform:translateY(-4px);box-shadow:0 8px 30px rgba(0,0,0,0.6);border-color:var(--accent);}
+  nav{display:flex;gap:18px;align-items:center}
+  nav a{color:var(--white);text-decoration:none;font-weight:600;font-size:14px;opacity:0.9;transition:color .2s ease}
+  nav a:hover{color:var(--accent)}
+  .cta{
+    background:transparent; border:1px solid rgba(255,255,255,0.12);
+    padding:10px 14px; border-radius:10px; font-weight:700; cursor:pointer;
+    transition:transform .22s ease, box-shadow .22s ease, border-color .22s ease;
+  }
+  .cta:hover{transform:translateY(-4px);box-shadow:0 8px 30px rgba(0,0,0,0.6);border-color:var(--accent);}
 
-/* Botón hamburguesa (solo móvil) */
-.hamburger{display:none;flex-direction:column;gap:4px;cursor:pointer;background:none;border:none}
-.hamburger span{width:22px;height:2px;background:var(--white);display:block;border-radius:2px;transition:.3s}
-.hamburger.active span:nth-child(1){transform:rotate(45deg) translate(4px, 4px)}
-.hamburger.active span:nth-child(2){opacity:0}
-.hamburger.active span:nth-child(3){transform:rotate(-45deg) translate(4px, -4px)}
+  /* Botón hamburguesa (solo móvil) */
+  .hamburger{display:none;flex-direction:column;gap:4px;cursor:pointer;background:none;border:none}
+  .hamburger span{width:22px;height:2px;background:var(--white);display:block;border-radius:2px;transition:.3s}
+  .hamburger.active span:nth-child(1){transform:rotate(45deg) translate(4px, 4px)}
+  .hamburger.active span:nth-child(2){opacity:0}
+  .hamburger.active span:nth-child(3){transform:rotate(-45deg) translate(4px, -4px)}
 
   /* HERO */
   .hero{
@@ -109,39 +108,39 @@ nav a:hover{color:var(--accent)}
   .btn-ghost{
     background:transparent;border:1px solid rgba(255,255,255,0.08);padding:12px 18px;border-radius:12px;color:var(--white);font-weight:700;
   }
-        
+
   /* ========== NUEVA SECCIÓN STATEMENT ========== */
   .statement {
-  background: linear-gradient(180deg,#060606 0%,#0f0f0f 100%);
-  padding: 100px 20px;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 40vh;
-  height: 40vh;
-  box-sizing: border-box;
-}
-@media (max-width: 680px) {
-  .statement {
-    padding: 60px 10px;
-    min-height: 28vh;
-    height: auto;
+    background: linear-gradient(180deg,#060606 0%,#0f0f0f 100%);
+    padding: 100px 20px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 40vh;
+    height: 40vh;
+    box-sizing: border-box;
   }
-}
+  @media (max-width: 680px) {
+    .statement {
+      padding: 60px 10px;
+      min-height: 28vh;
+      height: auto;
+    }
+  }
   .statement h2.glitch {
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: clamp(26px, 5vw, 48px);
-  color: var(--white);
-  position: relative;
-  display: inline-block;
-  animation: flicker 2s infinite alternate;
-  letter-spacing: 2px;
-  margin: 0 auto;
-  text-align: center;
-}
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(26px, 5vw, 48px);
+    color: var(--white);
+    position: relative;
+    display: inline-block;
+    animation: flicker 2s infinite alternate;
+    letter-spacing: 2px;
+    margin: 0 auto;
+    text-align: center;
+  }
   .statement h2.glitch::before,
   .statement h2.glitch::after{
     content:attr(data-text);
@@ -170,15 +169,8 @@ nav a:hover{color:var(--accent)}
     50%{clip:rect(55px,9999px,75px,0);}
     100%{clip:rect(45px,9999px,80px,0);}
   }
-  .statement.fade-in{
-    opacity:0;
-    transform:translateY(30px);
-    transition:opacity 1s ease,transform 1s ease;
-  }
-  .statement.fade-in.visible{
-    opacity:1;
-    transform:translateY(0);
-  }
+  .statement.fade-in{opacity:0;transform:translateY(30px);transition:opacity 1s ease,transform 1s ease;}
+  .statement.fade-in.visible{opacity:1;transform:translateY(0);}
 
   /* GRID: servicios / proceso */
   .grid-3{
@@ -221,143 +213,67 @@ nav a:hover{color:var(--accent)}
   /* Footer */
   footer{padding:28px 0;color:var(--muted);text-align:center;border-top:1px solid rgba(255,255,255,0.03);}
 
-  /* ===== Menú móvil (como el original, desplegable bajo el header) ===== */
-@media (max-width:680px){
-  nav {
-    display: none;
-    flex-direction: column;
-    position: fixed; /* antes era absolute */
-    top: 68px; /* puedes ajustar según el alto del header */
-    left: 0;
-    right: 0;
-    width: 100vw;
-    background: linear-gradient(180deg, rgba(20,20,20,0.95), rgba(0,0,0,0.85));
-    backdrop-filter: blur(12px);
-    border-radius: 0 0 14px 14px;
-    box-shadow: 0 8px 32px rgba(0,0,0,0.3);
-    z-index: 999; /* asegurar que quede encima del header */
-    padding: 20px 0;
-    align-items: center;
-    transition: transform 0.35s ease, opacity 0.35s ease;
-    transform: translateY(-100%);
-    opacity: 0;
-header {
-  z-index: 998; /* un nivel debajo del menú */
-}
-  }
-  nav.open {
-    display: flex;
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-  nav.open{ display:flex; }
-  .hamburger{display:flex}
-  /* mantener proporciones del header original en móvil */
-  header{padding:8px}
-  .nav-inner{padding:8px}
-  .logo svg{height:36px}
-  .masonry{grid-template-columns:1fr}
-}
-
-  /* Sticky WhatsApp */
-
-/* ===== Botón flotante de WhatsApp (versión full responsive + safe-area) ===== */
-.whatsapp {
-  position: fixed;
-  bottom: calc(env(safe-area-inset-bottom, 0px) + clamp(16px, 3vh, 28px));
-  right: calc(env(safe-area-inset-right, 0px) + clamp(16px, 3vw, 28px));
-  width: clamp(48px, 5vw, 60px);
-  height: clamp(48px, 5vw, 60px);
-  display: grid;
-  place-items: center;
-  border-radius: 50%;
-  background: radial-gradient(circle at 10% 10%, #3CFF90, #25D366 70%, #1EBE5D 100%);
-  box-shadow: 0 0 10px rgba(37,211,102,.25),
-              inset 0 0 8px rgba(255,255,255,.15);
-  animation: pulse-green 3s infinite ease-in-out;
-  z-index: 99;
-  transition: all .3s ease;
-  backdrop-filter: blur(4px);
-}
-
-/* Efecto hover */
-.whatsapp:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 20px rgba(37,211,102,.4),
-              inset 0 0 12px rgba(255,255,255,.25);
-}
-
-/* Tamaños y márgenes específicos para móviles pequeños */
-@media (max-width: 480px) {
-  .whatsapp {
-    bottom: calc(env(safe-area-inset-bottom, 0px) + 4vh);
-    right: calc(env(safe-area-inset-right, 0px) + 5vw);
-    width: 52px;
-    height: 52px;
-    box-shadow: 0 0 8px rgba(37,211,102,.2);
-  }
-}
-.whatsapp img {
-  width: 28px;
-  height: 28px;
-  filter: brightness(0) invert(1); /* logo blanco limpio */
-}
-
-/* Pulso elegante tipo respiración */
-@keyframes pulse-green {
-  0% {
-    box-shadow:
-      0 0 10px rgba(37, 211, 102, 0.25),
-      inset 0 0 8px rgba(255, 255, 255, 0.15);
-  }
-  50% {
-    box-shadow:
-      0 0 25px rgba(37, 211, 102, 0.5),
-      inset 0 0 12px rgba(255, 255, 255, 0.25);
-  }
-  100% {
-    box-shadow:
-      0 0 10px rgba(37, 211, 102, 0.25),
-      inset 0 0 8px rgba(255, 255, 255, 0.15);
-  }
-}
-
-
-  /* Responsive */
-  @media (max-width:992px){
-    .masonry{grid-template-columns:repeat(2,1fr)}
-    .grid-3{grid-template-columns:repeat(2,1fr)}
-  }
-  @media (max-width:680px){
-    nav {
-      display: none;
-      flex-direction: column;
-      position: absolute;
-      top: 56px;
-      left: 0;
-      width: 100vw;
-      /* Cambia el fondo a transparente y blury */
-      background: linear-gradient(180deg, rgba(30,30,30,0.65), rgba(0,0,0,0.45));
+  /* ====== MENÚ MÓVIL CORREGIDO ====== */
+  @media (max-width: 680px){
+    nav{
+      display:flex;
+      flex-direction:column;
+      position:fixed; /* anclado al viewport */
+      top:70px; left:0; right:0; width:100vw;
+      background: linear-gradient(180deg, rgba(20,20,20,0.95), rgba(0,0,0,0.85));
       backdrop-filter: blur(12px);
-      border-radius: 0 0 14px 14px;
-      box-shadow: 0 8px 32px rgba(0,0,0,0.18);
-      z-index: 100;
-      padding: 18px 0 18px 0;
-      align-items: center;
+      border-radius: 0 0 14px 14px; box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+      z-index: 999; padding: 20px 0; align-items: center; gap:16px;
+      transition: transform 0.35s ease, opacity 0.35s ease;
+      transform: translateY(-110%); opacity: 0; pointer-events: none;
     }
-    .nav-inner {
-      padding: 8px;
-      width: 100vw;
-      max-width: 100vw;
-    }
-    nav{display:none}
+    nav.open{ transform: translateY(0); opacity: 1; pointer-events: auto; }
+
     .hamburger{display:flex}
+    header{padding:8px}
+    .nav-inner{padding:8px; width:100vw; max-width:100vw;}
+    .logo svg{height:36px}
     .grid-3{grid-template-columns:1fr}
     .masonry{grid-template-columns:1fr}
-    header{padding:8px}
-    .nav-inner{padding:8px}
-    .logo svg{height:36px}
+    /* Asegurar layering correcto */
+    header{ z-index: 998; }
+  }
+
+  /* Sticky WhatsApp */
+  .whatsapp {
+    position: fixed;
+    bottom: calc(env(safe-area-inset-bottom, 0px) + clamp(16px, 3vh, 28px));
+    right: calc(env(safe-area-inset-right, 0px) + clamp(16px, 3vw, 28px));
+    width: clamp(48px, 5vw, 60px);
+    height: clamp(48px, 5vw, 60px);
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: radial-gradient(circle at 10% 10%, #3CFF90, #25D366 70%, #1EBE5D 100%);
+    box-shadow: 0 0 10px rgba(37,211,102,.25), inset 0 0 8px rgba(255,255,255,.15);
+    animation: pulse-green 3s infinite ease-in-out;
+    z-index: 99;
+    transition: all .3s ease;
+    backdrop-filter: blur(4px);
+  }
+  .whatsapp:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(37,211,102,.4), inset 0 0 12px rgba(255,255,255,.25);
+  }
+  @media (max-width: 480px) {
+    .whatsapp {
+      bottom: calc(env(safe-area-inset-bottom, 0px) + 4vh);
+      right: calc(env(safe-area-inset-right, 0px) + 5vw);
+      width: 52px;
+      height: 52px;
+      box-shadow: 0 0 8px rgba(37,211,102,.2);
+    }
+  }
+  .whatsapp img { width: 28px; height: 28px; filter: brightness(0) invert(1); }
+  @keyframes pulse-green {
+    0% { box-shadow: 0 0 10px rgba(37, 211, 102, 0.25), inset 0 0 8px rgba(255, 255, 255, 0.15); }
+    50% { box-shadow: 0 0 25px rgba(37, 211, 102, 0.5), inset 0 0 12px rgba(255, 255, 255, 0.25); }
+    100% { box-shadow: 0 0 10px rgba(37, 211, 102, 0.25), inset 0 0 8px rgba(255, 255, 255, 0.15); }
   }
 
   /* Small utilities */
@@ -366,209 +282,92 @@ header {
 
   /* TITULOS DE SECCIÓN */
   .section-title {
-  display: block;
-  width: 100%;
-  font-size: 2.2rem;
-  font-weight: 900;
-  color: var(--accent);
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  margin-top: 20px;
-  margin-bottom: 8px;
-  text-align: center;
-}
-@media (max-width:680px) {
-  .section-title {
     display: block;
     width: 100%;
-    font-size: 1.4rem;
-    margin-bottom: 6px;
+    font-size: 2.2rem;
+    font-weight: 900;
+    color: var(--accent);
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-top: 20px;
+    margin-bottom: 8px;
+    text-align: center;
+    position: relative;
+    font-family: 'Space Grotesk', sans-serif;
   }
-}
-.interactive-services{background:#0a0a0a;padding:100px 0;}
-.service-grid{display:grid;grid-template-columns:repeat(1,1fr);gap:24px;}
-.service-card{background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));border:1px solid rgba(255,255,255,0.05);border-radius:16px;padding:32px;position:relative;cursor:pointer;overflow:hidden;transition:all 0.4s ease;}
-.service-card:hover{transform:translateY(-6px);border-color:rgba(255,46,157,0.3);}
-.service-card::before{content:"";position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transition:opacity 0.5s ease;z-index:0;}
-.service-card:hover::before{opacity:0.2;}
-.service-title{display:flex;align-items:center;gap:10px;position:relative;z-index:2;}
-.service-card h3{font-size:20px;}
-.service-card p{font-size:15px;color:#9aa0a6;margin-top:12px;opacity:0;transform:translateY(12px);transition:all 0.4s ease;position:relative;z-index:2;}
-.service-card:hover p{opacity:1;transform:translateY(0);}
-
-/* ======== EXPANDIBLE SERVICE CARDS ======== */
-.service-card p {
-  max-height: 0;
-  opacity: 0;
-  overflow: hidden;
-  transform: translateY(12px);
-  transition: max-height 0.5s ease, opacity 0.5s ease, transform 0.4s ease;
-}
-
-.service-card.expanded p {
-  max-height: 300px; /* ajusta según el contenido */
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* ======== EXPANDIBLE SERVICE CARDS ======== */
-.service-card p {
-  max-height: 0;
-  opacity: 0;
-  overflow: hidden;
-  transform: translateY(12px);
-  transition: max-height 0.5s ease, opacity 0.5s ease, transform 0.4s ease;
-}
-
-.service-card.expanded p {
-  max-height: 300px; /* ajusta según el contenido */
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Texto dinámico inferior */
-.service-card::after {
-  content: "Ver más"; /* versión desktop por defecto */
-  position: absolute;
-  bottom: 12px;
-  right: 16px;
-  font-size: 13px;
-  color: var(--muted, #9aa0a6);
-  opacity: 0.85;
-  letter-spacing: 0.4px;
-  transition: opacity 0.4s ease;
-}
-
-.service-card.expanded::after {
-  content: "Ocultar";
-  opacity: 0.65;
-}
-
-/* Versión móvil: cambia texto por símbolo “+” y “–” */
-@media (max-width: 680px) {
-  .service-card::after {
-    content: "+";
-    font-size: 18px;
-    bottom: 10px;
-    right: 16px;
-  }
-  .service-card.expanded::after {
-    content: "-";
-  }
-}
-
-
-.service-card.expanded::after {
-  content: "Ocultar";
-  opacity: 0.65;
-}
-
-
-.click-hint {
-    width:18px;
-    height:18px;
-    color:var(--muted, #9aa0a6);
-    opacity:0.8;
-    transition:color 0.4s ease, transform 0.3s ease;
-  }
-  .service-card:hover .click-hint {
-    color:var(--accent);
-    transform:rotate(10deg);
+  @media (max-width:680px) {
+    .section-title { font-size: 1.4rem; margin-bottom: 6px; }
   }
 
+  /* ====== LINKS GLITCH PREMIUM (hover) ====== */
+  .section-title::before,
+  .section-title::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0; left: 0; width: 100%;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+  }
+  .section-title:hover::before {
+    clip: rect(0, 900px, 100%, 0); left: 2px; text-shadow: -2px 0 cyan;
+    animation: glitchShift 0.3s infinite linear alternate;
+  }
+  .section-title:hover::after {
+    clip: rect(0, 900px, 100%, 0); left: -2px; text-shadow: -2px 0 magenta;
+    animation: glitchShift 0.3s infinite linear alternate-reverse;
+  }
+  .section-title:hover { color: #fff; transform: translateY(-2px); }
+  @keyframes glitchShift {
+    0% { clip: rect(0, 9999px, 0, 0); }
+    20% { clip: rect(5px, 9999px, 10px, 0); }
+    40% { clip: rect(15px, 9999px, 25px, 0); }
+    60% { clip: rect(30px, 9999px, 45px, 0); }
+    80% { clip: rect(10px, 9999px, 50px, 0); }
+    100% { clip: rect(0, 9999px, 60px, 0); }
+  }
+
+  /* ======== SERVICIOS (expandibles por click) ======== */
+  .interactive-services{background:#0a0a0a;padding:100px 0;}
+  .service-grid{display:grid;grid-template-columns:repeat(1,1fr);gap:24px;}
+  .service-card{
+    background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));
+    border:1px solid rgba(255,255,255,0.05);
+    border-radius:16px;
+    padding:32px;
+    position:relative;
+    cursor:pointer;
+    overflow:hidden;
+    transition:all 0.4s ease;
+  }
+  .service-card:hover{transform:translateY(-6px);border-color:rgba(255,46,157,0.3);}
+  .service-card::before{content:"";position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transition:opacity 0.5s ease;z-index:0;}
+  .service-title{display:flex;align-items:center;gap:10px;position:relative;z-index:2;}
+  .service-card h3{font-size:20px;margin:0;}
+  /* Texto oculto inicialmente y visible SOLO al hacer clic */
+  .service-card p{
+    font-size:15px;color:#9aa0a6;margin-top:12px;
+    max-height:0; opacity:0; overflow:hidden; transform:translateY(12px);
+    transition:max-height 0.5s ease, opacity 0.5s ease, transform 0.4s ease;
+    position:relative; z-index:2;
+  }
+  .service-card.expanded p{max-height:300px;opacity:1;transform:translateY(0);}
+  /* Indicador "Ver más / Ocultar" (en móvil + / –) */
   .service-card::after{
-    content:"Ver más...";
-    position:absolute;
-    bottom:12px;
-    right:16px;
-    font-size:13px;
-    color:var(--muted, #9aa0a6);
-    opacity:0;
-    letter-spacing:0.4px;
-    transition:opacity .4s ease, transform .4s ease;
-    transform:translateY(6px);
-    font-weight:400;
+    content:"Ver más";
+    position:absolute; bottom:12px; right:16px;
+    font-size:13px; color:var(--muted); opacity:.85; letter-spacing:.4px;
+    transition:opacity .4s ease;
   }
-  .service-card:hover::after{
-    opacity:.85;
-    transform:translateY(0);
+  .service-card.expanded::after{content:"Ocultar";opacity:.65;}
+  @media (max-width:680px){
+    .service-card::after{content:"+";font-size:18px;bottom:10px;}
+    .service-card.expanded::after{content:"–";}
   }
+  /* hint del icono (i) */
+  .click-hint { width:18px; height:18px; color:var(--muted); opacity:0.8; transition:color 0.4s ease, transform 0.3s ease; }
+  .service-card:hover .click-hint { color:var(--accent); transform:rotate(10deg); }
 
-  .service-card:not(.clicked){
-    box-shadow:0 0 0 0 rgba(255,46,157,0.4);
-    animation:pulseBorder 3s infinite;
-  }
-  @keyframes pulseBorder{
-    0%{box-shadow:0 0 0 0 rgba(255,46,157,0.4);}
-    70%{box-shadow:0 0 0 8px rgba(255,46,157,0);}
-    100%{box-shadow:0 0 0 0 rgba(255,46,157,0);}
-  }
-
-/* ====== LINKS GLITCH PREMIUM ====== */
-.section-title {
-  position: relative;
-  display: inline-block;
-  font-family: 'Space Grotesk', sans-serif;
-  font-weight: 900;
-  font-size: clamp(1.8rem, 5vw, 2.4rem);
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  color: var(--accent);
-  text-decoration: none;
-  transition: color 0.25s ease;
-  cursor: pointer;
-  overflow: hidden;
-}
-
-.section-title::before,
-.section-title::after {
-  content: attr(data-text);
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-}
-
-.section-title:hover::before {
-  clip: rect(0, 900px, 100%, 0);
-  left: 2px;
-  text-shadow: -2px 0 cyan;
-  animation: glitchShift 0.3s infinite linear alternate;
-}
-
-.section-title:hover::after {
-  clip: rect(0, 900px, 100%, 0);
-  left: -2px;
-  text-shadow: -2px 0 magenta;
-  animation: glitchShift 0.3s infinite linear alternate-reverse;
-}
-
-.section-title:hover {
-  color: #fff;
-  transform: translateY(-2px);
-}
-
-@keyframes glitchShift {
-  0% { clip: rect(0, 9999px, 0, 0); }
-  20% { clip: rect(5px, 9999px, 10px, 0); }
-  40% { clip: rect(15px, 9999px, 25px, 0); }
-  60% { clip: rect(30px, 9999px, 45px, 0); }
-  80% { clip: rect(10px, 9999px, 50px, 0); }
-  100% { clip: rect(0, 9999px, 60px, 0); }
-}
-
-/* efecto responsivo */
-@media (max-width: 680px) {
-  .section-title {
-    font-size: 1.4rem;
-    letter-spacing: 1px;
-  }
-}
-
-
-  </style>
+</style>
 </head>
 <body>
 
@@ -582,12 +381,11 @@ header {
       </svg>
       <div>
         <div class="brand">Angel Sullyvan</div>
-        <div class="muted" style="font-size:12px">Fotografía estratégica · Músicos · Artistas · Creativos </div>
-</div>
+        <div class="muted" style="font-size:12px">Fotografía estratégica · Músicos · Artistas · Creativos</div>
       </div>
     </div>
 
-   <nav aria-label="Menú principal" id="main-nav">
+    <nav aria-label="Menú principal" id="main-nav">
       <a href="index.html">Inicio</a>
       <a href="servicios.html">Servicios</a>
       <a href="portafolio.html">Portafolio</a>
@@ -615,7 +413,7 @@ header {
     <div class="overlay" aria-hidden="true"></div>
 
     <div class="content container" role="hero">
-      <div class="kicker">BRANDING • RETRATOS • DIRECCIÓN CREATIVA</div>
+      <div class="kicker">BRANDING • RETRATOS • DIRECCIÓN</div>
        <h1>Retratos que amplifican tu sonido <br><span style="color:var(--accent)">Imágenes para que te recuerden.</span></h1>
       <p class="lead">Trabajo con músicos, artistas y creativos para transformar la identidad visual en una herramienta de carrera: portada, prensa, redes y booking — todo con intención estratégica.</p>
       <div class="actions">
@@ -630,67 +428,73 @@ header {
     <h2 class="glitch" data-text="BRANDING PHOTOGRAPHY FOR ARTISTS.">BRANDING PHOTOGRAPHY FOR ARTISTS.</h2>
   </section>
 
-
-<!-- NUEVA SECCIÓN SERVICIOS -->  
-<section id="servicios" class="interactive-services">
-  <div class="container">
-          <div>
-<a class="section-title" href="servicios.html" data-text="SERVICIOS">SERVICIOS</a>
-
+  <!-- NUEVA SECCIÓN SERVICIOS -->
+  <section id="servicios" class="interactive-services">
+    <div class="container">
+      <div>
+        <a class="section-title" href="servicios.html" data-text="SERVICIOS">SERVICIOS</a>
         <h2 class="h2">Qué ofrezco</h2>
       </div>
-            <div class="muted"> Dirección visual con propósito.
-            Cada sesión combina estrategia, técnica y narrativa para crear imágenes que comunican quién eres y hacia dónde vas como artista.</div>
-            <br></br>
-            <h2>El proceso que transforma tu imagen</h2>
-              <div class="service-grid">
-                  <div class="service-card" data-bg="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1200&q=80">
-                    <div class="service-title">
-                    <h3>1. Exploración y planificación</h3>
-                    <svg class="click-hint" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                      <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5" fill="none"/>
-                      <line x1="12" y1="10" x2="12" y2="16" stroke="currentColor" stroke-width="1.5"/>
-                      <circle cx="12" cy="7" r="1" fill="currentColor"/>
-                    </svg>
-                    </div>
-                    <p>Antes de disparar una sola foto, exploramos tu proyecto: qué sonido tienes, qué mensaje quieres proyectar y a quién quieres llegar.
-                    Definimos el enfoque visual, las referencias estéticas y el propósito de la sesión para asegurar que cada imagen tenga coherencia con tu visión musical y tu etapa artística.</p>
-                    </div>
-      <div class="service-card" data-bg="https://images.unsplash.com/photo-1607706189992-eae578626c86?auto=format&fit=crop&w=1200&q=80">
-        <div class="service-title"><h3>2. Dirección creativa</h3>
-          <svg class="click-hint" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-              <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5" fill="none"/>
-              <line x1="12" y1="10" x2="12" y2="16" stroke="currentColor" stroke-width="1.5"/>
-              <circle cx="12" cy="7" r="1" fill="currentColor"/>
-            </svg>
-        </div>
-        <p>En esta fase definimos el concepto visual completo: iluminación, color, actitud, vestuario y locaciones.
-Cada elemento se elige con intención para construir una narrativa coherente entre tu imagen, tu música y el público que quieres atraer.</p>
+      <div class="muted">
+        Dirección visual con propósito. Cada sesión combina estrategia, técnica y narrativa para crear imágenes que comunican quién eres y hacia dónde vas como artista.
       </div>
-      <div class="service-card" data-bg="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?auto=format&fit=crop&w=1200&q=80">
-        <div class="service-title"><h3>3. Producción</h3>
-          <svg class="click-hint" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <br />
+      <h2>El proceso que transforma tu imagen</h2>
+
+      <div class="service-grid">
+        <div class="service-card" data-bg="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1200&q=80">
+          <div class="service-title">
+            <h3>1. Exploración y planificación</h3>
+            <svg class="click-hint" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
               <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5" fill="none"/>
               <line x1="12" y1="10" x2="12" y2="16" stroke="currentColor" stroke-width="1.5"/>
               <circle cx="12" cy="7" r="1" fill="currentColor"/>
             </svg>
+          </div>
+          <p>Antes de disparar una sola foto, exploramos tu proyecto: qué sonido tienes, qué mensaje quieres proyectar y a quién quieres llegar.
+          Definimos el enfoque visual, las referencias estéticas y el propósito de la sesión para asegurar que cada imagen tenga coherencia con tu visión musical y tu etapa artística.</p>
         </div>
-        <p>Organizamos los detalles técnicos y logísticos de la sesión: scouting de espacios, montaje de iluminación, dirección durante la toma y flujo de trabajo en set.
-        Cada disparo está guiado para lograr resultados consistentes, con control de luz, postura y expresión que refuercen el mensaje de tu proyecto.</p>
-      </div>
-      <div class="service-card" data-bg="https://images.unsplash.com/photo-1520975910124-7e7f9b7b7f2b?auto=format&fit=crop&w=1200&q=80">
-        <div class="service-title"><h3>4. Entrega final</h3>
-          <svg class="click-hint" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+
+        <div class="service-card" data-bg="https://images.unsplash.com/photo-1607706189992-eae578626c86?auto=format&fit=crop&w=1200&q=80">
+          <div class="service-title">
+            <h3>2. Dirección creativa</h3>
+            <svg class="click-hint" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
               <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5" fill="none"/>
               <line x1="12" y1="10" x2="12" y2="16" stroke="currentColor" stroke-width="1.5"/>
               <circle cx="12" cy="7" r="1" fill="currentColor"/>
             </svg>
+          </div>
+          <p>En esta fase definimos el concepto visual completo: iluminación, color, actitud, vestuario y locaciones.
+          Cada elemento se elige con intención para construir una narrativa coherente entre tu imagen, tu música y el público que quieres atraer.</p>
         </div>
-        <p>Entrego una selección curada de imágenes con retoque profesional y acabado editorial. Listas para redes, portadas, prensa o tu EPK, con la calidad técnica y narrativa que tu proyecto necesita para destacar.</p>
+
+        <div class="service-card" data-bg="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?auto=format&fit=crop&w=1200&q=80">
+          <div class="service-title">
+            <h3>3. Producción</h3>
+            <svg class="click-hint" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5" fill="none"/>
+              <line x1="12" y1="10" x2="12" y2="16" stroke="currentColor" stroke-width="1.5"/>
+              <circle cx="12" cy="7" r="1" fill="currentColor"/>
+            </svg>
+          </div>
+          <p>Organizamos los detalles técnicos y logísticos de la sesión: scouting de espacios, montaje de iluminación, dirección durante la toma y flujo de trabajo en set.
+          Cada disparo está guiado para lograr resultados consistentes, con control de luz, postura y expresión que refuercen el mensaje de tu proyecto.</p>
+        </div>
+
+        <div class="service-card" data-bg="https://images.unsplash.com/photo-1520975910124-7e7f9b7b7f2b?auto=format&fit=crop&w=1200&q=80">
+          <div class="service-title">
+            <h3>4. Entrega final</h3>
+            <svg class="click-hint" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5" fill="none"/>
+              <line x1="12" y1="10" x2="12" y2="16" stroke="currentColor" stroke-width="1.5"/>
+              <circle cx="12" cy="7" r="1" fill="currentColor"/>
+            </svg>
+          </div>
+          <p>Entrego una selección curada de imágenes con retoque profesional y acabado editorial. Listas para redes, portadas, prensa o tu EPK, con la calidad técnica y narrativa que tu proyecto necesita para destacar.</p>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
   <!-- PORTFOLIO -->
   <section id="portfolio" style="padding-top:40px;padding-bottom:40px">
@@ -738,8 +542,7 @@ Cada elemento se elige con intención para construir una narrativa coherente ent
     <div class="container">
       <div class="section-head">
         <div>
-<a class="section-title" href="backstage.html" data-text="BACKSTAGE">BACKSTAGE</a>
-
+          <a class="section-title" href="backstage.html" data-text="BACKSTAGE">BACKSTAGE</a>
           <h2 class="h2">Detrás del proceso</h2>
         </div>
         <div class="muted">Tomas reales, dirección en acción</div>
@@ -752,14 +555,15 @@ Cada elemento se elige con intención para construir una narrativa coherente ent
       </div>
     </div>
   </section>
-<br><br>
+
+  <br><br>
+
   <!-- TESTIMONIOS -->
   <section id="testimonios">
     <div class="container">
       <div class="section-head">
         <div>
-<a class="section-title" href="testimonios.html" data-text="TESTIMONIOS">TESTIMONIOS</a>
-
+          <a class="section-title" href="testimonios.html" data-text="TESTIMONIOS">TESTIMONIOS</a>
           <h2 class="h2">Lo que dicen</h2>
         </div>
         <div class="muted">Opiniones que suman credibilidad</div>
@@ -777,14 +581,15 @@ Cada elemento se elige con intención para construir una narrativa coherente ent
       </div>
     </div>
   </section>
-<br><br>
+
+  <br><br>
+
   <!-- CONTACTO -->
   <section id="contacto">
     <div class="container">
       <div class="section-head">
         <div>
-<a class="section-title" href="contacto.html" data-text="CONTACTO">CONTACTO</a>
-
+          <a class="section-title" href="contacto.html" data-text="CONTACTO">CONTACTO</a>
           <h2 class="h2">¿Listo para empezar?</h2>
         </div>
         <div class="muted">Enviame un mensaje y comencemos a trabajar juntos</div>
@@ -831,11 +636,13 @@ Cada elemento se elige con intención para construir una narrativa coherente ent
 </a>
 
 <script>
-  // Mobile toggle simple
+  // Mobile toggle simple (reemplazado)
   function toggleMobile(){
-  const nav = document.querySelector('nav');
-  nav.classList.toggle('open');
-}
+    const nav = document.querySelector('nav');
+    const burger = document.getElementById('burger');
+    nav.classList.toggle('open');
+    burger.classList.toggle('active');
+  }
 
   // Simple scroll reveal (lightweight)
   const obsOptions = {threshold: 0.12};
@@ -864,16 +671,15 @@ Cada elemento se elige con intención para construir una narrativa coherente ent
   // Accessibility: focus outline visible
   document.addEventListener('keyup', e=>{
     if(e.key==='Tab'){document.documentElement.style.setProperty('outline','auto')}
-  })
-
-// Interacción expandible de las service cards
-document.querySelectorAll('.service-card').forEach(card => {
-  card.addEventListener('click', () => {
-    card.classList.toggle('expanded');
-    card.classList.add('clicked'); // mantiene el efecto de borde pulsante
   });
-});
 
+  // Interacción expandible de las service cards
+  document.querySelectorAll('.service-card').forEach(card => {
+    card.addEventListener('click', () => {
+      card.classList.toggle('expanded');
+      card.classList.add('clicked'); // mantiene el efecto de borde pulsante si lo agregas
+    });
+  });
 </script>
 
 </body>

@@ -374,6 +374,39 @@ nav a:hover{color:var(--accent)}
 .service-card p{font-size:15px;color:#9aa0a6;margin-top:12px;opacity:0;transform:translateY(12px);transition:all 0.4s ease;position:relative;z-index:2;}
 .service-card:hover p{opacity:1;transform:translateY(0);}
 
+/* ======== EXPANDIBLE SERVICE CARDS ======== */
+.service-card p {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transform: translateY(12px);
+  transition: max-height 0.5s ease, opacity 0.5s ease, transform 0.4s ease;
+}
+
+.service-card.expanded p {
+  max-height: 300px; /* ajusta según el contenido */
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.service-card::after {
+  content: "Haz clic para ver más";
+  position: absolute;
+  bottom: 12px;
+  right: 16px;
+  font-size: 13px;
+  color: var(--muted, #9aa0a6);
+  opacity: 0.85;
+  letter-spacing: 0.4px;
+  transition: opacity 0.4s ease;
+}
+
+.service-card.expanded::after {
+  content: "Haz clic para ocultar";
+  opacity: 0.65;
+}
+
+
 .click-hint {
     width:18px;
     height:18px;
@@ -497,13 +530,13 @@ nav a:hover{color:var(--accent)}
     </div>
 
    <nav aria-label="Menú principal" id="main-nav">
-  <a href="index.html">Inicio</a>
-  <a href="servicios.html">Servicios</a>
-  <a href="portafolio.html">Portafolio</a>
-  <a href="index.html#backstage">Backstage</a>
-  <a href="index.html#testimonios">Testimonios</a>
-  <a href="index.html#contacto" class="cta">Agendar sesión</a>
-  </nav>
+      <a href="index.html">Inicio</a>
+      <a href="servicios.html">Servicios</a>
+      <a href="portafolio.html">Portafolio</a>
+      <a href="index.html#backstage">Backstage</a>
+      <a href="index.html#testimonios">Testimonios</a>
+      <a href="index.html#contacto" class="cta">Agendar sesión</a>
+    </nav>
 
     <button class="hamburger" aria-label="Abrir menú" id="burger" onclick="toggleMobile()">
       <span></span><span></span><span></span>
@@ -696,7 +729,7 @@ Cada elemento se elige con intención para construir una narrativa coherente ent
 
           <h2 class="h2">¿Listo para empezar?</h2>
         </div>
-        <div class="muted">Rápido, directo y profesional</div>
+        <div class="muted">Enviame un mensaje y comencemos a trabajar juntos</div>
       </div>
 
       <div class="contact-card">
@@ -709,7 +742,7 @@ Cada elemento se elige con intención para construir una narrativa coherente ent
             <input type="text" name="project" placeholder="Nombre del proyecto / banda" aria-label="Proyecto">
           </div>
           <div style="margin-top:12px">
-            <textarea name="message" placeholder="Cuéntame en 2 líneas qué necesitas" aria-label="Mensaje"></textarea>
+            <textarea name="message" placeholder="Cuéntame sobre tu proyecto" aria-label="Mensaje"></textarea>
           </div>
 
           <div style="display:flex;gap:12px;align-items:center;margin-top:14px">
@@ -775,10 +808,14 @@ Cada elemento se elige con intención para construir una narrativa coherente ent
     if(e.key==='Tab'){document.documentElement.style.setProperty('outline','auto')}
   })
 
-  // Quita el halo al hacer clic (solo estética)
-  document.querySelectorAll('.service-card').forEach(card=>{
-    card.addEventListener('click',()=>card.classList.add('clicked'));
+// Interacción expandible de las service cards
+document.querySelectorAll('.service-card').forEach(card => {
+  card.addEventListener('click', () => {
+    card.classList.toggle('expanded');
+    card.classList.add('clicked'); // mantiene tu efecto de borde pulsante
   });
+});
+
 </script>
 
 </body>

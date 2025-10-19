@@ -222,13 +222,32 @@ nav a:hover{color:var(--accent)}
   footer{padding:28px 0;color:var(--muted);text-align:center;border-top:1px solid rgba(255,255,255,0.03);}
 
   /* ===== Menú móvil (como el original, desplegable bajo el header) ===== */
-@media (max-width: 680px){
-  nav{
-    display:none; flex-direction:column; position:absolute; top:100%; left:0; right:0; width:100vw; z-index: 999 !important;
-    background: linear-gradient(180deg, rgba(30,30,30,0.65), rgba(0,0,0,0.45));
-    backdrop-filter: blur(12px); border-radius: 0 0 14px 14px; box-shadow: 0 8px 32px rgba(0,0,0,0.18);
-    z-index: 100; padding: 18px 0; align-items: center;
+@media (max-width:680px){
+  nav {
+    display: none;
+    flex-direction: column;
+    position: fixed; /* antes era absolute */
+    top: 68px; /* puedes ajustar según el alto del header */
+    left: 0;
+    right: 0;
+    width: 100vw;
+    background: linear-gradient(180deg, rgba(20,20,20,0.95), rgba(0,0,0,0.85));
+    backdrop-filter: blur(12px);
+    border-radius: 0 0 14px 14px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+    z-index: 999; /* asegurar que quede encima del header */
+    padding: 20px 0;
+    align-items: center;
+    transition: transform 0.35s ease, opacity 0.35s ease;
+    transform: translateY(-100%);
+    opacity: 0;
   }
+  nav.open {
+    display: flex;
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
   nav.open{ display:flex; }
   .hamburger{display:flex}
   /* mantener proporciones del header original en móvil */

@@ -5,18 +5,15 @@
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>Angel Sullyvan — Fotografía Estratégica para Músicos</title>
 <meta name="description" content="Fotografía estratégica para músicos y artistas. Retratos pensados para proyectar tu sonido y posicionarte a otro nivel." />
-
 <!-- Open Graph -->
 <meta property="og:title" content="Angel Sullyvan — Fotografía Estratégica para Músicos" />
 <meta property="og:description" content="Retratos para músicos y creativos que buscan diferenciarse y conectar." />
 <meta property="og:image" content="https://images.unsplash.com/photo-1507874457470-272b3c8d8ee2?auto=format&fit=crop&w=1200&q=80" />
 <meta property="og:type" content="website" />
-
 <!-- Fonts (preload + swap) -->
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700;900&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-
 <style>
   :root{
     --bg:#060606;
@@ -41,43 +38,60 @@
     line-height:1.4;
   }
 
+
   /* Layout */
   .container{max-width:var(--max-width);margin:0 auto;padding:0 24px}
-
-  /* ===== Header (restaurado a estilo original) ===== */
   header{
-    position:fixed; top:12px; left:0; right:0;
-    padding:10px 24px; z-index:100;
-    background:transparent; /* como el original */
+    position:fixed;
+    top:12px;
+    left:0;
+    right:0;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:12px;
+    padding:10px 24px;
+    z-index:40;
+    pointer-events:auto;
   }
   .nav-inner{
-    width:90%; max-width:90%; margin:0 auto;
-    display:flex; align-items:center; justify-content:space-between; gap:16px;
+    width:90%;
+    max-width:90%;
+    margin:0 auto;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:16px;
     background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.02));
     backdrop-filter: blur(8px);
-    border-radius:12px; padding:8px 14px;
+    border-radius:12px;
+    padding:8px 14px;
   }
+
+
+  /* Logo */
   .logo{display:flex;gap:12px;align-items:center}
   .logo svg{height:44px;width:auto;display:block}
   .brand{font-family:Outfit;font-weight:700;letter-spacing:0.6px;font-size:14px}
 
+  /* Nav */
   nav{display:flex;gap:18px;align-items:center}
-  nav a{color:var(--white);text-decoration:none;font-weight:600;font-size:14px;opacity:0.9;transition:color .2s ease}
-  nav a:hover{color:var(--accent)}
+  nav a{color:var(--white);text-decoration:none;font-weight:600;font-size:14px;opacity:0.9}
   .cta{
-    background:transparent; border:1px solid rgba(255,255,255,0.12);
-    padding:10px 14px; border-radius:10px; font-weight:700; cursor:pointer;
-    transition:transform .22s ease, box-shadow .22s ease, border-color .22s ease;
+    background:transparent;
+    border:1px solid rgba(255,255,255,0.12);
+    padding:10px 14px;
+    border-radius:10px;
+    font-weight:700;
+    cursor:pointer;
+    transition:all .22s ease;
   }
   .cta:hover{transform:translateY(-4px);box-shadow:0 8px 30px rgba(0,0,0,0.6);border-color:var(--accent);}
 
-  /* Botón hamburguesa (solo móvil) */
-  .hamburger{display:none;flex-direction:column;gap:4px;cursor:pointer;background:none;border:none}
-  .hamburger span{width:22px;height:2px;background:var(--white);display:block;border-radius:2px;transition:.3s}
-  .hamburger.active span:nth-child(1){transform:rotate(45deg) translate(4px, 4px)}
-  .hamburger.active span:nth-child(2){opacity:0}
-  .hamburger.active span:nth-child(3){transform:rotate(-45deg) translate(4px, -4px)}
-
+  /* Mobile menu */
+  .hamburger{display:none;flex-direction:column;gap:4px;cursor:pointer}
+  .hamburger span{width:22px;height:2px;background:var(--white);display:block;border-radius:2px}
+  
   /* HERO */
   .hero{
     min-height:72vh;
@@ -111,36 +125,36 @@
 
   /* ========== NUEVA SECCIÓN STATEMENT ========== */
   .statement {
-    background: linear-gradient(180deg,#060606 0%,#0f0f0f 100%);
-    padding: 100px 20px;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 40vh;
-    height: 40vh;
-    box-sizing: border-box;
+  background: linear-gradient(180deg,#060606 0%,#0f0f0f 100%);
+  padding: 100px 20px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 40vh;
+  height: 40vh;
+  box-sizing: border-box;
+}
+@media (max-width: 680px) {
+  .statement {
+    padding: 60px 10px;
+    min-height: 28vh;
+    height: auto;
   }
-  @media (max-width: 680px) {
-    .statement {
-      padding: 60px 10px;
-      min-height: 28vh;
-      height: auto;
-    }
-  }
+}
   .statement h2.glitch {
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: clamp(26px, 5vw, 48px);
-    color: var(--white);
-    position: relative;
-    display: inline-block;
-    animation: flicker 2s infinite alternate;
-    letter-spacing: 2px;
-    margin: 0 auto;
-    text-align: center;
-  }
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(26px, 5vw, 48px);
+  color: var(--white);
+  position: relative;
+  display: inline-block;
+  animation: flicker 2s infinite alternate;
+  letter-spacing: 2px;
+  margin: 0 auto;
+  text-align: center;
+}
   .statement h2.glitch::before,
   .statement h2.glitch::after{
     content:attr(data-text);
@@ -169,8 +183,17 @@
     50%{clip:rect(55px,9999px,75px,0);}
     100%{clip:rect(45px,9999px,80px,0);}
   }
-  .statement.fade-in{opacity:0;transform:translateY(30px);transition:opacity 1s ease,transform 1s ease;}
-  .statement.fade-in.visible{opacity:1;transform:translateY(0);}
+  .statement.fade-in{
+    opacity:0;
+    transform:translateY(30px);
+    transition:opacity 1s ease,transform 1s ease;
+  }
+  .statement.fade-in.visible{
+    opacity:1;
+    transform:translateY(0);
+  }
+  
+
 
   /* GRID: servicios / proceso */
   .grid-3{
@@ -213,67 +236,94 @@
   /* Footer */
   footer{padding:28px 0;color:var(--muted);text-align:center;border-top:1px solid rgba(255,255,255,0.03);}
 
-  /* ====== MENÚ MÓVIL CORREGIDO ====== */
-  @media (max-width: 680px){
-    nav{
-      display:flex;
-      flex-direction:column;
-      position:fixed; /* anclado al viewport */
-      top:70px; left:0; right:0; width:100vw;
-      background: linear-gradient(180deg, rgba(20,20,20,0.95), rgba(0,0,0,0.85));
-      backdrop-filter: blur(12px);
-      border-radius: 0 0 14px 14px; box-shadow: 0 8px 32px rgba(0,0,0,0.4);
-      z-index: 999; padding: 20px 0; align-items: center; gap:16px;
-      transition: transform 0.35s ease, opacity 0.35s ease;
-      transform: translateY(-110%); opacity: 0; pointer-events: none;
-    }
-    nav.open{ transform: translateY(0); opacity: 1; pointer-events: auto; }
+  /* Sticky WhatsApp */
 
+  .whatsapp {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: radial-gradient(circle at 10% 10%, #3CFF90, #25D366 70%, #1EBE5D 100%);
+  box-shadow:
+    0 0 10px rgba(37, 211, 102, 0.25),
+    inset 0 0 8px rgba(255, 255, 255, 0.15);
+  z-index: 99;
+  cursor: pointer;
+  animation: pulse-green 3s infinite ease-in-out;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.whatsapp:hover {
+  transform: scale(1.08);
+  box-shadow:
+    0 0 35px rgba(37, 211, 102, 0.45),
+    inset 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+.whatsapp img {
+  width: 28px;
+  height: 28px;
+  filter: brightness(0) invert(1); /* logo blanco limpio */
+}
+
+  /* Pulso elegante tipo respiración */
+@keyframes pulse-green {
+  0% {
+    box-shadow:
+      0 0 10px rgba(37, 211, 102, 0.25),
+      inset 0 0 8px rgba(255, 255, 255, 0.15);
+  }
+  50% {
+    box-shadow:
+      0 0 25px rgba(37, 211, 102, 0.5),
+      inset 0 0 12px rgba(255, 255, 255, 0.25);
+  }
+  100% {
+    box-shadow:
+      0 0 10px rgba(37, 211, 102, 0.25),
+      inset 0 0 8px rgba(255, 255, 255, 0.15);
+  }
+}
+
+
+  /* Responsive */
+  @media (max-width:992px){
+    .masonry{grid-template-columns:repeat(2,1fr)}
+    .grid-3{grid-template-columns:repeat(2,1fr)}
+  }
+  @media (max-width:680px){
+    nav {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 56px;
+      left: 0;
+      width: 100vw;
+      /* Cambia el fondo a transparente y blury */
+      background: linear-gradient(180deg, rgba(30,30,30,0.65), rgba(0,0,0,0.45));
+      backdrop-filter: blur(12px);
+      border-radius: 0 0 14px 14px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+      z-index: 100;
+      padding: 18px 0 18px 0;
+      align-items: center;
+    }
+    .nav-inner {
+      padding: 8px;
+      width: 100vw;
+      max-width: 100vw;
+    }
+    nav{display:none}
     .hamburger{display:flex}
-    header{padding:8px}
-    .nav-inner{padding:8px; width:100vw; max-width:100vw;}
-    .logo svg{height:36px}
     .grid-3{grid-template-columns:1fr}
     .masonry{grid-template-columns:1fr}
-    /* Asegurar layering correcto */
-    header{ z-index: 998; }
-  }
-
-  /* Sticky WhatsApp */
-  .whatsapp {
-    position: fixed;
-    bottom: calc(env(safe-area-inset-bottom, 0px) + clamp(16px, 3vh, 28px));
-    right: calc(env(safe-area-inset-right, 0px) + clamp(16px, 3vw, 28px));
-    width: clamp(48px, 5vw, 60px);
-    height: clamp(48px, 5vw, 60px);
-    display: grid;
-    place-items: center;
-    border-radius: 50%;
-    background: radial-gradient(circle at 10% 10%, #3CFF90, #25D366 70%, #1EBE5D 100%);
-    box-shadow: 0 0 10px rgba(37,211,102,.25), inset 0 0 8px rgba(255,255,255,.15);
-    animation: pulse-green 3s infinite ease-in-out;
-    z-index: 99;
-    transition: all .3s ease;
-    backdrop-filter: blur(4px);
-  }
-  .whatsapp:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 20px rgba(37,211,102,.4), inset 0 0 12px rgba(255,255,255,.25);
-  }
-  @media (max-width: 480px) {
-    .whatsapp {
-      bottom: calc(env(safe-area-inset-bottom, 0px) + 4vh);
-      right: calc(env(safe-area-inset-right, 0px) + 5vw);
-      width: 52px;
-      height: 52px;
-      box-shadow: 0 0 8px rgba(37,211,102,.2);
-    }
-  }
-  .whatsapp img { width: 28px; height: 28px; filter: brightness(0) invert(1); }
-  @keyframes pulse-green {
-    0% { box-shadow: 0 0 10px rgba(37, 211, 102, 0.25), inset 0 0 8px rgba(255, 255, 255, 0.15); }
-    50% { box-shadow: 0 0 25px rgba(37, 211, 102, 0.5), inset 0 0 12px rgba(255, 255, 255, 0.25); }
-    100% { box-shadow: 0 0 10px rgba(37, 211, 102, 0.25), inset 0 0 8px rgba(255, 255, 255, 0.15); }
+    header{padding:8px}
+    .nav-inner{padding:8px}
+    .logo svg{height:36px}
   }
 
   /* Small utilities */
@@ -282,92 +332,281 @@
 
   /* TITULOS DE SECCIÓN */
   .section-title {
+  display: block;
+  width: 100%;
+  font-size: 2.2rem;
+  font-weight: 900;
+  color: var(--accent);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-top: 20px;
+  margin-bottom: 8px;
+  text-align: center;
+}
+@media (max-width:680px) {
+  .section-title {
     display: block;
     width: 100%;
-    font-size: 2.2rem;
-    font-weight: 900;
-    color: var(--accent);
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    margin-top: 20px;
-    margin-bottom: 8px;
-    text-align: center;
-    position: relative;
-    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.4rem;
+    margin-bottom: 6px;
   }
-  @media (max-width:680px) {
-    .section-title { font-size: 1.4rem; margin-bottom: 6px; }
+}
+.interactive-services{background:#0a0a0a;padding:100px 0;}
+.service-grid{display:grid;grid-template-columns:repeat(1,1fr);gap:24px;}
+.service-card{background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));border:1px solid rgba(255,255,255,0.05);border-radius:16px;padding:32px;position:relative;cursor:pointer;overflow:hidden;transition:all 0.4s ease;}
+.service-card:hover{transform:translateY(-6px);border-color:rgba(255,46,157,0.3);}
+.service-card::before{content:"";position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transition:opacity 0.5s ease;z-index:0;}
+.service-card:hover::before{opacity:0.2;}
+.service-title{display:flex;align-items:center;gap:10px;position:relative;z-index:2;}
+.service-card h3{font-size:20px;}
+.service-card p{font-size:15px;color:#9aa0a6;margin-top:12px;opacity:0;transform:translateY(12px);transition:all 0.4s ease;position:relative;z-index:2;}
+.service-card:hover p{opacity:1;transform:translateY(0);}
+
+.click-hint {
+    width:18px;
+    height:18px;
+    color:var(--muted, #9aa0a6);
+    opacity:0.8;
+    transition:color 0.4s ease, transform 0.3s ease;
+  }
+  .service-card:hover .click-hint {
+    color:var(--accent);
+    transform:rotate(10deg);
   }
 
-  /* ====== LINKS GLITCH PREMIUM (hover) ====== */
-  .section-title::before,
-  .section-title::after {
-    content: attr(data-text);
-    position: absolute;
-    top: 0; left: 0; width: 100%;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-  }
-  .section-title:hover::before {
-    clip: rect(0, 900px, 100%, 0); left: 2px; text-shadow: -2px 0 cyan;
-    animation: glitchShift 0.3s infinite linear alternate;
-  }
-  .section-title:hover::after {
-    clip: rect(0, 900px, 100%, 0); left: -2px; text-shadow: -2px 0 magenta;
-    animation: glitchShift 0.3s infinite linear alternate-reverse;
-  }
-  .section-title:hover { color: #fff; transform: translateY(-2px); }
-  @keyframes glitchShift {
-    0% { clip: rect(0, 9999px, 0, 0); }
-    20% { clip: rect(5px, 9999px, 10px, 0); }
-    40% { clip: rect(15px, 9999px, 25px, 0); }
-    60% { clip: rect(30px, 9999px, 45px, 0); }
-    80% { clip: rect(10px, 9999px, 50px, 0); }
-    100% { clip: rect(0, 9999px, 60px, 0); }
-  }
-
-  /* ======== SERVICIOS (expandibles por click) ======== */
-  .interactive-services{background:#0a0a0a;padding:100px 0;}
-  .service-grid{display:grid;grid-template-columns:repeat(1,1fr);gap:24px;}
-  .service-card{
-    background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));
-    border:1px solid rgba(255,255,255,0.05);
-    border-radius:16px;
-    padding:32px;
-    position:relative;
-    cursor:pointer;
-    overflow:hidden;
-    transition:all 0.4s ease;
-  }
-  .service-card:hover{transform:translateY(-6px);border-color:rgba(255,46,157,0.3);}
-  .service-card::before{content:"";position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transition:opacity 0.5s ease;z-index:0;}
-  .service-title{display:flex;align-items:center;gap:10px;position:relative;z-index:2;}
-  .service-card h3{font-size:20px;margin:0;}
-  /* Texto oculto inicialmente y visible SOLO al hacer clic */
-  .service-card p{
-    font-size:15px;color:#9aa0a6;margin-top:12px;
-    max-height:0; opacity:0; overflow:hidden; transform:translateY(12px);
-    transition:max-height 0.5s ease, opacity 0.5s ease, transform 0.4s ease;
-    position:relative; z-index:2;
-  }
-  .service-card.expanded p{max-height:300px;opacity:1;transform:translateY(0);}
-  /* Indicador "Ver más / Ocultar" (en móvil + / –) */
   .service-card::after{
-    content:"Ver más";
-    position:absolute; bottom:12px; right:16px;
-    font-size:13px; color:var(--muted); opacity:.85; letter-spacing:.4px;
-    transition:opacity .4s ease;
+    content:"Haz clic para ver más";
+    position:absolute;
+    bottom:12px;
+    right:16px;
+    font-size:13px;
+    color:var(--muted, #9aa0a6);
+    opacity:0;
+    letter-spacing:0.4px;
+    transition:opacity .4s ease, transform .4s ease;
+    transform:translateY(6px);
+    font-weight:400;
   }
-  .service-card.expanded::after{content:"Ocultar";opacity:.65;}
-  @media (max-width:680px){
-    .service-card::after{content:"+";font-size:18px;bottom:10px;}
-    .service-card.expanded::after{content:"–";}
+  .service-card:hover::after{
+    opacity:.85;
+    transform:translateY(0);
   }
-  /* hint del icono (i) */
-  .click-hint { width:18px; height:18px; color:var(--muted); opacity:0.8; transition:color 0.4s ease, transform 0.3s ease; }
-  .service-card:hover .click-hint { color:var(--accent); transform:rotate(10deg); }
 
-</style>
+  .service-card:not(.clicked){
+    box-shadow:0 0 0 0 rgba(255,46,157,0.4);
+    animation:pulseBorder 3s infinite;
+  }
+  @keyframes pulseBorder{
+    0%{box-shadow:0 0 0 0 rgba(255,46,157,0.4);}
+    70%{box-shadow:0 0 0 8px rgba(255,46,157,0);}
+    100%{box-shadow:0 0 0 0 rgba(255,46,157,0);}
+  }
+  
+    /* ====== LINKS GLITCH PREMIUM ====== */
+.section-title {
+  position: relative;
+  display: inline-block;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 900;
+  font-size: clamp(1.8rem, 5vw, 2.4rem);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--accent);
+  text-decoration: none;
+  transition: color 0.25s ease;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.section-title::before,
+.section-title::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+}
+
+.section-title:hover::before {
+  clip: rect(0, 900px, 100%, 0);
+  left: 2px;
+  text-shadow: -2px 0 cyan;
+  animation: glitchShift 0.3s infinite linear alternate;
+}
+
+.section-title:hover::after {
+  clip: rect(0, 900px, 100%, 0);
+  left: -2px;
+  text-shadow: -2px 0 magenta;
+  animation: glitchShift 0.3s infinite linear alternate-reverse;
+}
+
+.section-title:hover {
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+@keyframes glitchShift {
+  0% { clip: rect(0, 9999px, 0, 0); }
+  20% { clip: rect(5px, 9999px, 10px, 0); }
+  40% { clip: rect(15px, 9999px, 25px, 0); }
+  60% { clip: rect(30px, 9999px, 45px, 0); }
+  80% { clip: rect(10px, 9999px, 50px, 0); }
+  100% { clip: rect(0, 9999px, 60px, 0); }
+}
+
+/* efecto responsivo */
+@media (max-width: 680px) {
+  .section-title {
+    font-size: 1.4rem;
+    letter-spacing: 1px;
+  }
+}
+  
+  .estrategia {
+background: linear-gradient(180deg, #060606 0%, #0f0f0f 100%);
+padding: 100px 24px;
+}
+    
+
+
+    /* Efecto glow en palabras clave */
+.progressive-text strong {
+  position: relative;
+  color: var(--white);
+  font-weight: 600;
+  background: linear-gradient(90deg, var(--accent), #ff77b7, var(--accent));
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  opacity: 0.6;
+  transition: opacity 0.8s ease, filter 0.8s ease;
+}
+
+.progressive-text p.visible strong {
+  opacity: 1;
+  filter: drop-shadow(0 0 6px rgba(255, 46, 157, 0.45));
+}
+
+/* Responsivo */
+@media (max-width: 900px) {
+  .progressive-text p {
+    font-size: 14.8px;
+  }
+}
+
+
+/* ====== VISIÓN ESTRATÉGICA — ENTRADA Y DESVANECIMIENTO ====== */
+.vision-section {
+  position: relative;
+  background: linear-gradient(180deg, #060606 0%, #0f0f0f 100%);
+  padding: 120px 0;
+  overflow: hidden;
+}
+
+/* === Párrafos === */
+.gradient-reveal p {
+position: relative;
+opacity: 0;
+transform: translateY(40px);
+transition: opacity 1s ease-out, transform 1s ease-out;
+font-size: 15.5px;
+line-height: 1.7;
+color: var(--muted);
+margin-bottom: 26px;
+overflow: hidden;
+will-change: opacity, transform;
+}
+
+/* === Barrido de luz (magenta → cian) === */
+.gradient-reveal p::after {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 -35%;
+  width: 40%;
+  height: 100%;
+  pointer-events: none;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 0, 255, 0) 0%,
+    rgba(255, 0, 255, 0.45) 15%,
+    rgba(0, 255, 224, 0.8) 50%,
+    rgba(255, 0, 255, 0.45) 85%,
+    rgba(255, 0, 255, 0) 100%
+  );
+  filter: blur(5px) brightness(1.3);
+  transform: skewX(-10deg);
+  opacity: 0;
+}
+
+/* Glow ambiental global */
+.vision-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 40%, rgba(255, 0, 255, 0.08), rgba(0, 255, 224, 0.04), transparent 80%);
+  filter: blur(90px);
+  opacity: 0.1;
+  pointer-events: none;
+}
+
+/* Palabras clave */
+.gradient-reveal strong {
+  color: #ffffff;
+  font-weight: 600;
+  text-shadow: 0 0 10px rgba(255, 46, 157, 0.6),
+               0 0 15px rgba(0, 255, 224, 0.4);
+}
+
+.gradient-reveal p.visible::after {
+opacity: 0.7;
+animation: sweep 1.3s ease-out;
+}
+
+
+@keyframes sweep {
+0% { left: -50%; opacity: 0; }
+25% { opacity: 0.8; }
+100% { left: 130%; opacity: 0; }
+}
+
+/* === Keyframes === */
+@keyframes appearDisappear {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  15% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes sweepFade {
+  0%   { left: -50%; opacity: 0; }
+  20%  { opacity: 0.7; }
+  100% { left: 130%; opacity: 0; }
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .gradient-reveal p {
+    font-size: 14.6px;
+    line-height: 1.6;
+  }
+}
+
+  
+  </style>
 </head>
 <body>
 
@@ -381,17 +620,16 @@
       </svg>
       <div>
         <div class="brand">Angel Sullyvan</div>
-        <div class="muted" style="font-size:12px">Fotografía estratégica · Músicos · Artistas · Creativos</div>
+        <div class="muted" style="font-size:12px">Fotografía estratégica · Músicos</div>
       </div>
     </div>
 
-    <nav aria-label="Menú principal" id="main-nav">
-      <a href="index.html">Inicio</a>
-      <a href="servicios.html">Servicios</a>
-      <a href="portafolio.html">Portafolio</a>
-      <a href="index.html#backstage">Backstage</a>
-      <a href="index.html#testimonios">Testimonios</a>
-      <a href="index.html#contacto" class="cta">Agendar sesión</a>
+    <nav aria-label="Menú principal">
+      <a href="#portfolio">Portafolio</a>
+      <a href="#servicios">Servicios</a>
+      <a href="#backstage">Backstage</a>
+      <a href="#testimonios">Testimonios</a>
+      <a href="#contacto" class="cta">Agendar sesión</a>
     </nav>
 
     <button class="hamburger" aria-label="Abrir menú" id="burger" onclick="toggleMobile()">
@@ -415,7 +653,7 @@
     <div class="content container" role="hero">
       <div class="kicker">BRANDING • RETRATOS • DIRECCIÓN</div>
        <h1>Retratos que amplifican tu sonido <br><span style="color:var(--accent)">Imágenes para que te recuerden.</span></h1>
-      <p class="lead">Trabajo con músicos, artistas y creativos para transformar la identidad visual en una herramienta de carrera: portada, prensa, redes y booking — todo con intención estratégica.</p>
+      <p class="lead">Trabajo con músicos y creativos para transformar la identidad visual en una herramienta de carrera: portada, prensa, redes y booking — todo con intención estratégica.</p>
       <div class="actions">
         <button class="btn-primary" onclick="document.getElementById('portfolio').scrollIntoView({behavior:'smooth'})">Ver portafolio</button>
         <button class="btn-ghost" onclick="document.getElementById('contacto').scrollIntoView({behavior:'smooth'})">Agendar sesión</button>
@@ -425,76 +663,92 @@
 
   <!-- NUEVA SECCIÓN STATEMENT -->
   <section class="statement fade-in" id="statement">
-    <h2 class="glitch" data-text="BRANDING PHOTOGRAPHY FOR ARTISTS.">BRANDING PHOTOGRAPHY FOR ARTISTS.</h2>
+        <h2 class="glitch" data-text="BRANDING PHOTOGRAPHY FOR ARTISTS.">BRANDING PHOTOGRAPHY FOR ARTISTS.</h2>
   </section>
 
-  <!-- NUEVA SECCIÓN SERVICIOS -->
-  <section id="servicios" class="interactive-services">
-    <div class="container">
-      <div>
+<!-- SECCIÓN VISIÓN ESTRATÉGICA (con texto revelado progresivamente) -->
+<section id="vision" class="vision-section">
+  <div class="container">
+    <h2 class="section-title" data-text="VISIÓN ESTRATÉGICA">VISIÓN ESTRATÉGICA</h2>
+
+    <div class="vision-text gradient-reveal">
+      <p>En un entorno digital saturado de <strong>imágenes, estímulos y contenidos</strong>, muchos músicos y artistas obtienen poco alcance y reconocimiento porque su comunicación visual <strong>carece de dirección, coherencia y narrativa</strong>.</p>
+      <p>Aunque su música sea sólida, su imagen no genera conexión ni recordación.  
+      El problema no es la falta de talento, sino la ausencia de una mirada estratégica que dé sentido a lo que se muestra.</p>
+      
+      <p>La imagen pública de un artista no se trata solo de estética, sino también de <strong>percepción y propósito</strong>.  
+      Si la fotografía que usas está mal planificada o dirigida, puede hacerte ver <strong>amateur</strong>, aunque tu música sea profesional — genérico, aunque tu sonido sea auténtico.</p>
+      <p>La falta de coherencia visual limita el alcance, la conexión y la permanencia en la memoria del público.  
+      Tu sonido merece una imagen que esté a la misma altura.</p>
+      
+      <p>A través de la <strong>fotografía estratégica</strong>, ayudo a músicos y artistas a proyectar una identidad visual coherente con su sonido.  
+      Cada sesión combina <strong>dirección artística, narrativa visual</strong> y <strong>estrategia de imagen</strong> para crear retratos que no solo lucen bien, sino que revelan quién eres como artista.</p>
+      <p>Tu imagen se convierte en una herramienta de crecimiento profesional — portada, redes, prensa y booking — todo alineado con tu historia y tu sonido.</p>
+    </div>
+  </div>
+</section>
+  
+  <!-- NUEVA SECCIÓN SERVICIOS -->  
+<section id="servicios" class="interactive-services">
+  <div class="container">
+          <div>
+            
         <a class="section-title" href="servicios.html" data-text="SERVICIOS">SERVICIOS</a>
         <h2 class="h2">Qué ofrezco</h2>
       </div>
-      <div class="muted">
-        Dirección visual con propósito. Cada sesión combina estrategia, técnica y narrativa para crear imágenes que comunican quién eres y hacia dónde vas como artista.
+            <div class="muted"> Dirección visual con propósito.
+Cada sesión combina estrategia, técnica y narrativa para crear imágenes que comunican quién eres y hacia dónde vas como artista.</div>
+<br></br>
+    <h2>El proceso que transforma tu imagen</h2>
+    <div class="service-grid">
+      <div class="service-card" data-bg="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1200&q=80">
+        <div class="service-title">
+          <h3>1. Exploración y planificación</h3>
+          <svg class="click-hint" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5" fill="none"/>
+              <line x1="12" y1="10" x2="12" y2="16" stroke="currentColor" stroke-width="1.5"/>
+              <circle cx="12" cy="7" r="1" fill="currentColor"/>
+            </svg>
+        </div>
+        <p>Antes de disparar una sola foto, exploramos tu proyecto: qué sonido tienes, qué mensaje quieres proyectar y a quién quieres llegar.
+Definimos el enfoque visual, las referencias estéticas y el propósito de la sesión para asegurar que cada imagen tenga coherencia con tu visión musical y tu etapa artística.</p>
       </div>
-      <br />
-      <h2>El proceso que transforma tu imagen</h2>
-
-      <div class="service-grid">
-        <div class="service-card" data-bg="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1200&q=80">
-          <div class="service-title">
-            <h3>1. Exploración y planificación</h3>
-            <svg class="click-hint" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <div class="service-card" data-bg="https://images.unsplash.com/photo-1607706189992-eae578626c86?auto=format&fit=crop&w=1200&q=80">
+        <div class="service-title"><h3>2. Dirección creativa</h3>
+          <svg class="click-hint" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
               <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5" fill="none"/>
               <line x1="12" y1="10" x2="12" y2="16" stroke="currentColor" stroke-width="1.5"/>
               <circle cx="12" cy="7" r="1" fill="currentColor"/>
             </svg>
-          </div>
-          <p>Antes de disparar una sola foto, exploramos tu proyecto: qué sonido tienes, qué mensaje quieres proyectar y a quién quieres llegar.
-          Definimos el enfoque visual, las referencias estéticas y el propósito de la sesión para asegurar que cada imagen tenga coherencia con tu visión musical y tu etapa artística.</p>
         </div>
-
-        <div class="service-card" data-bg="https://images.unsplash.com/photo-1607706189992-eae578626c86?auto=format&fit=crop&w=1200&q=80">
-          <div class="service-title">
-            <h3>2. Dirección creativa</h3>
-            <svg class="click-hint" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-              <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5" fill="none"/>
-              <line x1="12" y1="10" x2="12" y2="16" stroke="currentColor" stroke-width="1.5"/>
-              <circle cx="12" cy="7" r="1" fill="currentColor"/>
-            </svg>
-          </div>
-          <p>En esta fase definimos el concepto visual completo: iluminación, color, actitud, vestuario y locaciones.
-          Cada elemento se elige con intención para construir una narrativa coherente entre tu imagen, tu música y el público que quieres atraer.</p>
-        </div>
-
-        <div class="service-card" data-bg="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?auto=format&fit=crop&w=1200&q=80">
-          <div class="service-title">
-            <h3>3. Producción</h3>
-            <svg class="click-hint" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-              <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5" fill="none"/>
-              <line x1="12" y1="10" x2="12" y2="16" stroke="currentColor" stroke-width="1.5"/>
-              <circle cx="12" cy="7" r="1" fill="currentColor"/>
-            </svg>
-          </div>
-          <p>Organizamos los detalles técnicos y logísticos de la sesión: scouting de espacios, montaje de iluminación, dirección durante la toma y flujo de trabajo en set.
-          Cada disparo está guiado para lograr resultados consistentes, con control de luz, postura y expresión que refuercen el mensaje de tu proyecto.</p>
-        </div>
-
-        <div class="service-card" data-bg="https://images.unsplash.com/photo-1520975910124-7e7f9b7b7f2b?auto=format&fit=crop&w=1200&q=80">
-          <div class="service-title">
-            <h3>4. Entrega final</h3>
-            <svg class="click-hint" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-              <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5" fill="none"/>
-              <line x1="12" y1="10" x2="12" y2="16" stroke="currentColor" stroke-width="1.5"/>
-              <circle cx="12" cy="7" r="1" fill="currentColor"/>
-            </svg>
-          </div>
-          <p>Entrego una selección curada de imágenes con retoque profesional y acabado editorial. Listas para redes, portadas, prensa o tu EPK, con la calidad técnica y narrativa que tu proyecto necesita para destacar.</p>
-        </div>
+        <p>En esta fase definimos el concepto visual completo: iluminación, color, actitud, vestuario y locaciones.
+Cada elemento se elige con intención para construir una narrativa coherente entre tu imagen, tu música y el público que quieres atraer.</p>
       </div>
+      <div class="service-card" data-bg="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?auto=format&fit=crop&w=1200&q=80">
+        <div class="service-title"><h3>3. Producción</h3>
+          <svg class="click-hint" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5" fill="none"/>
+              <line x1="12" y1="10" x2="12" y2="16" stroke="currentColor" stroke-width="1.5"/>
+              <circle cx="12" cy="7" r="1" fill="currentColor"/>
+            </svg>
+        </div>
+        <p>Organizamos los detalles técnicos y logísticos de la sesión: scouting de espacios, montaje de iluminación, dirección durante la toma y flujo de trabajo en set.
+Cada disparo está guiado para lograr resultados consistentes, con control de luz, postura y expresión que refuercen el mensaje de tu proyecto.</p>
+      </div>
+      <div class="service-card" data-bg="https://images.unsplash.com/photo-1520975910124-7e7f9b7b7f2b?auto=format&fit=crop&w=1200&q=80">
+        <div class="service-title"><h3>4. Entrega final</h3>
+          <svg class="click-hint" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5" fill="none"/>
+              <line x1="12" y1="10" x2="12" y2="16" stroke="currentColor" stroke-width="1.5"/>
+              <circle cx="12" cy="7" r="1" fill="currentColor"/>
+            </svg>
+        </div>
+        
+        <p>Entrego una selección curada de imágenes con retoque profesional y acabado editorial. Listas para redes, portadas, prensa o tu EPK, con la calidad téc
+                </div>
     </div>
-  </section>
+  </div>
+</section>
 
   <!-- PORTFOLIO -->
   <section id="portfolio" style="padding-top:40px;padding-bottom:40px">
@@ -507,7 +761,7 @@
         <div class="muted">Ejemplos de dirección visual y look editorial</div>
       </div>
 
-      <div class="masonry" id="masonry">
+            <div class="masonry" id="masonry">
         <!-- Reemplaza las imágenes por tus proyectos (usar webp/avif preferible) -->
         <a class="item" href="#" aria-label="Proyecto 1">
           <img loading="lazy" src="https://images.unsplash.com/photo-1511379938547-c1f69419868d?auto=format&fit=crop&w=1200&q=80" alt="Proyecto 1">
@@ -556,8 +810,6 @@
     </div>
   </section>
 
-  <br><br>
-
   <!-- TESTIMONIOS -->
   <section id="testimonios">
     <div class="container">
@@ -582,8 +834,6 @@
     </div>
   </section>
 
-  <br><br>
-
   <!-- CONTACTO -->
   <section id="contacto">
     <div class="container">
@@ -592,7 +842,7 @@
           <a class="section-title" href="contacto.html" data-text="CONTACTO">CONTACTO</a>
           <h2 class="h2">¿Listo para empezar?</h2>
         </div>
-        <div class="muted">Enviame un mensaje y comencemos a trabajar juntos</div>
+        <div class="muted">Rápido, directo y profesional</div>
       </div>
 
       <div class="contact-card">
@@ -605,7 +855,7 @@
             <input type="text" name="project" placeholder="Nombre del proyecto / banda" aria-label="Proyecto">
           </div>
           <div style="margin-top:12px">
-            <textarea name="message" placeholder="Cuéntame sobre tu proyecto" aria-label="Mensaje"></textarea>
+            <textarea name="message" placeholder="Cuéntame en 2 líneas qué necesitas" aria-label="Mensaje"></textarea>
           </div>
 
           <div style="display:flex;gap:12px;align-items:center;margin-top:14px">
@@ -636,12 +886,10 @@
 </a>
 
 <script>
-  // Mobile toggle simple (reemplazado)
+  // Mobile toggle simple
   function toggleMobile(){
     const nav = document.querySelector('nav');
-    const burger = document.getElementById('burger');
-    nav.classList.toggle('open');
-    burger.classList.toggle('active');
+    nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
   }
 
   // Simple scroll reveal (lightweight)
@@ -671,16 +919,47 @@
   // Accessibility: focus outline visible
   document.addEventListener('keyup', e=>{
     if(e.key==='Tab'){document.documentElement.style.setProperty('outline','auto')}
+  })
+
+  // Quita el halo al hacer clic (solo estética)
+  document.querySelectorAll('.service-card').forEach(card=>{
+    card.addEventListener('click',()=>card.classList.add('clicked'));
   });
 
-  // Interacción expandible de las service cards
-  document.querySelectorAll('.service-card').forEach(card => {
-    card.addEventListener('click', () => {
-      card.classList.toggle('expanded');
-      card.classList.add('clicked'); // mantiene el efecto de borde pulsante si lo agregas
+  // === VISIÓN ESTRATÉGICA — Lectura Progresiva (sin @scroll-timeline) ===
+  (() => {
+    const paragraphs = document.querySelectorAll('.gradient-reveal p');
+    if (!paragraphs.length) return;
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        const el = entry.target;
+
+        if (entry.isIntersecting) {
+          // Párrafo entra
+          el.classList.add('visible');
+          el.style.opacity = 1;
+          el.style.transform = 'translateY(0)';
+        } else {
+          // Cuando sale por arriba, desvanece hacia arriba
+          if (window.scrollY > el.offsetTop) {
+            el.style.transition = 'opacity 1.2s ease, transform 1.2s ease';
+            el.style.opacity = 0;
+            el.style.transform = 'translateY(-30px)';
+          }
+        }
+      });
+    }, { threshold: 0.55 });
+
+    paragraphs.forEach(p => {
+      p.style.opacity = 0;
+      p.style.transform = 'translateY(40px)';
+      p.style.transition = 'opacity 1s ease, transform 1s ease';
+      observer.observe(p);
     });
-  });
+  })();
 </script>
+
 
 </body>
 </html>

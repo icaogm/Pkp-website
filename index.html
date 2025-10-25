@@ -383,6 +383,7 @@
             transform: translateY(0);
         }
         /* === TYPEWRITER RESPONSIVE Y LINEA POR LINEA === */
+        /* === TYPEWRITER REAL, RESPONSIVE Y SIN DESPLAZES === */
         
         .typewriter-container {
             display: block;
@@ -391,24 +392,32 @@
             text-align: left;
             white-space: normal;
             word-wrap: break-word;
+            line-height: 1.5;
         }
+        /* cada línea individual */
         
         .typewriter-line {
             display: block;
             overflow: hidden;
-            border-right: 0.15em solid var(--accent);
-            animation: typewriter steps(var(--steps, 80)) var(--duration, 4s) forwards, blink 0.75s step-end infinite;
+            border-right: 0.15em solid var(--accent2);
+            white-space: nowrap;
+            /* 🔥 impide que se parta mientras se escribe */
             width: 0;
-            /* empieza oculta */
+            /* 🔥 oculta todo el texto inicialmente */
+            opacity: 0;
+            /* 🔥 invisibles al inicio */
+            animation: typing 4s steps(60, end) forwards, blink 0.7s step-end infinite;
         }
-        /* animación real */
+        /* animación de escritura */
         
-        @keyframes typewriter {
+        @keyframes typing {
             from {
                 width: 0;
+                opacity: 1;
             }
             to {
                 width: 100%;
+                opacity: 1;
             }
         }
         /* cursor parpadeante */
@@ -422,34 +431,29 @@
                 border-color: var(--accent2);
             }
         }
-        /* tiempos escalonados */
+        /* animaciones escalonadas por línea */
         
         .typewriter-line:nth-child(1) {
-            --duration: 5s;
-            animation-delay: 0s, 5s;
+            animation-delay: 0s, 4s;
         }
         
         .typewriter-line:nth-child(2) {
-            --duration: 6s;
-            animation-delay: 5.5s, 11.5s;
+            animation-delay: 4.5s, 8.5s;
         }
         
         .typewriter-line:nth-child(3) {
-            --duration: 5s;
-            animation-delay: 12s, 17s;
+            animation-delay: 9s, 13s;
         }
         
         .typewriter-line:nth-child(4) {
-            --duration: 6s;
-            animation-delay: 17.5s, 23.5s;
+            animation-delay: 13.5s, 17.5s;
         }
-        /* modo responsive */
+        /* para móviles */
         
         @media (max-width: 768px) {
             .typewriter-container {
                 max-width: 95%;
                 font-size: 0.95rem;
-                line-height: 1.5;
             }
             .typewriter-line {
                 border-right: 0.1em solid var(--accent2);

@@ -1,424 +1,1006 @@
 <!doctype html>
 <html lang="es">
+
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Portafolio — Angel Sullyvan</title>
-<meta name="description" content="Selección curada de trabajos recientes." />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Portafolio — Angel Sullyvan</title>
+    <meta name="description" content="Selección curada de trabajos recientes." />
 
-<!-- Open Graph -->
-<meta property="og:title" content="Portafolio — Angel Sullyvan" />
-<meta property="og:description" content="Retratos y proyectos con dirección visual, estética editorial y enfoque estratégico." />
-<meta property="og:image" content="https://images.unsplash.com/photo-1507874457470-272b3c8d8ee2?auto=format&fit=crop&w=1200&q=80" />
-<meta property="og:type" content="website" />
+    <!-- Open Graph -->
+    <meta property="og:title" content="Portafolio — Angel Sullyvan" />
+    <meta property="og:description" content="Retratos y proyectos con dirección visual, estética editorial y enfoque estratégico." />
+    <meta property="og:image" content="https://images.unsplash.com/photo-1507874457470-272b3c8d8ee2?auto=format&fit=crop&w=1200&q=80" />
+    <meta property="og:type" content="website" />
 
-<!-- Fonts -->
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700;900&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css"/>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700;900&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
 
-<style>
-  :root{
-    --bg:#060606;
-    --panel:#0f0f0f;
-    --muted:#9aa0a6;
-    --white:#ffffff;
-    --accent:#ff2e9d;
-    --glass: rgba(255,255,255,0.06);
-    --radius:14px;
-    --max-width:1200px;
-  }
+    <style>
+         :root {
+            --bg: #060606;
+            --panel: #0f0f0f;
+            --muted: #9aa0a6;
+            --white: #ffffff;
+            --accent: #ff2e9d;
+            --glass: rgba(255, 255, 255, 0.06);
+            --radius: 14px;
+            --max-width: 1200px;
+        }
+        
+        * {
+            box-sizing: border-box
+        }
+        
+        html,
+        body {
+            height: 100%
+        }
+        
+        body {
+            margin: 0;
+            font-family: Inter, Outfit, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, 'Space Grotesk', sans-serif;
+            background: var(--bg);
+            color: var(--white);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            line-height: 1.4;
+        }
+        
+        .container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 24px
+        }
+        
+        .muted {
+            color: var(--muted)
+        }
+        /* ===== HEADER (idéntico a servicios.html) ===== */
+        
+        header {
+            position: fixed;
+            top: 12px;
+            left: 0;
+            right: 0;
+            padding: 10px 24px;
+            z-index: 100;
+            background: transparent;
+        }
+        
+        .nav-inner {
+            width: 90%;
+            max-width: 90%;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(0, 0, 0, 0.02));
+            backdrop-filter: blur(8px);
+            border-radius: 12px;
+            padding: 8px 14px;
+        }
+        
+        .logo {
+            display: flex;
+            gap: 12px;
+            align-items: center
+        }
+        
+        .logo svg {
+            height: 44px;
+            width: auto;
+            display: block
+        }
+        
+        .brand {
+            font-family: Outfit;
+            font-weight: 700;
+            letter-spacing: 0.6px;
+            font-size: 14px
+        }
+        
+        .logo .muted {
+            font-size: 12px;
+            color: var(--muted);
+            margin-top: 2px;
+            letter-spacing: .2px;
+        }
+        
+        nav {
+            display: flex;
+            gap: 18px;
+            align-items: center
+        }
+        
+        nav a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            opacity: 0.9;
+            transition: color .2s ease
+        }
+        
+        nav a:hover {
+            color: var(--accent)
+        }
+        
+        .cta {
+            background: transparent;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            padding: 10px 14px;
+            border-radius: 10px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease;
+        }
+        
+        .cta:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6);
+            border-color: var(--accent);
+        }
+        /* Botón hamburguesa */
+        
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 4px;
+            cursor: pointer;
+            background: none;
+            border: none
+        }
+        
+        .hamburger span {
+            width: 22px;
+            height: 2px;
+            background: var(--white);
+            display: block;
+            border-radius: 2px;
+            transition: .3s
+        }
+        
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(4px, 4px)
+        }
+        
+        .hamburger.active span:nth-child(2) {
+            opacity: 0
+        }
+        
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(4px, -4px)
+        }
+        /* ===== Menú móvil ===== */
+        
+        @media (max-width:680px) {
+            nav {
+                display: flex;
+                flex-direction: column;
+                position: fixed;
+                top: 70px;
+                left: 0;
+                right: 0;
+                width: 100vw;
+                background: linear-gradient(180deg, rgba(20, 20, 20, 0.95), rgba(0, 0, 0, 0.85));
+                backdrop-filter: blur(12px);
+                border-radius: 0 0 14px 14px;
+                box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+                z-index: 999;
+                padding: 20px 0;
+                align-items: center;
+                gap: 16px;
+                transform: translateY(-110%);
+                opacity: 0;
+                pointer-events: none;
+                transition: transform .35s ease, opacity .35s ease;
+            }
+            nav.open {
+                transform: translateY(0);
+                opacity: 1;
+                pointer-events: auto;
+            }
+            .hamburger {
+                display: flex
+            }
+            header {
+                z-index: 998;
+                padding: 8px
+            }
+            .nav-inner {
+                padding: 8px;
+                width: 100vw;
+                max-width: 100vw
+            }
+            .logo svg {
+                height: 36px
+            }
+        }
+        /* ===== HERO PORTAFOLIO ===== */
+        
+        .portfolio-hero {
+            min-height: 56vh;
+            display: grid;
+            place-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .portfolio-hero .media {
+            position: absolute;
+            inset: 0;
+            background: #000;
+        }
+        
+        .portfolio-hero picture,
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: contrast(.95)saturate(.95);
+        }
+        
+        .portfolio-hero .overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(0, 0, 0, .45), rgba(0, 0, 0, .7));
+        }
+        
+        .portfolio-hero .content {
+            position: relative;
+            z-index: 3;
+            text-align: center;
+            padding: 60px 20px;
+            max-width: 980px;
+            margin: 0 auto;
+        }
+        
+        .glitch-title {
+            position: relative;
+            display: inline-block;
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            font-size: clamp(2rem, 6vw, 4rem);
+            text-transform: uppercase;
+            color: var(--white);
+            letter-spacing: 2px;
+            text-align: center;
+            animation: flicker 2.4s infinite alternate;
+        }
+        
+        .glitch-title::before,
+        .glitch-title::after {
+            content: attr(data-text);
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            overflow: hidden;
+        }
+        
+        .glitch-title::before {
+            left: 2px;
+            text-shadow: -2px 0 var(--accent);
+            animation: glitchTop 2s infinite linear alternate-reverse;
+        }
+        
+        .glitch-title::after {
+            left: -2px;
+            text-shadow: -2px 0 cyan;
+            animation: glitchBottom 2s infinite linear alternate;
+        }
+        
+        @keyframes flicker {
+            0%,
+            19%,
+            21%,
+            23%,
+            25%,
+            54%,
+            56%,
+            100% {
+                opacity: 1;
+            }
+            20%,
+            22%,
+            24%,
+            55% {
+                opacity: .7;
+            }
+        }
+        
+        @keyframes glitchTop {
+            0% {
+                clip: rect(2px, 9999px, 44px, 0);
+            }
+            50% {
+                clip: rect(12px, 9999px, 35px, 0);
+            }
+            100% {
+                clip: rect(2px, 9999px, 44px, 0);
+            }
+        }
+        
+        @keyframes glitchBottom {
+            0% {
+                clip: rect(45px, 9999px, 80px, 0);
+            }
+            50% {
+                clip: rect(55px, 9999px, 75px, 0);
+            }
+            100% {
+                clip: rect(45px, 9999px, 80px, 0);
+            }
+        }
+        
+        .portfolio-intro {
+            background: #0a0a0a;
+            padding: 60px 0 20px
+        }
+        
+        .portfolio-intro .lead {
+            max-width: 920px;
+            margin: 0 auto;
+            text-align: center;
+            color: #b0b0b0;
+            line-height: 1.6;
+            font-size: clamp(1rem, 2.4vw, 1.15rem);
+        }
+    </style>
 
-  *{box-sizing:border-box}
-  html,body{height:100%}
-  body{
-    margin:0;
-    font-family:Inter, Outfit, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, 'Space Grotesk', sans-serif;
-    background:var(--bg);
-    color:var(--white);
-    -webkit-font-smoothing:antialiased;
-    -moz-osx-font-smoothing:grayscale;
-    line-height:1.4;
-  }
-
-  .container{max-width:var(--max-width);margin:0 auto;padding:0 24px}
-  .muted{color:var(--muted)}
-
-  /* ===== HEADER (idéntico a servicios.html) ===== */
-  header{
-    position:fixed; top:12px; left:0; right:0;
-    padding:10px 24px; z-index:100;
-    background:transparent;
-  }
-  .nav-inner{
-    width:90%; max-width:90%; margin:0 auto;
-    display:flex; align-items:center; justify-content:space-between; gap:16px;
-    background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.02));
-    backdrop-filter:blur(8px);
-    border-radius:12px; padding:8px 14px;
-  }
-  .logo{display:flex;gap:12px;align-items:center}
-  .logo svg{height:44px;width:auto;display:block}
-  .brand{font-family:Outfit;font-weight:700;letter-spacing:0.6px;font-size:14px}
-  .logo .muted{
-    font-size:12px;
-    color:var(--muted);
-    margin-top:2px;
-    letter-spacing:.2px;
-  }
-
-  nav{display:flex;gap:18px;align-items:center}
-  nav a{color:var(--white);text-decoration:none;font-weight:600;font-size:14px;opacity:0.9;transition:color .2s ease}
-  nav a:hover{color:var(--accent)}
-  .cta{
-    background:transparent;border:1px solid rgba(255,255,255,0.12);
-    padding:10px 14px;border-radius:10px;font-weight:700;cursor:pointer;
-    transition:transform .22s ease, box-shadow .22s ease, border-color .22s ease;
-  }
-  .cta:hover{transform:translateY(-4px);box-shadow:0 8px 30px rgba(0,0,0,0.6);border-color:var(--accent);}
-
-  /* Botón hamburguesa */
-  .hamburger{display:none;flex-direction:column;gap:4px;cursor:pointer;background:none;border:none}
-  .hamburger span{width:22px;height:2px;background:var(--white);display:block;border-radius:2px;transition:.3s}
-  .hamburger.active span:nth-child(1){transform:rotate(45deg) translate(4px,4px)}
-  .hamburger.active span:nth-child(2){opacity:0}
-  .hamburger.active span:nth-child(3){transform:rotate(-45deg) translate(4px,-4px)}
-
-  /* ===== Menú móvil ===== */
-  @media (max-width:680px){
-    nav{
-      display:flex;
-      flex-direction:column;
-      position:fixed;
-      top:70px; left:0; right:0;
-      width:100vw;
-      background:linear-gradient(180deg, rgba(20,20,20,0.95), rgba(0,0,0,0.85));
-      backdrop-filter:blur(12px);
-      border-radius:0 0 14px 14px;
-      box-shadow:0 8px 32px rgba(0,0,0,0.4);
-      z-index:999;
-      padding:20px 0;
-      align-items:center;
-      gap:16px;
-      transform:translateY(-110%);
-      opacity:0;
-      pointer-events:none;
-      transition:transform .35s ease,opacity .35s ease;
-    }
-    nav.open{
-      transform:translateY(0);
-      opacity:1;
-      pointer-events:auto;
-    }
-    .hamburger{display:flex}
-    header{z-index:998;padding:8px}
-    .nav-inner{padding:8px;width:100vw;max-width:100vw}
-    .logo svg{height:36px}
-  }
-
-  /* ===== HERO PORTAFOLIO ===== */
-  .portfolio-hero{
-    min-height:56vh;display:grid;place-items:center;position:relative;overflow:hidden;
-  }
-  .portfolio-hero .media{position:absolute;inset:0;background:#000;}
-  .portfolio-hero picture,img{width:100%;height:100%;object-fit:cover;filter:contrast(.95)saturate(.95);}
-  .portfolio-hero .overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.45),rgba(0,0,0,.7));}
-  .portfolio-hero .content{position:relative;z-index:3;text-align:center;padding:60px 20px;max-width:980px;margin:0 auto;}
-
-  .glitch-title {
-    position:relative;
-    display:inline-block;
-    font-family:'Space Grotesk',sans-serif;
-    font-weight:700;
-    font-size:clamp(2rem,6vw,4rem);
-    text-transform:uppercase;
-    color:var(--white);
-    letter-spacing:2px;
-    text-align:center;
-    animation:flicker 2.4s infinite alternate;
-  }
-  .glitch-title::before,.glitch-title::after{
-    content:attr(data-text);
-    position:absolute;left:0;top:0;width:100%;overflow:hidden;
-  }
-  .glitch-title::before{left:2px;text-shadow:-2px 0 var(--accent);animation:glitchTop 2s infinite linear alternate-reverse;}
-  .glitch-title::after{left:-2px;text-shadow:-2px 0 cyan;animation:glitchBottom 2s infinite linear alternate;}
-  @keyframes flicker{0%,19%,21%,23%,25%,54%,56%,100%{opacity:1;}20%,22%,24%,55%{opacity:.7;}}
-  @keyframes glitchTop{0%{clip:rect(2px,9999px,44px,0);}50%{clip:rect(12px,9999px,35px,0);}100%{clip:rect(2px,9999px,44px,0);}}
-  @keyframes glitchBottom{0%{clip:rect(45px,9999px,80px,0);}50%{clip:rect(55px,9999px,75px,0);}100%{clip:rect(45px,9999px,80px,0);}}
-
-  .portfolio-intro{background:#0a0a0a;padding:60px 0 20px}
-  .portfolio-intro .lead{
-    max-width:920px;margin:0 auto;text-align:center;color:#b0b0b0;line-height:1.6;
-    font-size:clamp(1rem,2.4vw,1.15rem);
-  }
-</style>
-
-<!-- Bloque de corrección móvil -->
-<style id="mobile-nav-fix">
-nav{
-  display:flex;
-  position:static;
-  transform:none;
-  opacity:1;
-  pointer-events:auto;
-  align-items:center;
-  gap:18px;
-}
-.hamburger{display:none;}
-@media (max-width:680px){
-  nav{
-    display:flex;
-    flex-direction:column;
-    position:fixed;
-    top:70px; left:0; right:0;
-    width:100vw;
-    background:linear-gradient(180deg, rgba(20,20,20,0.95), rgba(0,0,0,0.85));
-    backdrop-filter:blur(12px);
-    border-radius:0 0 14px 14px;
-    box-shadow:0 8px 32px rgba(0,0,0,0.4);
-    z-index:999;
-    padding:20px 0;
-    align-items:center;
-    gap:16px;
-    transform:translateY(-110%);
-    opacity:0;
-    pointer-events:none;
-    transition:transform .35s ease,opacity .35s ease;
-  }
-  nav.open{
-    transform:translateY(0);
-    opacity:1;
-    pointer-events:auto;
-  }
-  .hamburger{
-    display:flex;
-    flex-direction:column;
-    gap:4px;
-    cursor:pointer;
-    background:none;
-    border:none;
-    z-index:1000;
-  }
-  .hamburger span{
-    width:24px; height:2px;
-    background:#fff; border-radius:2px;
-    transition:all .3s ease;
-  }
-  .hamburger.active span:nth-child(1){ transform:rotate(45deg) translate(4px,4px);}
-  .hamburger.active span:nth-child(2){opacity:0;}
-  .hamburger.active span:nth-child(3){ transform:rotate(-45deg) translate(4px,-4px);}
-  header{z-index:998;}
-}
-</style>
+    <!-- Bloque de corrección móvil -->
+    <style id="mobile-nav-fix">
+        nav {
+            display: flex;
+            position: static;
+            transform: none;
+            opacity: 1;
+            pointer-events: auto;
+            align-items: center;
+            gap: 18px;
+        }
+        
+        .hamburger {
+            display: none;
+        }
+        
+        @media (max-width:680px) {
+            nav {
+                display: flex;
+                flex-direction: column;
+                position: fixed;
+                top: 70px;
+                left: 0;
+                right: 0;
+                width: 100vw;
+                background: linear-gradient(180deg, rgba(20, 20, 20, 0.95), rgba(0, 0, 0, 0.85));
+                backdrop-filter: blur(12px);
+                border-radius: 0 0 14px 14px;
+                box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+                z-index: 999;
+                padding: 20px 0;
+                align-items: center;
+                gap: 16px;
+                transform: translateY(-110%);
+                opacity: 0;
+                pointer-events: none;
+                transition: transform .35s ease, opacity .35s ease;
+            }
+            nav.open {
+                transform: translateY(0);
+                opacity: 1;
+                pointer-events: auto;
+            }
+            .hamburger {
+                display: flex;
+                flex-direction: column;
+                gap: 4px;
+                cursor: pointer;
+                background: none;
+                border: none;
+                z-index: 1000;
+            }
+            .hamburger span {
+                width: 24px;
+                height: 2px;
+                background: #fff;
+                border-radius: 2px;
+                transition: all .3s ease;
+            }
+            .hamburger.active span:nth-child(1) {
+                transform: rotate(45deg) translate(4px, 4px);
+            }
+            .hamburger.active span:nth-child(2) {
+                opacity: 0;
+            }
+            .hamburger.active span:nth-child(3) {
+                transform: rotate(-45deg) translate(4px, -4px);
+            }
+            header {
+                z-index: 998;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-<header aria-hidden="false">
-  <div class="nav-inner container">
-    <div class="logo">
-      <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+    <header aria-hidden="false">
+        <div class="nav-inner container">
+            <div class="logo">
+                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
         <rect x="10" y="10" width="80" height="80" rx="12" fill="none" stroke="#fff" stroke-width="4"/>
         <path d="M28 68 L50 32 L72 68" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
       </svg>
-      <div>
-        <div class="brand">Angel Sullyvan</div>
-        <div class="muted">Fotografía estratégica · Músicos · Artistas · Creativos</div>
-      </div>
-    </div>
+                <div>
+                    <div class="brand">Angel Sullyvan</div>
+                    <div class="muted">Fotografía estratégica · Músicos · Artistas · Creativos</div>
+                </div>
+            </div>
 
-    <nav aria-label="Menú principal" id="main-nav">
-      <a href="index.html">Inicio</a>
-      <a href="servicios.html">Servicios</a>
-      <a href="portafolio.html">Portafolio</a>
-      <a href="index.html#backstage">Backstage</a>
-      <a href="index.html#testimonios">Testimonios</a>
-      <a href="index.html#contacto" class="cta">Agendar sesión</a>
-    </nav>
+            <nav aria-label="Menú principal" id="main-nav">
+                <a href="index.html">Inicio</a>
+                <a href="servicios.html">Servicios</a>
+                <a href="portafolio.html">Portafolio</a>
+                <a href="index.html#backstage">Backstage</a>
+                <a href="index.html#testimonios">Testimonios</a>
+                <a href="index.html#contacto" class="cta">Agendar sesión</a>
+            </nav>
 
-    <button class="hamburger" aria-label="Abrir menú" id="burger" onclick="toggleMobile()">
+            <button class="hamburger" aria-label="Abrir menú" id="burger" onclick="toggleMobile()">
       <span></span><span></span><span></span>
     </button>
-  </div>
-</header>
+        </div>
+    </header>
 
-<main>
-  <section class="portfolio-hero" aria-label="Hero Portafolio">
-    <div class="media" aria-hidden="true">
-      <picture>
-        <source srcset="https://images.unsplash.com/photo-1507874457470-272b3c8d8ee2?auto=format&fit=crop&w=1600&q=80" type="image/webp">
-        <img src="https://images.unsplash.com/photo-1507874457470-272b3c8d8ee2?auto=format&fit=crop&w=1600&q=80" alt="Luces de estudio y atmósfera editorial">
-      </picture>
-    </div>
-    <div class="overlay" aria-hidden="true"></div>
-    <div class="content container">
-      <h1 class="glitch-title" data-text="PORTAFOLIO">PORTAFOLIO</h1>
-    </div>
-  </section>
+    <main>
+        <section class="portfolio-hero" aria-label="Hero Portafolio">
+            <div class="media" aria-hidden="true">
+                <picture>
+                    <source srcset="https://images.unsplash.com/photo-1507874457470-272b3c8d8ee2?auto=format&fit=crop&w=1600&q=80" type="image/webp">
+                    <img src="https://images.unsplash.com/photo-1507874457470-272b3c8d8ee2?auto=format&fit=crop&w=1600&q=80" alt="Luces de estudio y atmósfera editorial">
+                </picture>
+            </div>
+            <div class="overlay" aria-hidden="true"></div>
+            <div class="content container">
+                <h1 class="glitch-title" data-text="PORTAFOLIO">PORTAFOLIO</h1>
+            </div>
+        </section>
 
-  <section class="portfolio-intro">
-    <div class="container">
-      <p class="lead">
-        Selección curada de trabajos recientes — dirección visual, iluminación y acabado editorial al servicio de tu proyecto musical.
-        Cada sesión está diseñada para comunicar con intención, diferenciarte y generar memorabilidad.
-      </p>
-    </div>
-  </section>
-  <!-- GALERÍA -->
-  <section class="portfolio-grid">
-    <div class="container">
-      <div class="masonry">
-        <!-- Proyecto 1 -->
-        <a class="item glightbox"
-           href="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?auto=format&fit=crop&w=1800&q=90"
-           data-gallery="korn-session"
-           data-title="KORN SESSION — Portada"
-           data-description="Dirección visual con estética industrial, tonos fríos y dramatismo de luz controlada.">
-          <img loading="lazy"
-               src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?auto=format&fit=crop&w=1200&q=80"
-               alt="KORN SESSION — Portada">
-          <div class="meta">KORN SESSION · Editorial</div>
-        </a>
+        <section class="portfolio-intro">
+            <div class="container">
+                <p class="lead">
+                    Selección curada de trabajos recientes — dirección visual, iluminación y acabado editorial al servicio de tu proyecto musical. Cada sesión está diseñada para comunicar con intención, diferenciarte y generar memorabilidad.
+                </p>
+            </div>
+        </section>
 
-        <!-- Internas ocultas -->
-        <a class="glightbox" href="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1800&q=90" data-gallery="korn-session" style="display:none"></a>
-        <a class="glightbox" href="https://images.unsplash.com/photo-1504198453319-5ce911bafcde?auto=format&fit=crop&w=1800&q=90" data-gallery="korn-session" style="display:none"></a>
-        <a class="glightbox" href="https://images.unsplash.com/photo-1517433456452-f9633a875f6f?auto=format&fit=crop&w=1800&q=90" data-gallery="korn-session" style="display:none"></a>
+        <!-- =========================
+     PORTAFOLIO · PRESS KIT
+     ========================= -->
+        <section id="pkp-portfolio" class="section">
+            <style>
+                /* Scoped styles para no chocar con tu CSS */
+                
+                #pkp-portfolio {
+                    padding: clamp(48px, 6vw, 96px) 0;
+                    color: var(--text, #fff);
+                    background: var(--bg, #000);
+                }
+                
+                #pkp-portfolio .wrap {
+                    width: min(1200px, 92vw);
+                    margin: 0 auto;
+                }
+                
+                #pkp-portfolio .eyebrow {
+                    font: 700 clamp(12px, 1.4vw, 14px)/1 'Space Grotesk', system-ui, sans-serif;
+                    letter-spacing: .12em;
+                    text-transform: uppercase;
+                    opacity: .8;
+                }
+                
+                #pkp-portfolio h2 {
+                    font: 700 clamp(28px, 5vw, 52px)/1.1 'Space Grotesk', system-ui, sans-serif;
+                    margin: .5rem 0 1rem;
+                }
+                
+                #pkp-portfolio .sub {
+                    max-width: 58ch;
+                    opacity: .9;
+                    margin-bottom: 2rem;
+                }
+                
+                #pkp-portfolio .note {
+                    display: inline-flex;
+                    align-items: center;
+                    gap: .5rem;
+                    padding: .35rem .7rem;
+                    border-radius: 999px;
+                    font-size: .85rem;
+                    background: color-mix(in srgb, var(--accent, #FF00FF) 16%, transparent);
+                    border: 1px solid color-mix(in srgb, var(--accent, #FF00FF) 40%, transparent);
+                    margin-top: .75rem;
+                }
+                /* Grid */
+                
+                #pkp-portfolio .grid {
+                    display: grid;
+                    grid-template-columns: 1fr;
+                    gap: 14px;
+                }
+                
+                @media (min-width: 640px) {
+                    #pkp-portfolio .grid {
+                        grid-template-columns: repeat(2, 1fr);
+                    }
+                }
+                
+                @media (min-width: 1024px) {
+                    #pkp-portfolio .grid {
+                        grid-template-columns: repeat(3, 1fr);
+                    }
+                }
+                /* Card */
+                
+                #pkp-portfolio .card {
+                    position: relative;
+                    aspect-ratio: 4/5;
+                    overflow: hidden;
+                    border-radius: 16px;
+                    background: #111;
+                    outline: 1px solid color-mix(in srgb, #fff 10%, transparent);
+                    transition: transform .28s ease, outline-color .28s ease;
+                    will-change: transform;
+                }
+                
+                #pkp-portfolio .card:hover {
+                    transform: translateY(-3px);
+                    outline-color: color-mix(in srgb, var(--accent2, #00FFE0) 40%, transparent);
+                }
+                
+                #pkp-portfolio .card img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    display: block;
+                    filter: saturate(1.02) contrast(1.02);
+                    transition: scale .5s ease;
+                }
+                
+                #pkp-portfolio .card:hover img {
+                    scale: 1.03;
+                }
+                /* Overlay */
+                
+                #pkp-portfolio .overlay {
+                    position: absolute;
+                    inset: 0;
+                    background: linear-gradient(to top, rgba(0, 0, 0, .55) 10%, rgba(0, 0, 0, 0) 60%);
+                    display: flex;
+                    align-items: end;
+                    padding: 14px;
+                }
+                
+                #pkp-portfolio .tag {
+                    display: inline-flex;
+                    gap: .45rem;
+                    align-items: center;
+                    background: rgba(0, 0, 0, .45);
+                    border: 1px solid color-mix(in srgb, #fff 18%, transparent);
+                    padding: .35rem .6rem;
+                    border-radius: 999px;
+                    font-size: .78rem;
+                    backdrop-filter: blur(6px);
+                }
+                
+                #pkp-portfolio .tag .dot {
+                    width: 6px;
+                    height: 6px;
+                    border-radius: 999px;
+                    background: var(--accent, #FF00FF);
+                    box-shadow: 0 0 12px var(--accent, #FF00FF);
+                }
+                /* Bloque */
+                
+                #pkp-portfolio .block {
+                    margin: 40px 0 56px;
+                }
+                
+                #pkp-portfolio .block h3 {
+                    font: 700 clamp(18px, 2.6vw, 28px)/1.15 'Space Grotesk', system-ui, sans-serif;
+                    margin: 0 0 8px;
+                }
+                
+                #pkp-portfolio .block p.desc {
+                    margin: 0 0 18px;
+                    max-width: 70ch;
+                    opacity: .9;
+                }
+                /* Footer note */
+                
+                #pkp-portfolio .transition-note {
+                    margin-top: 28px;
+                    padding: 14px 16px;
+                    border-radius: 14px;
+                    background: #0b0b0b;
+                    border: 1px dashed color-mix(in srgb, #fff 18%, transparent);
+                    font-size: .95rem;
+                    opacity: .9;
+                }
+            </style>
 
-        <!-- Más proyectos -->
-        <a class="item glightbox" href="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=1800&q=90" data-gallery="set1" data-title="Proyecto 2 — Editorial">
-          <img loading="lazy" src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=1200&q=80">
-          <div class="meta">Proyecto 2 · Editorial</div>
-        </a>
+            <div class="wrap">
+                <h2>Portafolio en <span style="color:var(--accent, #FF00FF)">construcción</span></h2>
+                <p class="sub">Muestreo curado de trabajos previos, presentado como <strong>exploraciones de conceptos, iluminacion, dirección visual y branding personal</strong> — alineado al enfoque para músicos y artistas.</p>
+                <div class="note" aria-label="Estado de portafolio">
+                    <span>🔧</span><span>Transición activa hacia línea 100% artistas/músicos</span>
+                </div>
 
-        <a class="item" href="#">
-          <img loading="lazy" src="https://images.unsplash.com/photo-1520975910124-7e7f9b7b7f2b?auto=format&fit=crop&w=1200&q=80">
-          <div class="meta">Proyecto 3 · Press Kit</div>
-        </a>
+                <!-- =======================
+         1) HIGH KEY SERIES
+         ======================= -->
+                <div class="block" id="high-key">
+                    <h3>High Key Series — Exploraciones de Luz y Presencia</h3>
+                    <p class="desc">Retratos en clave alta para tests de presencia, expresión, tonos y texturas de diferentes tipos de piel. Minimalista, directo, usable como fotografía de perfil distribución digital; campañas visuales de pop, R&B o música comercial;
+                        o cover o interior de álbum en tono “pureza / introspección / vulnerabilidad”.</p>
 
-        <a class="item glightbox" href="https://images.unsplash.com/photo-1504198453319-5ce911bafcde?auto=format&fit=crop&w=1800&q=90" data-gallery="set2" data-title="Proyecto 4 — Single Art">
-          <img loading="lazy" src="https://images.unsplash.com/photo-1504198453319-5ce911bafcde?auto=format&fit=crop&w=1200&q=80">
-          <div class="meta">Proyecto 4 · Single Art</div>
-        </a>
+                    <div class="grid">
+                        <!-- Reemplaza las rutas de imagen por tus archivos -->
+                        <a href="/img/portafolio/High Key Series//SS_001b.jpg" class="card glightbox" data-gallery="highkey" data-title="Dirección visual en clave alta · Serie High Key" aria-label="Abrir imagen en lightbox: High Key 01">
+                            <img src="/img/portafolio/High Key Series//SS_001b.jpg" alt="Retrato high key con fondo blanco y gesto frontal">
+                            <div class="overlay"><span class="tag"><span class="dot"></span>High Key · 01</span>
+                            </div>
+                        </a>
 
-        <a class="item" href="#">
-          <img loading="lazy" src="https://images.unsplash.com/photo-1514512364185-1f7a2b8f2a1f?auto=format&fit=crop&w=1200&q=80">
-          <div class="meta">Proyecto 5 · Backstage</div>
-        </a>
+                        <a href="/img/portfolio/high-key/high-key-02-xl.jpg" class="card glightbox" data-gallery="highkey" data-title="Presencia y minimalismo · Serie High Key" aria-label="Abrir imagen High Key 02">
+                            <img src="/img/portfolio/high-key/high-key-02.jpg" alt="Retrato high key con iluminación suave y mirada directa">
+                            <div class="overlay"><span class="tag"><span class="dot"></span>High Key · 02</span>
+                            </div>
+                        </a>
 
-        <a class="item glightbox" href="https://images.unsplash.com/photo-1517433456452-f9633a875f6f?auto=format&fit=crop&w=1800&q=90" data-gallery="set2" data-title="Proyecto 6 — Retrato">
-          <img loading="lazy" src="https://images.unsplash.com/photo-1517433456452-f9633a875f6f?auto=format&fit=crop&w=1200&q=80">
-          <div class="meta">Proyecto 6 · Retrato</div>
-        </a>
-      </div>
-    </div>
-  </section>
+                        <a href="/img/portfolio/high-key/high-key-03-xl.jpg" class="card glightbox" data-gallery="highkey" data-title="Iluminación avanzada para press kit" aria-label="Abrir imagen High Key 03">
+                            <img src="/img/portfolio/high-key/high-key-03.jpg" alt="Retrato high key con recorte cercano y actitud editorial">
+                            <div class="overlay"><span class="tag"><span class="dot"></span>High Key · 03</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
 
-  <section class="portfolio-cta">
-    <div class="container">
-      <div class="wrap">
-        <h3>¿Listo para construir imágenes que te posicionen?</h3>
-        <p>Diseñemos una sesión con dirección visual clara y resultados editoriales.</p>
-        <a href="index.html#contacto" class="btn-primary">Agendar sesión</a>
-      </div>
-    </div>
-  </section>
-</main>
 
-<footer>
-  <div class="container">
-    <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
-      <div class="muted">© 2025 Angel Sullyvan</div>
-      <div class="muted">Hecho para músicos que quieren ser vistos</div>
-    </div>
-  </div>
-</footer>
+                <!-- =======================
+         2) CONCEPT SERIES
+         ======================= -->
+                <div class="block" id="concept-series">
+                    <h3>Concept Series — Escenografías Conceptuales</h3>
+                    <p class="desc">Dirección artística basada en mundos visuales. Ideal para portada de single/EP, key art o campaña de lanzamiento.</p>
 
-<a class="whatsapp" href="https://wa.me/524464086741" target="_blank" rel="noopener" aria-label="Enviar WhatsApp">
-  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <div class="grid">
+                        <!-- SELVA 01 -->
+                        <a href="/img/portfolio/concept/selva-01-xl.jpg" class="card glightbox" data-gallery="concept" data-title="Escenografía conceptual · Selva 01" aria-label="Abrir imagen Selva 01">
+                            <img src="/img/portfolio/concept/selva-01.jpg" alt="Retrato conceptual con temática de selva, verdes y texturas orgánicas">
+                            <div class="overlay"><span class="tag"><span class="dot"></span>Selva · 01</span>
+                            </div>
+                        </a>
+
+                        <!-- SELVA 02 -->
+                        <a href="/img/portfolio/concept/selva-02-xl.jpg" class="card glightbox" data-gallery="concept" data-title="Escenografía conceptual · Selva 02" aria-label="Abrir imagen Selva 02">
+                            <img src="/img/portfolio/concept/selva-02.jpg" alt="Retrato conceptual temático de selva con iluminación dramática">
+                            <div class="overlay"><span class="tag"><span class="dot"></span>Selva · 02</span>
+                            </div>
+                        </a>
+
+                        <!-- NOVIA (retratada como portada) -->
+                        <a href="/img/portfolio/concept/novia-01-xl.jpg" class="card glightbox" data-gallery="concept" data-title="Concept Cover · Ritual / Pureza" aria-label="Abrir imagen Concept Novia">
+                            <img src="/img/portfolio/concept/novia-01.jpg" alt="Retrato conceptual estilizado tipo portada, estética ritual/pureza">
+                            <div class="overlay"><span class="tag"><span class="dot"></span>Concept · Cover</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- =======================
+         3)  STUDIO CREW SERIES
+         ======================= -->
+                <div class="block" id="concept-series">
+                    <h3>Studio Crew Series — Backstage & Presencia</h3>
+                    <p class="desc">Retratos escénicos realizados en barbería. Inspirados en el universo backstage y el poder visual de quienes construyen la imagen de los artistas</p>
+
+                    <div class="grid">
+                        <!-- SELVA 01 -->
+                        <a href="/img/portfolio/concept/selva-01-xl.jpg" class="card glightbox" data-gallery="concept" data-title="Escenografía conceptual · Selva 01" aria-label="Abrir imagen Selva 01">
+                            <img src="/img/portfolio/concept/selva-01.jpg" alt="Retrato conceptual con temática de selva, verdes y texturas orgánicas">
+                            <div class="overlay"><span class="tag"><span class="dot"></span>Selva · 01</span>
+                            </div>
+                        </a>
+
+                        <!-- SELVA 02 -->
+                        <a href="/img/portfolio/concept/selva-02-xl.jpg" class="card glightbox" data-gallery="concept" data-title="Escenografía conceptual · Selva 02" aria-label="Abrir imagen Selva 02">
+                            <img src="/img/portfolio/concept/selva-02.jpg" alt="Retrato conceptual temático de selva con iluminación dramática">
+                            <div class="overlay"><span class="tag"><span class="dot"></span>Selva · 02</span>
+                            </div>
+                        </a>
+
+                        <!-- NOVIA (retratada como portada) -->
+                        <a href="/img/portfolio/concept/novia-01-xl.jpg" class="card glightbox" data-gallery="concept" data-title="Concept Cover · Ritual / Pureza" aria-label="Abrir imagen Concept Novia">
+                            <img src="/img/portfolio/concept/novia-01.jpg" alt="Retrato conceptual estilizado tipo portada, estética ritual/pureza">
+                            <div class="overlay"><span class="tag"><span class="dot"></span>Concept · Cover</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- =======================
+         3) STRATEGIC PORTRAITS
+         ======================= -->
+                <div class="block" id="strategic-portraits">
+                    <h3>Strategic Portraits — Imagen Profesional / Marca Personal</h3>
+                    <p class="desc">Retratos con intención para comunicar autoridad y presencia. Aplicable a artistas que profesionalizan su imagen pública.</p>
+
+                    <div class="grid">
+                        <a href="/img/portfolio/strategic/brand-01-xl.jpg" class="card glightbox" data-gallery="brand" data-title="Retrato editorial con intención de marca" aria-label="Abrir imagen Brand 01">
+                            <img src="/img/portfolio/strategic/brand-01.jpg" alt="Retrato editorial con iluminación cinematográfica y actitud segura">
+                            <div class="overlay"><span class="tag"><span class="dot"></span>Brand · 01</span>
+                            </div>
+                        </a>
+
+                        <a href="/img/portfolio/strategic/brand-02-xl.jpg" class="card glightbox" data-gallery="brand" data-title="Presencia y dirección visual" aria-label="Abrir imagen Brand 02">
+                            <img src="/img/portfolio/strategic/brand-02.jpg" alt="Retrato estratégico con fondo neutro y expresión enfocada">
+                            <div class="overlay"><span class="tag"><span class="dot"></span>Brand · 02</span>
+                            </div>
+                        </a>
+
+                        <a href="/img/portfolio/strategic/brand-03-xl.jpg" class="card glightbox" data-gallery="brand" data-title="Headshot editorial · Autoridad" aria-label="Abrir imagen Brand 03">
+                            <img src="/img/portfolio/strategic/brand-03.jpg" alt="Headshot editorial con encuadre limpio y look profesional">
+                            <div class="overlay"><span class="tag"><span class="dot"></span>Brand · 03</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Nota final temporal -->
+                <div class="transition-note" role="note">
+                    <strong>Nota</strong>: Portafolio en transición hacia la línea <em>Press Kit Photography</em>. Las imágenes actuales son exploraciones técnicas y conceptuales que ilustran iluminación avanzada, dirección visual y construcción de imagen.
+                </div>
+            </div>
+
+            <!-- Init GLightbox (si ya cargas la librería globalmente, esto la activa) -->
+            <script>
+                if (typeof GLightbox === 'function') {
+                    GLightbox({
+                        selector: '.glightbox'
+                    });
+                }
+            </script>
+        </section>
+
+
+
+        <section class="portfolio-cta">
+            <div class="container">
+                <div class="wrap">
+                    <h3>¿Listo para construir imágenes que te posicionen?</h3>
+                    <p>Diseñemos una sesión con dirección visual clara y resultados editoriales.</p>
+                    <a href="index.html#contacto" class="btn-primary">Agendar sesión</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
+                <div class="muted">© 2025 Angel Sullyvan</div>
+                <div class="muted">Hecho para músicos que quieren ser vistos</div>
+            </div>
+        </div>
+    </footer>
+
+    <a class="whatsapp" href="https://wa.me/524464086741" target="_blank" rel="noopener" aria-label="Enviar WhatsApp">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
     <path d="M20.52 3.48A11.9 11.9 0 0 0 12 0C5.373 0 .028 4.9.028 11.5c0 2 .523 3.9 1.51 5.6L0 24l7.07-1.5c1.63.9 3.46 1.4 5.36 1.4 6.627 0 12-4.9 12-11.5 0-3.07-1.37-5.95-3.91-8.02z" fill="#25D366"/>
     <path d="M17.2 14.2c-.4-.2-2.2-1.1-2.6-1.2-.4-.1-.6-.2-1 .2l-.7.8c-.2.2-.4.3-.7.1-1.9-1-3.2-2.8-3.6-3.3-.2-.3 0-.5.2-.7.2-.2.4-.5.5-.7.1-.2.1-.4 0-.6l-1.2-2.9c-.3-.8-.6-.7-.8-.7h-.7c-.2 0-.6.1-.9.4-.3.3-1.2 1.1-1.2 2.6s1.2 3 1.4 3.2c.2.3 2.4 3.9 5.8 5.4 2.2 1 3 .9 4.1.8.7-.1 2.2-.9 2.5-1.7.3-.8.3-1.6.2-1.7-.1-.1-.4-.2-.8-.4z" fill="#fff"/>
   </svg>
-</a>
+    </a>
 
-<!-- Scripts -->
-<script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
-<script id="mobile-nav-fix-js">
-function toggleMobile(){
-  const nav = document.querySelector('nav');
-  const burger = document.getElementById('burger');
-  if (!nav) return;
-  nav.classList.toggle('open');
-  if (burger) burger.classList.toggle('active');
-}
-// Reset al salir de móvil
-(function(){
-  const mq = window.matchMedia('(max-width: 680px)');
-  function handleMQ(e){
-    const nav = document.querySelector('nav');
-    const burger = document.getElementById('burger');
-    if (!nav) return;
-    if(!e.matches){ // desktop
-      nav.classList.remove('open');
-      if (burger) burger.classList.remove('active');
-      nav.style.removeProperty('display');
-      nav.style.removeProperty('transform');
-      nav.style.removeProperty('opacity');
-      nav.style.removeProperty('pointer-events');
-      nav.style.removeProperty('position');
-    }
-  }
-  if (mq.addEventListener) mq.addEventListener('change', handleMQ);
-  else if (mq.addListener) mq.addListener(handleMQ);
-  handleMQ(mq);
-})();
-const lightbox=GLightbox({selector:'.glightbox',touchNavigation:true,loop:true,zoomable:true,autoplayVideos:false});
-</script>
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+    <script id="mobile-nav-fix-js">
+        function toggleMobile() {
+            const nav = document.querySelector('nav');
+            const burger = document.getElementById('burger');
+            if (!nav) return;
+            nav.classList.toggle('open');
+            if (burger) burger.classList.toggle('active');
+        }
+        // Reset al salir de móvil
+        (function() {
+            const mq = window.matchMedia('(max-width: 680px)');
 
-<style>
-  /* ===== Masonry, CTA, Footer ===== */
-  .masonry{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;padding:30px 0 10px;}
-  .masonry .item{position:relative;border-radius:12px;overflow:hidden;min-height:240px;background:#111;border:1px solid rgba(255,255,255,0.03);transition:transform .5s cubic-bezier(.2,.9,.2,1),box-shadow .5s;}
-  .masonry .item img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .8s cubic-bezier(.2,.9,.2,1);}
-  .masonry .item:hover{transform:translateY(-4px);box-shadow:0 24px 60px rgba(0,0,0,0.6);}
-  .masonry .item:hover img{transform:scale(1.06);}
-  .masonry .meta{position:absolute;left:12px;bottom:12px;color:var(--white);font-weight:700;background:linear-gradient(90deg,rgba(0,0,0,0.6),rgba(0,0,0,0.25));padding:10px 12px;border-radius:8px;letter-spacing:.3px;}
-  @media (max-width:992px){.masonry{grid-template-columns:repeat(2,1fr);}}
-  @media (max-width:680px){.masonry{grid-template-columns:1fr;}}
+            function handleMQ(e) {
+                const nav = document.querySelector('nav');
+                const burger = document.getElementById('burger');
+                if (!nav) return;
+                if (!e.matches) { // desktop
+                    nav.classList.remove('open');
+                    if (burger) burger.classList.remove('active');
+                    nav.style.removeProperty('display');
+                    nav.style.removeProperty('transform');
+                    nav.style.removeProperty('opacity');
+                    nav.style.removeProperty('pointer-events');
+                    nav.style.removeProperty('position');
+                }
+            }
+            if (mq.addEventListener) mq.addEventListener('change', handleMQ);
+            else if (mq.addListener) mq.addListener(handleMQ);
+            handleMQ(mq);
+        })();
+        const lightbox = GLightbox({
+            selector: '.glightbox',
+            touchNavigation: true,
+            loop: true,
+            zoomable: true,
+            autoplayVideos: false
+        });
+    </script>
 
-  .portfolio-cta{background:linear-gradient(180deg,#0a0a0a 0%,#0c0c0c 100%);padding:80px 0;margin-top:10px;}
-  .portfolio-cta .wrap{max-width:920px;margin:0 auto;text-align:center}
-  .portfolio-cta h3{font-family:"Outfit",sans-serif;font-size:clamp(1.6rem,3.6vw,2rem);font-weight:800;margin:0 0 8px;color:#fff}
-  .portfolio-cta p{color:#b0b0b0;margin:0 0 16px}
-  .btn-primary{background:linear-gradient(90deg,var(--accent),#ff7ab5 120%);color:#060606;padding:12px 20px;border-radius:12px;border:none;font-weight:800;cursor:pointer;box-shadow:0 8px 30px rgba(255,46,157,0.12),0 2px 6px rgba(0,0,0,0.6);transition:transform .2s ease,box-shadow .2s;text-decoration:none;display:inline-block;}
-  .btn-primary:hover{transform:translateY(-4px);box-shadow:0 18px 50px rgba(255,46,157,0.14);}
-
-  footer{padding:28px 0;color:var(--muted);text-align:center;border-top:1px solid rgba(255,255,255,0.03);}
-
-  .whatsapp {
-    position:fixed;
-    bottom:calc(env(safe-area-inset-bottom,0px)+clamp(16px,3vh,28px));
-    right:calc(env(safe-area-inset-right,0px)+clamp(16px,3vw,28px));
-    width:clamp(48px,5vw,60px);
-    height:clamp(48px,5vw,60px);
-    display:grid;place-items:center;
-    border-radius:50%;
-    background:radial-gradient(circle at 10% 10%,#3CFF90,#25D366 70%,#1EBE5D 100%);
-    box-shadow:0 0 10px rgba(37,211,102,.25),inset 0 0 8px rgba(255,255,255,.15);
-    animation:pulse-green 3s infinite ease-in-out;
-    z-index:99;
-    transition:all .3s ease;
-    backdrop-filter:blur(4px);
-  }
-  .whatsapp:hover{transform:scale(1.05);box-shadow:0 0 20px rgba(37,211,102,.4),inset 0 0 12px rgba(255,255,255,.25);}
-  .whatsapp img{width:28px;height:28px;filter:brightness(0) invert(1);}
-  @keyframes pulse-green{
-    0%{box-shadow:0 0 10px rgba(37,211,102,0.25),inset 0 0 8px rgba(255,255,255,0.15);}
-    50%{box-shadow:0 0 25px rgba(37,211,102,0.5),inset 0 0 12px rgba(255,255,255,0.25);}
-    100%{box-shadow:0 0 10px rgba(37,211,102,0.25),inset 0 0 8px rgba(255,255,255,0.15);}
-  }
-</style>
+    <style>
+        /* ===== Masonry, CTA, Footer ===== */
+        
+        .masonry {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 14px;
+            padding: 30px 0 10px;
+        }
+        
+        .masonry .item {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            min-height: 240px;
+            background: #111;
+            border: 1px solid rgba(255, 255, 255, 0.03);
+            transition: transform .5s cubic-bezier(.2, .9, .2, 1), box-shadow .5s;
+        }
+        
+        .masonry .item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform .8s cubic-bezier(.2, .9, .2, 1);
+        }
+        
+        .masonry .item:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 24px 60px rgba(0, 0, 0, 0.6);
+        }
+        
+        .masonry .item:hover img {
+            transform: scale(1.06);
+        }
+        
+        .masonry .meta {
+            position: absolute;
+            left: 12px;
+            bottom: 12px;
+            color: var(--white);
+            font-weight: 700;
+            background: linear-gradient(90deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.25));
+            padding: 10px 12px;
+            border-radius: 8px;
+            letter-spacing: .3px;
+        }
+        
+        @media (max-width:992px) {
+            .masonry {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width:680px) {
+            .masonry {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .portfolio-cta {
+            background: linear-gradient(180deg, #0a0a0a 0%, #0c0c0c 100%);
+            padding: 80px 0;
+            margin-top: 10px;
+        }
+        
+        .portfolio-cta .wrap {
+            max-width: 920px;
+            margin: 0 auto;
+            text-align: center
+        }
+        
+        .portfolio-cta h3 {
+            font-family: "Outfit", sans-serif;
+            font-size: clamp(1.6rem, 3.6vw, 2rem);
+            font-weight: 800;
+            margin: 0 0 8px;
+            color: #fff
+        }
+        
+        .portfolio-cta p {
+            color: #b0b0b0;
+            margin: 0 0 16px
+        }
+        
+        .btn-primary {
+            background: linear-gradient(90deg, var(--accent), #ff7ab5 120%);
+            color: #060606;
+            padding: 12px 20px;
+            border-radius: 12px;
+            border: none;
+            font-weight: 800;
+            cursor: pointer;
+            box-shadow: 0 8px 30px rgba(255, 46, 157, 0.12), 0 2px 6px rgba(0, 0, 0, 0.6);
+            transition: transform .2s ease, box-shadow .2s;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 18px 50px rgba(255, 46, 157, 0.14);
+        }
+        
+        footer {
+            padding: 28px 0;
+            color: var(--muted);
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.03);
+        }
+        
+        .whatsapp {
+            position: fixed;
+            bottom: calc(env(safe-area-inset-bottom, 0px)+clamp(16px, 3vh, 28px));
+            right: calc(env(safe-area-inset-right, 0px)+clamp(16px, 3vw, 28px));
+            width: clamp(48px, 5vw, 60px);
+            height: clamp(48px, 5vw, 60px);
+            display: grid;
+            place-items: center;
+            border-radius: 50%;
+            background: radial-gradient(circle at 10% 10%, #3CFF90, #25D366 70%, #1EBE5D 100%);
+            box-shadow: 0 0 10px rgba(37, 211, 102, .25), inset 0 0 8px rgba(255, 255, 255, .15);
+            animation: pulse-green 3s infinite ease-in-out;
+            z-index: 99;
+            transition: all .3s ease;
+            backdrop-filter: blur(4px);
+        }
+        
+        .whatsapp:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(37, 211, 102, .4), inset 0 0 12px rgba(255, 255, 255, .25);
+        }
+        
+        .whatsapp img {
+            width: 28px;
+            height: 28px;
+            filter: brightness(0) invert(1);
+        }
+        
+        @keyframes pulse-green {
+            0% {
+                box-shadow: 0 0 10px rgba(37, 211, 102, 0.25), inset 0 0 8px rgba(255, 255, 255, 0.15);
+            }
+            50% {
+                box-shadow: 0 0 25px rgba(37, 211, 102, 0.5), inset 0 0 12px rgba(255, 255, 255, 0.25);
+            }
+            100% {
+                box-shadow: 0 0 10px rgba(37, 211, 102, 0.25), inset 0 0 8px rgba(255, 255, 255, 0.15);
+            }
+        }
+    </style>
 </body>
+
 </html>

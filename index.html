@@ -382,81 +382,118 @@
             opacity: 1;
             transform: translateY(0);
         }
-        /* === TYPEWRITER RESPONSIVE Y LINEA POR LINEA === */
-        /* === TYPEWRITER REAL, RESPONSIVE Y SIN DESPLAZES === */
+        /* VISIÓN ESTRATÉGICA — declaración editorial */
         
-        .typewriter-container {
-            display: block;
-            max-width: 90%;
+        .vision-section {
+            padding: 90px 24px 110px;
+            background: var(--bg);
+        }
+        
+        .vision-section .section-title {
+            margin: 0 0 34px;
+        }
+        
+        .vision-inner {
+            width: min(100%, 1120px);
             margin: 0 auto;
-            text-align: left;
-            white-space: normal;
-            word-wrap: break-word;
-            line-height: 1.5;
         }
-        /* cada línea individual */
         
-        .typewriter-line {
-            display: block;
-            overflow: hidden;
-            border-right: 0.15em solid var(--accent2);
-            white-space: nowrap;
-            /* 🔥 impide que se parta mientras se escribe */
-            width: 0;
-            /* 🔥 oculta todo el texto inicialmente */
+        .vision-headline {
+            max-width: 1000px;
+            margin: 0 auto 58px;
+            text-align: center;
+            font-family: 'Space Grotesk', Outfit, sans-serif;
+            font-size: clamp(36px, 5.2vw, 76px);
+            font-weight: 700;
+            line-height: 1.08;
+            letter-spacing: -.035em;
+            text-wrap: balance;
+        }
+        
+        .vision-headline span {
+            color: var(--accent);
+        }
+        
+        .vision-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 24px;
+        }
+        
+        .vision-block {
+            border-top: 2px solid rgba(0, 255, 224, .65);
+            padding: 24px 8px 0 0;
+            min-width: 0;
+        }
+        
+        .vision-label {
+            margin: 0 0 16px;
+            color: var(--accent2);
+            font-family: Outfit, sans-serif;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: .13em;
+        }
+        
+        .vision-paragraph {
+            margin: 0;
+            font-family: Inter, sans-serif;
+            font-size: clamp(16px, 1.2vw, 18px);
+            font-weight: 400;
+            line-height: 1.75;
+            color: #e5e5e5;
+            text-wrap: pretty;
             opacity: 0;
-            /* 🔥 invisibles al inicio */
-            animation: typing 4s steps(60, end) forwards, blink 0.7s step-end infinite;
+            transform: translateY(20px);
+            transition: opacity .7s ease, transform .7s ease;
         }
-        /* animación de escritura */
         
-        @keyframes typing {
-            from {
-                width: 0;
+        .vision-paragraph.is-visible {
+            opacity: 1;
+            transform: none;
+        }
+        
+        .vision-paragraph strong {
+            color: #fff;
+            font-weight: 700;
+        }
+        
+        @media (max-width: 900px) {
+            .vision-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+                max-width: 700px;
+                margin: 0 auto;
+            }
+            .vision-headline {
+                margin-bottom: 44px;
+            }
+        }
+        
+        @media (max-width: 680px) {
+            .vision-section {
+                padding: 64px 20px 78px;
+            }
+            .vision-section .section-title {
+                margin-bottom: 28px;
+            }
+            .vision-headline {
+                font-size: clamp(34px, 9vw, 48px);
+            }
+            .vision-block {
+                padding-top: 18px;
+            }
+            .vision-paragraph {
+                font-size: 16px;
+                line-height: 1.7;
+            }
+        }
+        
+        @media (prefers-reduced-motion: reduce) {
+            .vision-paragraph {
                 opacity: 1;
-            }
-            to {
-                width: 100%;
-                opacity: 1;
-            }
-        }
-        /* cursor parpadeante */
-        
-        @keyframes blink {
-            from,
-            to {
-                border-color: transparent;
-            }
-            50% {
-                border-color: var(--accent2);
-            }
-        }
-        /* animaciones escalonadas por línea */
-        
-        .typewriter-line:nth-child(1) {
-            animation-delay: 0s, 4s;
-        }
-        
-        .typewriter-line:nth-child(2) {
-            animation-delay: 4.5s, 8.5s;
-        }
-        
-        .typewriter-line:nth-child(3) {
-            animation-delay: 9s, 13s;
-        }
-        
-        .typewriter-line:nth-child(4) {
-            animation-delay: 13.5s, 17.5s;
-        }
-        /* para móviles */
-        
-        @media (max-width: 768px) {
-            .typewriter-container {
-                max-width: 95%;
-                font-size: 0.95rem;
-            }
-            .typewriter-line {
-                border-right: 0.1em solid var(--accent2);
+                transform: none;
+                transition: none;
             }
         }
         /* GRID: servicios / proceso */
@@ -965,37 +1002,27 @@
             <h2 class="glitch" data-text="BRANDING PHOTOGRAPHY FOR ARTISTS.">BRANDING PHOTOGRAPHY FOR ARTISTS.</h2>
         </section>
 
-        <!-- NUEVA SECCIÓN STATEMENT 2 -->
-
-        <h2 class="section-title" data-text="VISIÓN ESTRATÉGICA">VISIÓN ESTRATÉGICA</h2>
-
-        <p class="typewriter-container">
-            <span class="typewriter-line">En un entorno digital saturado de <strong>imágenes,<br> 
-              estímulos y contenidos</strong>, muchos músicos y <br>
-              artistas logran poco alcance porque su <br>
-              comunicación visual <strong>carece de dirección, <br>
-                coherencia y narrativa</strong>. Aunque su música <br>
-                sea sólida, su imagen no genera conexión ni <br>
-                recordación.<br></br></span>
-            <span class="typewriter-line">La imagen pública de un artista no se trata solo 
-              <br>de estética, sino de <strong>percepción y propósito</strong>.<br> 
-              Usar una fotografía mal planificada puede hacerte ver<br> 
-              <strong>amateur</strong>, aunque tu música sea profesional;<br> 
-              <strong>genérico</strong>, aunque tu sonido sea auténtico.  <br></br></span>
-            <span class="typewriter-line">Tu sonido merece una imagen a la misma altura.<br>
-              La <strong>falta de coherencia visual</strong> limita el alcance,<br>
-              la conexión y la permanencia en la memoria del público.<br></br></span>
-            <span class="typewriter-line">A través de la <strong>fotografía</strong>, ayudo a músicos y <br>
-              artistas a proyectar una identidad visual<br>
-              coherente con su sonido. Cada sesión combina<br>
-              <strong>dirección artística, narrativa visual</strong> y <strong>estrategia de imagen</strong><br>
-              para crear retratos que no solo lucen<br>
-              bien, sino que revelan quién eres y te posicionan<br>
-               como artista.<br></br></span>
-        </p>
-
-
-
+        <!-- VISIÓN ESTRATÉGICA -->
+        <section class="vision-section" id="vision-estrategica" aria-labelledby="vision-title">
+            <div class="vision-inner">
+                <h2 class="section-title" id="vision-title" data-text="VISIÓN ESTRATÉGICA">VISIÓN ESTRATÉGICA</h2>
+                <p class="vision-headline">TU SONIDO MERECE UNA IMAGEN <span>A LA MISMA ALTURA.</span></p>
+                <div class="vision-grid">
+                    <article class="vision-block">
+                        <h3 class="vision-label">01 / EL PROBLEMA</h3>
+                        <p class="vision-paragraph">En un entorno digital saturado de contenidos, una identidad visual <strong>sin dirección</strong> dificulta que tu proyecto destaque y permanezca en la memoria del público.</p>
+                    </article>
+                    <article class="vision-block">
+                        <h3 class="vision-label">02 / LA CONSECUENCIA</h3>
+                        <p class="vision-paragraph">Una imagen mal planificada puede hacerte ver <strong>amateur</strong>, aunque tu música sea profesional, o <strong>genérico</strong>, aunque tu sonido tenga una identidad propia.</p>
+                    </article>
+                    <article class="vision-block">
+                        <h3 class="vision-label">03 / MI ENFOQUE</h3>
+                        <p class="vision-paragraph">Combino <strong>fotografía estratégica, dirección artística y narrativa visual</strong> para construir imágenes coherentes con tu universo musical y fortalecer la manera en que tu público te percibe.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
 
         <!-- NUEVA SECCIÓN SERVICIOS -->
         <section id="servicios" class="interactive-services">
@@ -1026,7 +1053,7 @@
                     </div>
                     <div class="service-card" data-bg="https://images.unsplash.com/photo-1607706189992-eae578626c86?auto=format&fit=crop&w=1200&q=80">
                         <div class="service-title">
-                            <h3>2. Producción Fotográfica Editorial</h3>
+                            <h3>2. Dirección Editorial y Marca Visual</h3>
                             <svg class="click-hint" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
               <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5" fill="none"/>
               <line x1="12" y1="10" x2="12" y2="16" stroke="currentColor" stroke-width="1.5"/>
@@ -1217,6 +1244,24 @@
             })
         });
 
+        // Aparición progresiva de los párrafos de Visión Estratégica
+        const visionParagraphs = document.querySelectorAll('.vision-paragraph');
+        if ('IntersectionObserver' in window) {
+            const visionObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.12
+            });
+            visionParagraphs.forEach(paragraph => visionObserver.observe(paragraph));
+        } else {
+            visionParagraphs.forEach(paragraph => paragraph.classList.add('is-visible'));
+        }
+
         // Track lead (placeholder)
         function trackLead() {
             console.log('Lead enviado')
@@ -1241,6 +1286,3 @@
 </body>
 
 </html>
-
-
-

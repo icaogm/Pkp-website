@@ -63,6 +63,44 @@
 
 
 .hero{min-height:56vh;min-height:56svh;padding:145px 0 80px;text-align:center}.hero .glitch-title{font-family:'Space Grotesk',sans-serif;font-size:clamp(2rem,6vw,4rem);letter-spacing:2px;margin:0}.identity-intro .hero-copy{max-width:900px}.identity-intro h2{font-size:clamp(2.2rem,4.8vw,4rem);letter-spacing:-.035em}.identity-intro h2 span{color:var(--accent)}@media(prefers-reduced-motion:reduce){.glitch-title,.glitch-title:before,.glitch-title:after{animation:none!important}.glitch-title:before,.glitch-title:after{display:none}}
+</style><style id="original-header-restored">header{
+  position:fixed; top:12px; left:0; right:0;
+  padding:10px 24px; z-index:100;
+  background:transparent; /* como el original */
+}
+header .nav-inner{
+  width:90%; max-width:90%; margin:0 auto;
+  display:flex; align-items:center; justify-content:space-between; gap:16px;
+  background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.02));
+  backdrop-filter: blur(8px);
+  border-radius:12px; padding:8px 14px;
+}
+header .logo{display:flex;gap:12px;align-items:center}
+header .logo svg{height:44px;width:auto;display:block}
+header .brand{font-family:Outfit;font-weight:700;letter-spacing:0.6px;font-size:14px}
+
+header nav{display:flex;gap:18px;align-items:center}
+header nav a{color:var(--white);text-decoration:none;font-weight:600;font-size:14px;opacity:0.9;transition:color .2s ease}
+header nav a:hover{color:var(--accent)}
+header .cta{
+  background:transparent; border:1px solid rgba(255,255,255,0.12);
+  padding:10px 14px; border-radius:10px; font-weight:700; cursor:pointer;
+  transition:transform .22s ease, box-shadow .22s ease, border-color .22s ease;
+}
+header .cta:hover{transform:translateY(-4px);box-shadow:0 8px 30px rgba(0,0,0,0.6);border-color:var(--accent);}
+
+
+header{border-bottom:0;backdrop-filter:none}header .logo svg{flex-shrink:0}header .logo .muted{display:block}header nav a[aria-current]{color:var(--white)}header nav a:hover{color:var(--accent)}header .cta{border-color:rgba(255,255,255,.12)}header .hamburger{border:0;border-radius:0;padding:10px;background:none}header .hamburger span{margin:0}header .hamburger{gap:4px}header .nav-inner{max-width:90%}header nav a{min-height:0}header .hamburger.active span:nth-child(1){transform:rotate(45deg) translate(4px,4px)}header .hamburger.active span:nth-child(2){opacity:0}header .hamburger.active span:nth-child(3){transform:rotate(-45deg) translate(4px,-4px)}
+@media(min-width:681px){header .hamburger{display:none}body.js header nav:not(.open),header nav{display:flex;flex-direction:row;position:static;width:auto;padding:0;background:transparent;border:0;box-shadow:none;gap:18px}header{padding:10px 24px}header .nav-inner{padding:8px 14px}}
+@media(max-width:680px){header{padding:8px}header .nav-inner{width:100%;max-width:100%;padding:8px}header .logo svg{height:36px;width:auto}header .hamburger{display:flex;flex-direction:column}header nav{display:flex;flex-direction:column;position:fixed;top:70px;left:0;right:0;width:100%;background:linear-gradient(180deg,rgba(20,20,20,.95),rgba(0,0,0,.85));backdrop-filter:blur(12px);border-radius:0 0 14px 14px;box-shadow:0 8px 32px rgba(0,0,0,.4);padding:20px 0;gap:16px}body.js header nav:not(.open){display:none}header nav a{min-height:44px}header .logo{min-width:0}header .logo .muted{font-size:clamp(9px,2.4vw,12px)!important}header .brand{font-size:14px}}
+</style><style id="original-hero-background">
+/* Fondo y proporciones tomados del hero del index proporcionado. */
+.hero{min-height:72vh;display:grid;place-items:center;position:relative;overflow:hidden;padding:0;isolation:isolate}
+.hero .hero-media{position:absolute;inset:0;background:#000;z-index:0}
+.hero .hero-media picture,.hero .hero-media img{width:100%;height:100%;object-fit:cover;display:block;filter:contrast(.95) saturate(.95)}
+.hero .hero-media img{object-position:50% 50%}
+.hero .overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.45),rgba(0,0,0,.6));z-index:1}
+.hero>.container{position:relative;z-index:3;text-align:center;padding:40px 20px;max-width:980px;margin:0 auto}
 </style></head><body><a class="skip" href="#contenido">Saltar al contenido</a><header aria-hidden="false">
   <div class="nav-inner container">
     <div class="logo">
@@ -91,7 +129,11 @@
     </button>
   </div>
 </header><main id="contenido">
-<section class="hero" aria-labelledby="hero-title"><div class="hero-media" aria-hidden="true"><img src="https://images.unsplash.com/photo-1507874457470-272b3c8d8ee2?auto=format&fit=crop&w=1600&q=80" alt="" fetchpriority="high"></div><div class="overlay" aria-hidden="true"></div><div class="container"><h1 id="hero-title" class="glitch-title" data-text="SERVICIOS">SERVICIOS</h1></div></section><section class="section identity-intro" aria-labelledby="intro-title"><div class="container"><div class="hero-copy"><h2 id="intro-title">Tu música tiene identidad y estilo propio.<br><span>Tu imagen debe reflejarlos.</span></h2><p class="lead">Fotografías con dirección creativa para expresar quién eres como artista y dar forma visual a tu próximo paso: presentar tu proyecto, renovar tu imagen o lanzar nueva música.</p><div class="actions"><a class="btn primary" href="index.html#contacto">Hablemos de tu proyecto</a><a class="btn secondary" href="#servicios">Explorar los servicios</a></div></div></div></section>
+<section class="hero" aria-labelledby="hero-title"><div class="hero-media" aria-hidden="true"><picture>
+                    <!-- Reemplaza srcset con tu imagen WebP/AVIF de alta calidad -->
+                    <source srcset="https://images.unsplash.com/photo-1507874457470-272b3c8d8ee2?auto=format&fit=crop&w=1600&q=80" type="image/webp">
+                    <img fetchpriority="high" src="https://images.unsplash.com/photo-1507874457470-272b3c8d8ee2?auto=format&fit=crop&w=1600&q=80" alt="">
+                </picture></div><div class="overlay" aria-hidden="true"></div><div class="container"><h1 id="hero-title" class="glitch-title" data-text="SERVICIOS">SERVICIOS</h1></div></section><section class="section identity-intro" aria-labelledby="intro-title"><div class="container"><div class="hero-copy"><h2 id="intro-title">Tu música tiene identidad y estilo propio.<br><span>Tu imagen debe reflejarlos.</span></h2><p class="lead">Fotografías con dirección creativa para expresar quién eres como artista y dar forma visual a tu próximo paso: presentar tu proyecto, renovar tu imagen o lanzar nueva música.</p><div class="actions"><a class="btn primary" href="index.html#contacto">Hablemos de tu proyecto</a><a class="btn secondary" href="#servicios">Explorar los servicios</a></div></div></div></section>
 <section id="servicios" class="section" aria-labelledby="services-title"><div class="container"><div class="section-intro"><p class="eyebrow">Servicios</p><h2 id="services-title">El punto de partida es tu proyecto.</h2><p>Elige según lo que necesitas comunicar. Ambos servicios incluyen dirección creativa y pueden desarrollar producciones complejas; la diferencia está en el objetivo de las fotografías, no en el nivel de producción.</p></div><div class="grid">
 <article class="service"><span class="number">01 / Identidad artística</span><h3>Construcción de Imagen</h3><p>Para músicos y artistas que quieren definir o renovar la manera en que se presentan. Traducimos tu sonido, tu personalidad y tu momento artístico en una serie de fotografías con un lenguaje visual coherente.</p><ul><li><strong>Objetivo:</strong> crear fotografías que comuniquen tu estilo y tu propuesta artística.</li><li><strong>Dirección creativa:</strong> concepto, luz, color, vestuario, locaciones y dirección frente a cámara alineados con tu identidad.</li><li><strong>Producción a la medida:</strong> desde una sesión básica hasta una producción compleja, según el concepto y el alcance acordado.</li><li><strong>Resultado:</strong> fotografías seleccionadas y retocadas para tu perfil artístico, prensa y comunicación digital, según los usos definidos.</li></ul><a href="index.html#contacto">Quiero construir mi imagen →</a></article>
 <article class="service"><span class="number">02 / Una historia específica</span><h3>Producción Fotográfica Editorial</h3><p>Para crear las fotografías de un lanzamiento, una portada o una campaña. Desarrollamos un concepto visual centrado en el mensaje de tu proyecto.</p><ul><li><strong>Objetivo:</strong> crear una serie de imágenes que comunique una idea o un lanzamiento concreto.</li><li><strong>Dirección creativa:</strong> narrativa, estética, iluminación, vestuario, locaciones y dirección frente a cámara al servicio del concepto.</li><li><strong>Producción a la medida:</strong> incluye la planeación de producciones complejas cuando la propuesta lo requiere, con alcance acordado antes de la sesión.</li><li><strong>Resultado:</strong> fotografías seleccionadas y retocadas con acabado editorial para los usos previstos en el proyecto.</li></ul><a href="index.html#contacto">Quiero producir mi proyecto editorial →</a></article></div></div></section>
@@ -104,4 +146,4 @@
     <path d="M20.52 3.48A11.9 11.9 0 0 0 12 0C5.373 0 .028 4.9.028 11.5c0 2 .523 3.9 1.51 5.6L0 24l7.07-1.5c1.63.9 3.46 1.4 5.36 1.4 6.627 0 12-4.9 12-11.5 0-3.07-1.37-5.95-3.91-8.02z" fill="#25D366"/>
     <path d="M17.2 14.2c-.4-.2-2.2-1.1-2.6-1.2-.4-.1-.6-.2-1 .2l-.7.8c-.2.2-.4.3-.7.1-1.9-1-3.2-2.8-3.6-3.3-.2-.3 0-.5.2-.7.2-.2.4-.5.5-.7.1-.2.1-.4 0-.6l-1.2-2.9c-.3-.8-.6-.7-.8-.7h-.7c-.2 0-.6.1-.9.4-.3.3-1.2 1.1-1.2 2.6s1.2 3 1.4 3.2c.2.3 2.4 3.9 5.8 5.4 2.2 1 3 .9 4.1.8.7-.1 2.2-.9 2.5-1.7.3-.8.3-1.6.2-1.7-.1-.1-.4-.2-.8-.4z" fill="#fff"/>
   </svg>
-</a><script>document.body.classList.add('js');const nav=document.getElementById('main-nav'),burger=document.getElementById('burger'),mq=matchMedia('(max-width:800px)');function setMenu(open){nav.classList.toggle('open',open);burger.setAttribute('aria-expanded',String(open));burger.setAttribute('aria-label',open?'Cerrar menú':'Abrir menú')}burger.addEventListener('click',()=>setMenu(burger.getAttribute('aria-expanded')!=='true'));nav.addEventListener('click',e=>{if(e.target.closest('a'))setMenu(false)});document.addEventListener('keydown',e=>{if(e.key==='Escape'&&burger.getAttribute('aria-expanded')==='true'){setMenu(false);burger.focus()}});document.addEventListener('click',e=>{if(!e.target.closest('header'))setMenu(false)});mq.addEventListener('change',()=>setMenu(false));</script></body></html>
+</a><script>document.body.classList.add('js');const nav=document.getElementById('main-nav'),burger=document.getElementById('burger'),mq=matchMedia('(max-width:680px)');function setMenu(open){nav.classList.toggle('open',open);burger.classList.toggle('active',open);burger.setAttribute('aria-expanded',String(open));burger.setAttribute('aria-label',open?'Cerrar menú':'Abrir menú')}burger.addEventListener('click',()=>setMenu(burger.getAttribute('aria-expanded')!=='true'));nav.addEventListener('click',e=>{if(e.target.closest('a'))setMenu(false)});document.addEventListener('keydown',e=>{if(e.key==='Escape'&&burger.getAttribute('aria-expanded')==='true'){setMenu(false);burger.focus()}});document.addEventListener('click',e=>{if(!e.target.closest('header'))setMenu(false)});mq.addEventListener('change',()=>setMenu(false));</script></body></html>

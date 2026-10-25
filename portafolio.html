@@ -59,169 +59,11 @@
         .muted {
             color: var(--muted)
         }
-        /* ===== HEADER (idéntico a servicios.html) ===== */
         
-        header {
-            position: fixed;
-            top: 12px;
-            left: 0;
-            right: 0;
-            padding: 10px 24px;
-            z-index: 100;
-            background: transparent;
-        }
-        
-        .nav-inner {
-            width: 90%;
-            max-width: 90%;
-            margin: 0 auto;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 16px;
-            background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(0, 0, 0, 0.02));
-            backdrop-filter: blur(8px);
-            border-radius: 12px;
-            padding: 8px 14px;
-        }
-        
-        .logo {
-            display: flex;
-            gap: 12px;
-            align-items: center
-        }
-        
-        .logo svg {
-            height: 44px;
-            width: auto;
-            display: block
-        }
-        
-        .brand {
-            font-family: Outfit;
-            font-weight: 700;
-            letter-spacing: 0.6px;
-            font-size: 14px
-        }
-        
-        .logo .muted {
-            font-size: 12px;
-            color: var(--muted);
-            margin-top: 2px;
-            letter-spacing: .2px;
-        }
-        
-        nav {
-            display: flex;
-            gap: 18px;
-            align-items: center
-        }
-        
-        nav a {
-            color: var(--white);
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 14px;
-            opacity: 0.9;
-            transition: color .2s ease
-        }
-        
-        nav a:hover {
-            color: var(--accent)
-        }
-        
-        .cta {
-            background: transparent;
-            border: 1px solid rgba(255, 255, 255, 0.12);
-            padding: 10px 14px;
-            border-radius: 10px;
-            font-weight: 700;
-            cursor: pointer;
-            transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease;
-        }
-        
-        .cta:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6);
-            border-color: var(--accent);
-        }
-        /* Botón hamburguesa */
-        
-        .hamburger {
-            display: none;
-            flex-direction: column;
-            gap: 4px;
-            cursor: pointer;
-            background: none;
-            border: none
-        }
-        
-        .hamburger span {
-            width: 22px;
-            height: 2px;
-            background: var(--white);
-            display: block;
-            border-radius: 2px;
-            transition: .3s
-        }
-        
-        .hamburger.active span:nth-child(1) {
-            transform: rotate(45deg) translate(4px, 4px)
-        }
-        
-        .hamburger.active span:nth-child(2) {
-            opacity: 0
-        }
-        
-        .hamburger.active span:nth-child(3) {
-            transform: rotate(-45deg) translate(4px, -4px)
-        }
-        /* ===== Menú móvil ===== */
         
         @media (max-width:680px) {
-            nav {
-                display: flex;
-                flex-direction: column;
-                position: fixed;
-                top: 70px;
-                left: 0;
-                right: 0;
-                width: 100vw;
-                background: linear-gradient(180deg, rgba(20, 20, 20, 0.95), rgba(0, 0, 0, 0.85));
-                backdrop-filter: blur(12px);
-                border-radius: 0 0 14px 14px;
-                box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
-                z-index: 999;
-                padding: 20px 0;
-                align-items: center;
-                gap: 16px;
-                transform: translateY(-110%);
-                opacity: 0;
-                pointer-events: none;
-                transition: transform .35s ease, opacity .35s ease;
-            }
-            nav.open {
-                transform: translateY(0);
-                opacity: 1;
-                pointer-events: auto;
-            }
-            .hamburger {
-                display: flex
-            }
-            header {
-                z-index: 998;
-                padding: 8px
-            }
-            .nav-inner {
-                padding: 8px;
-                width: 100vw;
-                max-width: 100vw
-            }
-            .logo svg {
-                height: 36px
-            }
         }
-        /* ===== HERO PORTAFOLIO ===== */
+        
         
         .portfolio-hero {
             min-height: 56vh;
@@ -355,25 +197,127 @@
 
     <!-- Bloque de corrección móvil -->
     <style id="mobile-nav-fix">
+        
+        @media (max-width:680px) {
+        }
+    </style>
+<style id="index-header-hero">        header {
+            position: fixed;
+            top: 12px;
+            left: 0;
+            right: 0;
+            padding: 10px 24px;
+            z-index: 100;
+            background: transparent;
+            /* como el original */
+        }
+        
+        .nav-inner {
+            width: 90%;
+            max-width: 90%;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(0, 0, 0, 0.02));
+            backdrop-filter: blur(8px);
+            border-radius: 12px;
+            padding: 8px 14px;
+        }
+        
+        .logo {
+            display: flex;
+            gap: 12px;
+            align-items: center
+        }
+        
+        .logo svg {
+            height: 44px;
+            width: auto;
+            display: block
+        }
+        
+        .brand {
+            font-family: Outfit;
+            font-weight: 700;
+            letter-spacing: 0.6px;
+            font-size: 14px
+        }
+        
         nav {
             display: flex;
-            position: static;
-            transform: none;
-            opacity: 1;
-            pointer-events: auto;
-            align-items: center;
             gap: 18px;
+            align-items: center
         }
+        
+        nav a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            opacity: 0.9;
+            transition: color .2s ease
+        }
+        
+        nav a:hover {
+            color: var(--accent)
+        }
+        
+        .cta {
+            background: transparent;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            padding: 10px 14px;
+            border-radius: 10px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease;
+        }
+        
+        .cta:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6);
+            border-color: var(--accent);
+        }
+        /* Botón hamburguesa (solo móvil) */
         
         .hamburger {
             display: none;
+            flex-direction: column;
+            gap: 4px;
+            cursor: pointer;
+            background: none;
+            border: none
         }
         
-        @media (max-width:680px) {
+        .hamburger span {
+            width: 22px;
+            height: 2px;
+            background: var(--white);
+            display: block;
+            border-radius: 2px;
+            transition: .3s
+        }
+        
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(4px, 4px)
+        }
+        
+        .hamburger.active span:nth-child(2) {
+            opacity: 0
+        }
+        
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(4px, -4px)
+        }
+        /* ====== MENÚ MÓVIL CORREGIDO ====== */
+        
+        @media (max-width: 680px) {
             nav {
                 display: flex;
                 flex-direction: column;
                 position: fixed;
+                /* anclado al viewport */
                 top: 70px;
                 left: 0;
                 right: 0;
@@ -386,10 +330,10 @@
                 padding: 20px 0;
                 align-items: center;
                 gap: 16px;
+                transition: transform 0.35s ease, opacity 0.35s ease;
                 transform: translateY(-110%);
                 opacity: 0;
                 pointer-events: none;
-                transition: transform .35s ease, opacity .35s ease;
             }
             nav.open {
                 transform: translateY(0);
@@ -397,78 +341,80 @@
                 pointer-events: auto;
             }
             .hamburger {
-                display: flex;
-                flex-direction: column;
-                gap: 4px;
-                cursor: pointer;
-                background: none;
-                border: none;
-                z-index: 1000;
+                display: flex
             }
-            .hamburger span {
-                width: 24px;
-                height: 2px;
-                background: #fff;
-                border-radius: 2px;
-                transition: all .3s ease;
+            header {
+                padding: 8px
             }
-            .hamburger.active span:nth-child(1) {
-                transform: rotate(45deg) translate(4px, 4px);
+            .nav-inner {
+                padding: 8px;
+                width: 100vw;
+                max-width: 100vw;
             }
-            .hamburger.active span:nth-child(2) {
-                opacity: 0;
+            .logo svg {
+                height: 36px
             }
-            .hamburger.active span:nth-child(3) {
-                transform: rotate(-45deg) translate(4px, -4px);
+            .grid-3 {
+                grid-template-columns: 1fr
             }
+            .masonry {
+                grid-template-columns: 1fr
+            }
+            /* Asegurar layering correcto */
             header {
                 z-index: 998;
             }
         }
-    </style>
-</head>
+
+.portfolio-hero{min-height:72vh;display:grid;place-items:center;position:relative;overflow:hidden}
+.portfolio-hero .media{position:absolute;inset:0;background:#000;z-index:0}
+.portfolio-hero picture,.portfolio-hero img{width:100%;height:100%;object-fit:cover;display:block;filter:contrast(.95) saturate(.95)}
+.portfolio-hero .overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.45),rgba(0,0,0,.6));z-index:1}
+.portfolio-hero .content{position:relative;z-index:3;text-align:center;padding:40px 20px;max-width:980px;margin:0 auto}
+a:focus-visible,button:focus-visible{outline:3px solid #00ffe0;outline-offset:4px}
+@media(max-width:680px){nav:not(.open){visibility:hidden}nav.open{visibility:visible}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.glitch-title::before,.glitch-title::after{display:none}}
+</style></head>
 
 <body>
 
     <header aria-hidden="false">
         <div class="nav-inner container">
             <div class="logo">
+                <!-- SVG minimal logo: reemplaza por tu SVG real -->
                 <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
         <rect x="10" y="10" width="80" height="80" rx="12" fill="none" stroke="#fff" stroke-width="4"/>
         <path d="M28 68 L50 32 L72 68" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
       </svg>
                 <div>
                     <div class="brand">Angel Sullyvan</div>
-                    <div class="muted">Fotografía estratégica · Músicos · Artistas · Creativos</div>
+                    <div class="muted" style="font-size:12px">Fotografía estratégica · Músicos · Artistas · Creativos</div>
                 </div>
             </div>
 
             <nav aria-label="Menú principal" id="main-nav">
                 <a href="index.html">Inicio</a>
                 <a href="servicios.html">Servicios</a>
-                <a href="portafolio.html">Portafolio</a>
+                <a href="portafolio.html" aria-current="page">Portafolio</a>
                 <a href="index.html#backstage">Backstage</a>
                 <a href="index.html#testimonios">Testimonios</a>
                 <a href="index.html#contacto" class="cta">Agendar sesión</a>
             </nav>
 
-            <button class="hamburger" aria-label="Abrir menú" id="burger" onclick="toggleMobile()">
+            <button class="hamburger" aria-label="Abrir menú" id="burger" aria-controls="main-nav" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
         </div>
     </header>
 
     <main>
-        <section class="portfolio-hero" aria-label="Hero Portafolio">
-            <div class="media" aria-hidden="true">
-                <picture>
+        <section class="portfolio-hero" aria-labelledby="portfolio-title"><div class="media" aria-hidden="true"><picture>
+                    <!-- Reemplaza srcset con tu imagen WebP/AVIF de alta calidad -->
                     <source srcset="https://images.unsplash.com/photo-1507874457470-272b3c8d8ee2?auto=format&fit=crop&w=1600&q=80" type="image/webp">
-                    <img src="https://images.unsplash.com/photo-1507874457470-272b3c8d8ee2?auto=format&fit=crop&w=1600&q=80" alt="Luces de estudio y atmósfera editorial">
-                </picture>
-            </div>
-            <div class="overlay" aria-hidden="true"></div>
+                    <img fetchpriority="high" src="https://images.unsplash.com/photo-1507874457470-272b3c8d8ee2?auto=format&fit=crop&w=1600&q=80" alt="">
+                </picture></div><div class="overlay" aria-hidden="true"></div>
             <div class="content container">
-                <h1 class="glitch-title" data-text="PORTAFOLIO">PORTAFOLIO</h1>
+                <h1 id="portfolio-title" class="glitch-title" data-text="PORTAFOLIO">PORTAFOLIO</h1>
             </div>
         </section>
 
@@ -485,7 +431,7 @@
      ========================= -->
         <section id="pkp-portfolio" class="section">
             <style>
-                /* Scoped styles para no chocar con tu CSS */
+                
                 
                 #pkp-portfolio {
                     padding: clamp(48px, 6vw, 96px) 0;
@@ -527,7 +473,7 @@
                     border: 1px solid color-mix(in srgb, var(--accent, #FF00FF) 40%, transparent);
                     margin-top: .75rem;
                 }
-                /* Grid */
+                
                 
                 #pkp-portfolio .grid {
                     display: grid;
@@ -546,7 +492,7 @@
                         grid-template-columns: repeat(3, 1fr);
                     }
                 }
-                /* Card */
+                
                 
                 #pkp-portfolio .card {
                     position: relative;
@@ -576,7 +522,7 @@
                 #pkp-portfolio .card:hover img {
                     scale: 1.03;
                 }
-                /* Overlay */
+                
                 
                 #pkp-portfolio .overlay {
                     position: absolute;
@@ -606,7 +552,7 @@
                     background: var(--accent, #FF00FF);
                     box-shadow: 0 0 12px var(--accent, #FF00FF);
                 }
-                /* Bloque */
+                
                 
                 #pkp-portfolio .block {
                     margin: 40px 0 56px;
@@ -622,7 +568,7 @@
                     max-width: 70ch;
                     opacity: .9;
                 }
-                /* Footer note */
+                
                 
                 #pkp-portfolio .transition-note {
                     margin-top: 28px;
@@ -636,52 +582,50 @@
             </style>
 
             <div class="wrap">
-                <h2>Portafolio en <span style="color:var(--accent, #FF00FF)">construcción</span></h2>
-                <p class="sub">Muestreo curado de trabajos previos, presentado como <strong>exploraciones de conceptos, iluminacion, dirección visual y branding personal</strong> — alineado al enfoque para músicos y artistas.</p>
-                <div class="note" aria-label="Estado de portafolio">
-                    <span>🔧</span><span>Transición activa hacia línea 100% artistas/músicos</span>
-                </div>
+                <h2>Proyectos y series fotográficas</h2>
+                <p class="sub">Una selección de encargos para clientes y proyectos personales que muestran mi trabajo en dirección creativa, iluminación y retrato.</p>
+                
 
 
                 <!-- =======================         3) Sci-Fi PORTRAITS         ======================= -->
-                <div class="block " id="strategic-portraits ">
-                    <h3>Sci-Fi Portraits — Dirección Artistica / Exploracion de iluminación</h3>
-                    <p class="desc ">Serie editorial que mezcla estética cyber, moda oscura y dirección de retrato.</p>
+                <div class="block " id="sci-fi-portraits">
+                    <h3>Sci-Fi Portraits</h3>
+                    <p class="desc">Retratos que exploran la relación entre el color, la luz y una estética futurista.</p>
 
                     <div class="grid ">
-                        <a href="img/portafolio/Sci-fi Series/Luana_Futurist_04_2048px.jpg " class="card glightbox " data-gallery="brand " data-title="Retrato editorial con intención de marca " aria-label="Abrir imagen Brand 01 ">
-                            <img src="img/portafolio/Sci-fi Series/Luana_Futurist_04_2048px.jpg " alt="Retrato editorial con iluminación cinematográfica y actitud segura ">
-                            <div class="overlay "><span class="tag "><span class="dot "></span>Brand · 01</span>
+                        <a href="img/portafolio/Sci-fi Series/Luana_Futurist_04_2048px.jpg" class="card glightbox " data-gallery="sci-fi-portraits" data-title="Sci-Fi · 01" aria-label="Ampliar fotografía 1 de Sci-Fi">
+                            <img loading="lazy" decoding="async" src="img/portafolio/Sci-fi Series/Luana_Futurist_04_2048px.jpg" alt="Retrato editorial con iluminación cinematográfica y actitud segura ">
+                            <div class="overlay "><span class="tag "><span class="dot"></span>Sci-Fi · 01</span>
                             </div>
                         </a>
 
-                        <a href="img/portafolio/Sci-fi Series/Luana_Futurist_05_2048px.jpg " class="card glightbox " data-gallery="brand " data-title="Presencia y dirección visual " aria-label="Abrir imagen Brand 02 ">
-                            <img src="img/portafolio/Sci-fi Series/Luana_Futurist_05_2048px.jpg " alt="Retrato estratégico con fondo neutro y expresión enfocada ">
-                            <div class="overlay "><span class="tag "><span class="dot "></span>Brand · 02</span>
+                        <a href="img/portafolio/Sci-fi Series/Luana_Futurist_05_2048px.jpg" class="card glightbox " data-gallery="sci-fi-portraits" data-title="Sci-Fi · 02" aria-label="Ampliar fotografía 2 de Sci-Fi">
+                            <img loading="lazy" decoding="async" src="img/portafolio/Sci-fi Series/Luana_Futurist_05_2048px.jpg" alt="Retrato estratégico con fondo neutro y expresión enfocada ">
+                            <div class="overlay "><span class="tag "><span class="dot"></span>Sci-Fi · 02</span>
                             </div>
                         </a>
 
-                        <a href="img/portafolio/Sci-fi Series/Luana_Futurist_01_2048px.jpg " class="card glightbox " data-gallery="brand " data-title="Headshot editorial · Autoridad " aria-label="Abrir imagen Brand 03 ">
-                            <img src="img/portafolio/Sci-fi Series/Luana_Futurist_01_2048px.jpg " alt="Headshot editorial con encuadre limpio y look profesional ">
-                            <div class="overlay "><span class="tag "><span class="dot "></span>Brand · 03</span>
+                        <a href="img/portafolio/Sci-fi Series/Luana_Futurist_01_2048px.jpg" class="card glightbox " data-gallery="sci-fi-portraits" data-title="Sci-Fi · 03" aria-label="Ampliar fotografía 3 de Sci-Fi">
+                            <img loading="lazy" decoding="async" src="img/portafolio/Sci-fi Series/Luana_Futurist_01_2048px.jpg" alt="Headshot editorial con encuadre limpio y look profesional ">
+                            <div class="overlay "><span class="tag "><span class="dot"></span>Sci-Fi · 03</span>
                             </div>
                         </a>
 
-                        <a href="img/portafolio/Sci-fi Series/Luana_Futurist_03_2048px.jpg " class="card glightbox " data-gallery="brand " data-title="Headshot editorial · Autoridad " aria-label="Abrir imagen Brand 03 ">
-                            <img src="img/portafolio/Sci-fi Series/Luana_Futurist_03_2048px.jpg " alt="Headshot editorial con encuadre limpio y look profesional ">
-                            <div class="overlay "><span class="tag "><span class="dot "></span>Brand · 03</span>
+                        <a href="img/portafolio/Sci-fi Series/Luana_Futurist_03_2048px.jpg" class="card glightbox " data-gallery="sci-fi-portraits" data-title="Sci-Fi · 04" aria-label="Ampliar fotografía 4 de Sci-Fi">
+                            <img loading="lazy" decoding="async" src="img/portafolio/Sci-fi Series/Luana_Futurist_03_2048px.jpg" alt="Headshot editorial con encuadre limpio y look profesional ">
+                            <div class="overlay "><span class="tag "><span class="dot"></span>Sci-Fi · 04</span>
                             </div>
                         </a>
 
-                        <a href="img/portafolio/Sci-fi Series/Luana_Futurist_07_2048px.jpg " class="card glightbox " data-gallery="brand " data-title="Headshot editorial · Autoridad " aria-label="Abrir imagen Brand 03 ">
-                            <img src="img/portafolio/Sci-fi Series/Luana_Futurist_07_2048px.jpg " alt="Headshot editorial con encuadre limpio y look profesional ">
-                            <div class="overlay "><span class="tag "><span class="dot "></span>Brand · 03</span>
+                        <a href="img/portafolio/Sci-fi Series/Luana_Futurist_07_2048px.jpg" class="card glightbox " data-gallery="sci-fi-portraits" data-title="Sci-Fi · 05" aria-label="Ampliar fotografía 5 de Sci-Fi">
+                            <img loading="lazy" decoding="async" src="img/portafolio/Sci-fi Series/Luana_Futurist_07_2048px.jpg" alt="Headshot editorial con encuadre limpio y look profesional ">
+                            <div class="overlay "><span class="tag "><span class="dot"></span>Sci-Fi · 05</span>
                             </div>
                         </a>
 
-                        <a href="img/portafolio/Sci-fi Series/Luana_Futurist_08_2048px.jpg " class="card glightbox " data-gallery="brand " data-title="Headshot editorial · Autoridad " aria-label="Abrir imagen Brand 03 ">
-                            <img src="img/portafolio/Sci-fi Series/Luana_Futurist_08_2048px.jpg " alt="Headshot editorial con encuadre limpio y look profesional ">
-                            <div class="overlay "><span class="tag "><span class="dot "></span>Brand · 03</span>
+                        <a href="img/portafolio/Sci-fi Series/Luana_Futurist_08_2048px.jpg" class="card glightbox " data-gallery="sci-fi-portraits" data-title="Sci-Fi · 06" aria-label="Ampliar fotografía 6 de Sci-Fi">
+                            <img loading="lazy" decoding="async" src="img/portafolio/Sci-fi Series/Luana_Futurist_08_2048px.jpg" alt="Headshot editorial con encuadre limpio y look profesional ">
+                            <div class="overlay "><span class="tag "><span class="dot"></span>Sci-Fi · 06</span>
                             </div>
                         </a>
                     </div>
@@ -689,50 +633,50 @@
 
 
                 <!-- =======================         3)  STUDIO CREW SERIES          ======================= -->
-                <div class="block" id="concept-series">
-                    <h3>Studio Crew Series — Branding & Direccion de arte editorial</h3>
-                    <p class="desc">Retratos escénicos realizados en barbería. Inspirados en el universo backstage y el poder visual de quienes construyen la imagen de los artistas</p>
+                <div class="block" id="barbershop-crew">
+                    <h3>Barbershop Crew</h3>
+                    <p class="desc">Una serie de retratos para presentar a los barberos y estilistas como artistas de la imagen, destacando el estilo y la personalidad de cada uno.</p>
 
                     <div class="grid">
                         <!-- STUDIO CREW SERIES 01 -->
-                        <a href="img/portafolio/STUDIO CREW SERIES/inffinis_0050.jpg" class="card glightbox" data-gallery="concept" data-title="Retrato en barbería · Studio Crew · 01" aria-label="Abrir imagen Studio Crew · 01">
-                            <img src=" img/portafolio/STUDIO CREW SERIES/inffinis_0050.jpg " alt="Retrato conceptual con temática de selva, verdes y texturas orgánicas ">
-                            <div class="overlay "><span class="tag "><span class="dot "></span>Studio Crew · 01</span>
+                        <a href="img/portafolio/STUDIO CREW SERIES/inffinis_0050.jpg" class="card glightbox" data-gallery="barbershop-crew" data-title="Barbershop Crew · 01" aria-label="Ampliar fotografía 1 de Barbershop Crew">
+                            <img loading="lazy" decoding="async" src="img/portafolio/STUDIO CREW SERIES/inffinis_0050.jpg" alt="Retrato conceptual con temática de selva, verdes y texturas orgánicas ">
+                            <div class="overlay "><span class="tag "><span class="dot"></span>Barbershop Crew · 01</span>
                             </div>
                         </a>
 
                         <!-- STUDIO CREW SERIES 02 -->
-                        <a href="img/portafolio/STUDIO CREW SERIES/inffinis_0074.jpg " class="card glightbox " data-gallery="concept " data-title="Retrato en barbería · Studio Crew · 02 " aria-label="Abrir imagen Studio Crew · 02 ">
-                            <img src="img/portafolio/STUDIO CREW SERIES/inffinis_0074.jpg " alt="Retrato conceptual temático de selva con iluminación dramática ">
-                            <div class="overlay "><span class="tag "><span class="dot "></span>Studio Crew · 02</span>
+                        <a href="img/portafolio/STUDIO CREW SERIES/inffinis_0074.jpg" class="card glightbox " data-gallery="barbershop-crew" data-title="Barbershop Crew · 02" aria-label="Ampliar fotografía 2 de Barbershop Crew">
+                            <img loading="lazy" decoding="async" src="img/portafolio/STUDIO CREW SERIES/inffinis_0074.jpg" alt="Retrato conceptual temático de selva con iluminación dramática ">
+                            <div class="overlay "><span class="tag "><span class="dot"></span>Barbershop Crew · 02</span>
                             </div>
                         </a>
 
                         <!-- STUDIO CREW SERIES 03 -->
-                        <a href="img/portafolio/STUDIO CREW SERIES/inffinis_0082.jpg " class="card glightbox " data-gallery="concept " data-title="Retrato en barbería · Studio Crew · 03 " aria-label="Abrir imagen Studio Crew · 03 ">
-                            <img src="img/portafolio/STUDIO CREW SERIES/inffinis_0082.jpg " alt="Retrato conceptual estilizado tipo portada, estética ritual/pureza ">
-                            <div class="overlay "><span class="tag "><span class="dot "></span>Studio Crew · 03</span>
+                        <a href="img/portafolio/STUDIO CREW SERIES/inffinis_0082.jpg" class="card glightbox " data-gallery="barbershop-crew" data-title="Barbershop Crew · 03" aria-label="Ampliar fotografía 3 de Barbershop Crew">
+                            <img loading="lazy" decoding="async" src="img/portafolio/STUDIO CREW SERIES/inffinis_0082.jpg" alt="Retrato conceptual estilizado tipo portada, estética ritual/pureza ">
+                            <div class="overlay "><span class="tag "><span class="dot"></span>Barbershop Crew · 03</span>
                             </div>
                         </a>
 
                         <!-- STUDIO CREW SERIES 04 -->
-                        <a href="img/portafolio/STUDIO CREW SERIES/inffinis_0089.jpg " class="card glightbox " data-gallery="concept " data-title="Retrato en barbería · Studio Crew · 04 " aria-label="Abrir imagen Studio Crew · 04 ">
-                            <img src="img/portafolio/STUDIO CREW SERIES/inffinis_0089.jpg " alt="Retrato conceptual estilizado tipo portada, estética ritual/pureza ">
-                            <div class="overlay "><span class="tag "><span class="dot "></span>Studio Crew · 04</span>
+                        <a href="img/portafolio/STUDIO CREW SERIES/inffinis_0089.jpg" class="card glightbox " data-gallery="barbershop-crew" data-title="Barbershop Crew · 04" aria-label="Ampliar fotografía 4 de Barbershop Crew">
+                            <img loading="lazy" decoding="async" src="img/portafolio/STUDIO CREW SERIES/inffinis_0089.jpg" alt="Retrato conceptual estilizado tipo portada, estética ritual/pureza ">
+                            <div class="overlay "><span class="tag "><span class="dot"></span>Barbershop Crew · 04</span>
                             </div>
                         </a>
 
                         <!-- STUDIO CREW SERIES 05 -->
-                        <a href="img/portafolio/STUDIO CREW SERIES/inffinis_0231.jpg " class="card glightbox " data-gallery="concept " data-title="Retrato en barbería · Studio Crew · 05 " aria-label="Abrir imagen Studio Crew · 05 ">
-                            <img src="img/portafolio/STUDIO CREW SERIES/inffinis_0231.jpg " alt="Retrato conceptual estilizado tipo portada, estética ritual/pureza ">
-                            <div class="overlay "><span class="tag "><span class="dot "></span>Studio Crew · 05</span>
+                        <a href="img/portafolio/STUDIO CREW SERIES/inffinis_0231.jpg" class="card glightbox " data-gallery="barbershop-crew" data-title="Barbershop Crew · 05" aria-label="Ampliar fotografía 5 de Barbershop Crew">
+                            <img loading="lazy" decoding="async" src="img/portafolio/STUDIO CREW SERIES/inffinis_0231.jpg" alt="Retrato conceptual estilizado tipo portada, estética ritual/pureza ">
+                            <div class="overlay "><span class="tag "><span class="dot"></span>Barbershop Crew · 05</span>
                             </div>
                         </a>
 
                         <!-- STUDIO CREW SERIES 06 -->
-                        <a href="img/portafolio/STUDIO CREW SERIES/inffinis_0251.jpg " class="card glightbox " data-gallery="concept " data-title="Retrato en barbería · Studio Crew · 06 " aria-label="Abrir imagen Studio Crew · 06 ">
-                            <img src="img/portafolio/STUDIO CREW SERIES/inffinis_0251.jpg " alt="Retrato conceptual estilizado tipo portada, estética ritual/pureza ">
-                            <div class="overlay "><span class="tag "><span class="dot "></span>Studio Crew · 06</span>
+                        <a href="img/portafolio/STUDIO CREW SERIES/inffinis_0251.jpg" class="card glightbox " data-gallery="barbershop-crew" data-title="Barbershop Crew · 06" aria-label="Ampliar fotografía 6 de Barbershop Crew">
+                            <img loading="lazy" decoding="async" src="img/portafolio/STUDIO CREW SERIES/inffinis_0251.jpg" alt="Retrato conceptual estilizado tipo portada, estética ritual/pureza ">
+                            <div class="overlay "><span class="tag "><span class="dot"></span>Barbershop Crew · 06</span>
                             </div>
                         </a>
 
@@ -740,47 +684,47 @@
                 </div>
 
                 <!-- =======================         2) CONCEPT SERIES         ======================= -->
-                <div class="block " id="concept-series ">
-                    <h3>Concept Series — Escenografías Conceptuales</h3>
-                    <p class="desc ">Dirección artística basada en mundos visuales. Ideal para portada de single/EP, key art o campaña de lanzamiento.</p>
+                <div class="block " id="concept-series">
+                    <h3>Concept Series</h3>
+                    <p class="desc">Un proyecto colaborativo en el que las modelos, el estilismo, el maquillaje y la fotografía dan forma a un concepto visual compartido.</p>
 
                     <div class="grid ">
                         <!-- SELVA 01 -->
-                        <a href="img/portafolio/Concept Series/Sesion_Editorial_003.jpg " class="card glightbox " data-gallery="concept " data-title="Escenografía conceptual · Selva 01 " aria-label="Abrir imagen Selva 01 ">
-                            <img src="img/portafolio/Concept Series/Sesion_Editorial_003.jpg " alt="Retrato conceptual con temática de selva, verdes y texturas orgánicas ">
-                            <div class="overlay "><span class="tag "><span class="dot "></span>Selva · 01</span>
+                        <a href="img/portafolio/Concept Series/Sesion_Editorial_003.jpg" class="card glightbox " data-gallery="concept-series" data-title="Concept · 01" aria-label="Ampliar fotografía 1 de Concept">
+                            <img loading="lazy" decoding="async" src="img/portafolio/Concept Series/Sesion_Editorial_003.jpg" alt="Retrato conceptual con temática de selva, verdes y texturas orgánicas ">
+                            <div class="overlay "><span class="tag "><span class="dot"></span>Concept · 01</span>
                             </div>
                         </a>
 
                         <!-- SELVA 02 -->
-                        <a href="img/portafolio/Concept Series/Sesion_Editorial_007.jpg " class="card glightbox " data-gallery="concept " data-title="Escenografía conceptual · Selva 02 " aria-label="Abrir imagen Selva 03 ">
-                            <img src="img/portafolio/Concept Series/Sesion_Editorial_007.jpg " alt="Retrato conceptual temático de selva con iluminación dramática ">
-                            <div class="overlay "><span class="tag "><span class="dot "></span>Selva · 02</span>
+                        <a href="img/portafolio/Concept Series/Sesion_Editorial_007.jpg" class="card glightbox " data-gallery="concept-series" data-title="Concept · 02" aria-label="Ampliar fotografía 2 de Concept">
+                            <img loading="lazy" decoding="async" src="img/portafolio/Concept Series/Sesion_Editorial_007.jpg" alt="Retrato conceptual temático de selva con iluminación dramática ">
+                            <div class="overlay "><span class="tag "><span class="dot"></span>Concept · 02</span>
                             </div>
                         </a>
 
-                        <a href="img/portafolio/Concept Series/Sesion_Editorial_012.jpg " class="card glightbox " data-gallery="concept " data-title="Escenografía conceptual · Selva 03 " aria-label="Abrir imagen Selva 03 ">
-                            <img src="img/portafolio/Concept Series/Sesion_Editorial_012.jpg " alt="Retrato conceptual temático de selva con iluminación dramática ">
-                            <div class="overlay "><span class="tag "><span class="dot "></span>Selva · 03</span>
+                        <a href="img/portafolio/Concept Series/Sesion_Editorial_012.jpg" class="card glightbox " data-gallery="concept-series" data-title="Concept · 03" aria-label="Ampliar fotografía 3 de Concept">
+                            <img loading="lazy" decoding="async" src="img/portafolio/Concept Series/Sesion_Editorial_012.jpg" alt="Retrato conceptual temático de selva con iluminación dramática ">
+                            <div class="overlay "><span class="tag "><span class="dot"></span>Concept · 03</span>
                             </div>
                         </a>
 
                         <!-- NOVIA (retratada como portada) -->
-                        <a href="img/portafolio/Concept Series/Sesion_Nicole-Sanchez_006-evoto.jpg " class="card glightbox " data-gallery="concept " data-title="Concept Cover · Bride · 01 " aria-label="Abrir imagen Concept Novia ">
-                            <img src="img/portafolio/Concept Series/Sesion_Nicole-Sanchez_006-evoto.jpg " alt="Retrato conceptual estilizado tipo portada, estética ritual/pureza ">
-                            <div class="overlay "><span class="tag "><span class="dot "></span>Bride · 01</span>
+                        <a href="img/portafolio/Concept Series/Sesion_Nicole-Sanchez_006-evoto.jpg" class="card glightbox " data-gallery="concept-series" data-title="Concept · 04" aria-label="Ampliar fotografía 4 de Concept">
+                            <img loading="lazy" decoding="async" src="img/portafolio/Concept Series/Sesion_Nicole-Sanchez_006-evoto.jpg" alt="Retrato conceptual estilizado tipo portada, estética ritual/pureza ">
+                            <div class="overlay "><span class="tag "><span class="dot"></span>Concept · 04</span>
                             </div>
                         </a>
 
-                        <a href="img/portafolio/Concept Series/Sesion_Nicole-Sanchez_009-evoto.jpg " class="card glightbox " data-gallery="concept " data-title="Concept Cover · Bride · 02 " aria-label="Abrir imagen Concept Novia ">
-                            <img src="img/portafolio/Concept Series/Sesion_Nicole-Sanchez_009-evoto.jpg " alt="Retrato conceptual estilizado tipo portada, estética ritual/pureza ">
-                            <div class="overlay "><span class="tag "><span class="dot "></span>Bride · 02</span>
+                        <a href="img/portafolio/Concept Series/Sesion_Nicole-Sanchez_009-evoto.jpg" class="card glightbox " data-gallery="concept-series" data-title="Concept · 05" aria-label="Ampliar fotografía 5 de Concept">
+                            <img loading="lazy" decoding="async" src="img/portafolio/Concept Series/Sesion_Nicole-Sanchez_009-evoto.jpg" alt="Retrato conceptual estilizado tipo portada, estética ritual/pureza ">
+                            <div class="overlay "><span class="tag "><span class="dot"></span>Concept · 05</span>
                             </div>
                         </a>
 
-                        <a href="img/portafolio/Concept Series/Sesion_Nicole-Sanchez_026-evoto.jpg " class="card glightbox " data-gallery="concept " data-title="Concept Cover · Bride · 03 " aria-label="Abrir imagen Concept Novia ">
-                            <img src="img/portafolio/Concept Series/Sesion_Nicole-Sanchez_026-evoto.jpg " alt="Retrato conceptual estilizado tipo portada, estética ritual/pureza ">
-                            <div class="overlay "><span class="tag "><span class="dot "></span>Bride · 03</span>
+                        <a href="img/portafolio/Concept Series/Sesion_Nicole-Sanchez_026-evoto.jpg" class="card glightbox " data-gallery="concept-series" data-title="Concept · 06" aria-label="Ampliar fotografía 6 de Concept">
+                            <img loading="lazy" decoding="async" src="img/portafolio/Concept Series/Sesion_Nicole-Sanchez_026-evoto.jpg" alt="Retrato conceptual estilizado tipo portada, estética ritual/pureza ">
+                            <div class="overlay "><span class="tag "><span class="dot"></span>Concept · 06</span>
                             </div>
                         </a>
                     </div>
@@ -788,40 +732,39 @@
 
 
                 <!-- =======================         1) HIGH KEY SERIES         ======================= -->
-                <div class="block " id="high-key ">
-                    <h3>High Key Series — Exploraciones de Luz y Expresión</h3>
-                    <p class="desc ">Retratos en clave alta para tests de presencia, expresión, tonos y texturas de diferentes tipos de piel. Minimalista, directo, usable como fotografía de perfil distribución digital; campañas visuales de pop, R&B o música comercial;
-                        o cover o interior de álbum en tono “pureza / introspección / vulnerabilidad”.</p>
+                <div class="block " id="high-key">
+                    <h3>High Key Series</h3>
+                    <p class="desc">Una exploración del retrato beauty como parte de la propuesta visual de artistas y músicos.</p>
 
                     <div class="grid ">
                         <!-- Reemplaza las rutas de imagen por tus archivos -->
-                        <a href="img/portafolio/High Key Series/SS_001b.jpg " class="card glightbox " data-gallery="highkey " data-title="Dirección visual en clave alta · Serie High Key " aria-label="Abrir imagen en lightbox: High Key 01 ">
-                            <img src="img/portafolio/High Key Series/SS_001b.jpg " alt="Retrato high key con fondo blanco y gesto frontal ">
-                            <div class="overlay "><span class="tag "><span class="dot "></span>High Key · 01</span>
+                        <a href="img/portafolio/High Key Series/SS_001b.jpg" class="card glightbox " data-gallery="high-key" data-title="High Key · 01" aria-label="Ampliar fotografía 1 de High Key">
+                            <img loading="lazy" decoding="async" src="img/portafolio/High Key Series/SS_001b.jpg" alt="Retrato high key con fondo blanco y gesto frontal ">
+                            <div class="overlay "><span class="tag "><span class="dot"></span>High Key · 01</span>
                             </div>
                         </a>
 
-                        <a href="img/portafolio/High Key Series/SS_02c.jpg " class="card glightbox " data-gallery="highkey " data-title="Presencia y minimalismo · Serie High Key " aria-label="Abrir imagen High Key 02 ">
-                            <img src="img/portafolio/High Key Series/SS_02c.jpg " alt="Retrato high key con iluminación suave y mirada directa ">
-                            <div class="overlay "><span class="tag "><span class="dot "></span>High Key · 02</span>
+                        <a href="img/portafolio/High Key Series/SS_02c.jpg" class="card glightbox " data-gallery="high-key" data-title="High Key · 02" aria-label="Ampliar fotografía 2 de High Key">
+                            <img loading="lazy" decoding="async" src="img/portafolio/High Key Series/SS_02c.jpg" alt="Retrato high key con iluminación suave y mirada directa ">
+                            <div class="overlay "><span class="tag "><span class="dot"></span>High Key · 02</span>
                             </div>
                         </a>
 
-                        <a href="img/portafolio/High Key Series/SS_03B.jpg " class="card glightbox " data-gallery="highkey " data-title="Presencia y minimalismo · Serie High Key " aria-label="Abrir imagen High Key 02 ">
-                            <img src="img/portafolio/High Key Series/SS_03B.jpg " alt="Retrato high key con iluminación suave y mirada directa ">
-                            <div class="overlay "><span class="tag "><span class="dot "></span>High Key · 03</span>
+                        <a href="img/portafolio/High Key Series/SS_03B.jpg" class="card glightbox " data-gallery="high-key" data-title="High Key · 03" aria-label="Ampliar fotografía 3 de High Key">
+                            <img loading="lazy" decoding="async" src="img/portafolio/High Key Series/SS_03B.jpg" alt="Retrato high key con iluminación suave y mirada directa ">
+                            <div class="overlay "><span class="tag "><span class="dot"></span>High Key · 03</span>
                             </div>
                         </a>
 
-                        <a href="img/portafolio/High Key Series/SS_08.jpg " class="card glightbox " data-gallery="highkey " data-title="Presencia y minimalismo · Serie High Key " aria-label="Abrir imagen High Key 02 ">
-                            <img src="img/portafolio/High Key Series/SS_08.jpg " alt="Retrato high key con iluminación suave y mirada directa ">
-                            <div class="overlay "><span class="tag "><span class="dot "></span>High Key · 04</span>
+                        <a href="img/portafolio/High Key Series/SS_08.jpg" class="card glightbox " data-gallery="high-key" data-title="High Key · 04" aria-label="Ampliar fotografía 4 de High Key">
+                            <img loading="lazy" decoding="async" src="img/portafolio/High Key Series/SS_08.jpg" alt="Retrato high key con iluminación suave y mirada directa ">
+                            <div class="overlay "><span class="tag "><span class="dot"></span>High Key · 04</span>
                             </div>
                         </a>
 
-                        <a href="img/portafolio/High Key Series/SS_09-web.jpg " class="card glightbox " data-gallery="highkey " data-title="Iluminación avanzada para press kit " aria-label="Abrir imagen High Key 03 ">
-                            <img src="img/portafolio/High Key Series/SS_09-web.jpg " alt="Retrato high key con recorte cercano y actitud editorial ">
-                            <div class="overlay "><span class="tag "><span class="dot "></span>High Key · 05</span>
+                        <a href="img/portafolio/High Key Series/SS_09-web.jpg" class="card glightbox " data-gallery="high-key" data-title="High Key · 05" aria-label="Ampliar fotografía 5 de High Key">
+                            <img loading="lazy" decoding="async" src="img/portafolio/High Key Series/SS_09-web.jpg" alt="Retrato high key con recorte cercano y actitud editorial ">
+                            <div class="overlay "><span class="tag "><span class="dot"></span>High Key · 05</span>
                             </div>
                         </a>
                     </div>
@@ -829,45 +772,37 @@
 
 
                 <!-- =======================          3) STRATEGIC PORTRAITS          ======================= -->
-                <div class="block " id="strategic-portraits ">
-                    <h3>Strategic Portraits — Imagen Profesional / Marca Personal</h3>
-                    <p class="desc ">Retratos con intención para comunicar autoridad y presencia. Aplicable a artistas y productores que profesionalizan su imagen pública.</p>
+                <div class="block " id="strategic-portraits">
+                    <h3>Perfiles multidisciplinarios</h3>
+                    <p class="desc">Retratos para profesionistas, creados para comunicar su personalidad, experiencia y perfil profesional</p>
 
                     <div class="grid ">
-                        <a href="img/portafolio/Strategic Portraits/Sesion_Eli_072-evoto.jpg " class="card glightbox " data-gallery="brand " data-title="Retrato editorial con intención de marca " aria-label="Abrir imagen Brand 01 ">
-                            <img src="img/portafolio/Strategic Portraits/Sesion_Eli_072-evoto.jpg " alt="Retrato editorial con iluminación cinematográfica y actitud segura ">
-                            <div class="overlay "><span class="tag "><span class="dot "></span>Brand · 01</span>
+                        <a href="img/portafolio/Strategic Portraits/Sesion_Eli_072-evoto.jpg" class="card glightbox " data-gallery="strategic-portraits" data-title="Strategic Portraits · 01" aria-label="Ampliar fotografía 1 de Strategic Portraits">
+                            <img loading="lazy" decoding="async" src="img/portafolio/Strategic Portraits/Sesion_Eli_072-evoto.jpg" alt="Retrato editorial con iluminación cinematográfica y actitud segura ">
+                            <div class="overlay "><span class="tag "><span class="dot"></span>Strategic Portraits · 01</span>
                             </div>
                         </a>
 
-                        <a href="img/portafolio/Strategic Portraits/Sesion_Eli_047-evoto.jpg " class="card glightbox " data-gallery="brand " data-title="Presencia y dirección visual " aria-label="Abrir imagen Brand 02 ">
-                            <img src="img/portafolio/Strategic Portraits/Sesion_Eli_047-evoto.jpg " alt="Retrato estratégico con fondo neutro y expresión enfocada ">
-                            <div class="overlay "><span class="tag "><span class="dot "></span>Brand · 02</span>
+                        <a href="img/portafolio/Strategic Portraits/Sesion_Eli_047-evoto.jpg" class="card glightbox " data-gallery="strategic-portraits" data-title="Strategic Portraits · 02" aria-label="Ampliar fotografía 2 de Strategic Portraits">
+                            <img loading="lazy" decoding="async" src="img/portafolio/Strategic Portraits/Sesion_Eli_047-evoto.jpg" alt="Retrato estratégico con fondo neutro y expresión enfocada ">
+                            <div class="overlay "><span class="tag "><span class="dot"></span>Strategic Portraits · 02</span>
                             </div>
                         </a>
 
-                        <a href="img/portafolio/Strategic Portraits/Sesion_Eli_008-evoto.jpg " class="card glightbox " data-gallery="brand " data-title="Headshot editorial · Autoridad " aria-label="Abrir imagen Brand 03 ">
-                            <img src="img/portafolio/Strategic Portraits/Sesion_Eli_008-evoto.jpg " alt="Headshot editorial con encuadre limpio y look profesional ">
-                            <div class="overlay "><span class="tag "><span class="dot "></span>Brand · 03</span>
+                        <a href="img/portafolio/Strategic Portraits/Sesion_Eli_008-evoto.jpg" class="card glightbox " data-gallery="strategic-portraits" data-title="Strategic Portraits · 03" aria-label="Ampliar fotografía 3 de Strategic Portraits">
+                            <img loading="lazy" decoding="async" src="img/portafolio/Strategic Portraits/Sesion_Eli_008-evoto.jpg" alt="Headshot editorial con encuadre limpio y look profesional ">
+                            <div class="overlay "><span class="tag "><span class="dot"></span>Strategic Portraits · 03</span>
                             </div>
                         </a>
                     </div>
                 </div>
 
                 <!-- Nota final temporal -->
-                <div class="transition-note " role="note ">
-                    <strong>Nota</strong>: Portafolio en transición hacia la línea <em>Press Kit Photography</em>. Las imágenes actuales son exploraciones técnicas y conceptuales que ilustran iluminación avanzada, dirección visual y construcción de imagen.
-                </div>
+                
             </div>
 
             <!-- Init GLightbox (si ya cargas la librería globalmente, esto la activa) -->
-            <script>
-                if (typeof GLightbox === 'function') {
-                    GLightbox({
-                        selector: '.glightbox'
-                    });
-                }
-            </script>
+            
         </section>
 
 
@@ -875,9 +810,9 @@
         <section class="portfolio-cta ">
             <div class="container ">
                 <div class="wrap ">
-                    <h3>¿Listo para construir imágenes que te posicionen?</h3>
+                    <h3>Hablemos de las fotografías que necesitas para tu proyecto.</h3>
                     <p>Diseñemos una sesión con dirección visual clara y resultados editoriales.</p>
-                    <a href="index.html#contacto " class="btn-primary ">Agendar sesión</a>
+                    <a href="index.html#contacto" class="btn-primary ">Agendar sesión</a>
                 </div>
             </div>
         </section>
@@ -892,57 +827,28 @@
         </div>
     </footer>
 
-    <a class="whatsapp " href="https://wa.me/524464086741 " target="_blank " rel="noopener " aria-label="Enviar WhatsApp ">
-        <svg width="22 " height="22 " viewBox="0 0 24 24 " fill="none " aria-hidden="true ">
-    <path d="M20.52 3.48A11.9 11.9 0 0 0 12 0C5.373 0 .028 4.9.028 11.5c0 2 .523 3.9 1.51 5.6L0 24l7.07-1.5c1.63.9 3.46 1.4 5.36 1.4 6.627 0 12-4.9 12-11.5 0-3.07-1.37-5.95-3.91-8.02z " fill="#25D366 "/>
+    <a class="whatsapp " href="https://wa.me/524464086741" target="_blank" rel="noopener" aria-label="Enviar WhatsApp">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true ">
+    <path d="M20.52 3.48A11.9 11.9 0 0 0 12 0C5.373 0 .028 4.9.028 11.5c0 2 .523 3.9 1.51 5.6L0 24l7.07-1.5c1.63.9 3.46 1.4 5.36 1.4 6.627 0 12-4.9 12-11.5 0-3.07-1.37-5.95-3.91-8.02z " fill="#25D366"/>
     <path d="M17.2 14.2c-.4-.2-2.2-1.1-2.6-1.2-.4-.1-.6-.2-1 .2l-.7.8c-.2.2-.4.3-.7.1-1.9-1-3.2-2.8-3.6-3.3-.2-.3 0-.5.2-.7.2-.2.4-.5.5-.7.1-.2.1-.4 0-.6l-1.2-2.9c-.3-.8-.6-.7-.8-.7h-.7c-.2 0-.6.1-.9.4-.3.3-1.2 1.1-1.2 2.6s1.2 3 1.4 3.2c.2.3 2.4 3.9
-                            5.8 5.4 2.2 1 3 .9 4.1.8.7-.1 2.2-.9 2.5-1.7.3-.8.3-1.6.2-1.7-.1-.1-.4-.2-.8-.4z " fill="#fff "/>
+                            5.8 5.4 2.2 1 3 .9 4.1.8.7-.1 2.2-.9 2.5-1.7.3-.8.3-1.6.2-1.7-.1-.1-.4-.2-.8-.4z " fill="#fff"/>
   </svg>
     </a>
 
     <!-- Scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js "></script>
-    <script id="mobile-nav-fix-js ">
-        function toggleMobile() {
-            const nav = document.querySelector('nav');
-            const burger = document.getElementById('burger');
-            if (!nav) return;
-            nav.classList.toggle('open');
-            if (burger) burger.classList.toggle('active');
-        }
-        // Reset al salir de móvil
-        (function() {
-            const mq = window.matchMedia('(max-width: 680px)');
-
-            function handleMQ(e) {
-                const nav = document.querySelector('nav');
-                const burger = document.getElementById('burger');
-                if (!nav) return;
-                if (!e.matches) { // desktop
-                    nav.classList.remove('open');
-                    if (burger) burger.classList.remove('active');
-                    nav.style.removeProperty('display');
-                    nav.style.removeProperty('transform');
-                    nav.style.removeProperty('opacity');
-                    nav.style.removeProperty('pointer-events');
-                    nav.style.removeProperty('position');
-                }
-            }
-            if (mq.addEventListener) mq.addEventListener('change', handleMQ);
-            else if (mq.addListener) mq.addListener(handleMQ);
-            handleMQ(mq);
-        })();
-        const lightbox = GLightbox({
-            selector: '.glightbox',
-            touchNavigation: true,
-            loop: true,
-            zoomable: true,
-            autoplayVideos: false
-        });
-    </script>
+    <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+    <script id="mobile-nav-fix-js">
+const nav=document.getElementById('main-nav'),burger=document.getElementById('burger');
+function setMenu(open){nav.classList.toggle('open',open);burger.classList.toggle('active',open);burger.setAttribute('aria-expanded',String(open));burger.setAttribute('aria-label',open?'Cerrar menú':'Abrir menú')}
+burger.addEventListener('click',()=>setMenu(!nav.classList.contains('open')));
+nav.addEventListener('click',event=>{if(event.target.closest('a'))setMenu(false)});
+document.addEventListener('keydown',event=>{if(event.key==='Escape'&&nav.classList.contains('open')){setMenu(false);burger.focus()}});
+const mq=matchMedia('(max-width:680px)');const resetMenu=()=>setMenu(false);if(mq.addEventListener)mq.addEventListener('change',resetMenu);else mq.addListener(resetMenu);
+if(typeof GLightbox==='function')GLightbox({selector:'.glightbox',touchNavigation:true,loop:true,zoomable:true,autoplayVideos:false});
+</script>
 
     <style>
-        /* ===== Masonry, CTA, Footer ===== */
+        
         
         .masonry {
             display: grid;
@@ -1055,8 +961,8 @@
         
         .whatsapp {
             position: fixed;
-            bottom: calc(env(safe-area-inset-bottom, 0px)+clamp(16px, 3vh, 28px));
-            right: calc(env(safe-area-inset-right, 0px)+clamp(16px, 3vw, 28px));
+            bottom: calc(env(safe-area-inset-bottom, 0px) + clamp(16px, 3vh, 28px));
+            right: calc(env(safe-area-inset-right, 0px) + clamp(16px, 3vw, 28px));
             width: clamp(48px, 5vw, 60px);
             height: clamp(48px, 5vw, 60px);
             display: grid;

@@ -1,11 +1,7 @@
-media: media
-content:
-  - name: pages
-    label: Pages
-    type: collection
-    path: docs
-    fields:
-      - name: title
-        type: string
-      - name: body
-        type: rich-text
+media:
+  - name: fotografias
+    label: Fotografías del portafolio
+    input: img/portafolio
+    output: /img/portafolio
+    extensions: [jpg, jpeg, png, webp, avif]
+    rename: safe

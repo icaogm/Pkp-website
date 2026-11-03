@@ -2998,21 +2998,21 @@
     <script>
         const menuButton = document.getElementById('menu-button'),
             nav = document.getElementById('nav-links');
-        menuButton ? .addEventListener('click', () => {
+        menuButton ?.addEventListener('click', () => {
             const opened = nav.classList.toggle('is-open');
             menuButton.setAttribute('aria-expanded', String(opened));
             menuButton.textContent = opened ? '✕' : '☰';
             menuButton.setAttribute('aria-label', opened ? 'Cerrar menú' : 'Abrir menú')
         });
-        nav ? .querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+        nav ?.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
             nav.classList.remove('is-open');
             menuButton.setAttribute('aria-expanded', 'false');
             menuButton.textContent = '☰'
         }));
         document.addEventListener('keydown', e => {
             if (e.key === 'Escape') {
-                nav ? .classList.remove('is-open');
-                menuButton ? .setAttribute('aria-expanded', 'false');
+                nav ?.classList.remove('is-open');
+                menuButton ?.setAttribute('aria-expanded', 'false');
                 menuButton.textContent = '☰'
             }
         });

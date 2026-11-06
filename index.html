@@ -2519,6 +2519,42 @@
                 font-size: 4.7rem
             }
         }
+    
+        /* Controles de la rotación de fotografías en la portada. */
+        .hero-visual.hero-rotating img { animation: none; }
+        .hero-visual.hero-rotating {
+            background: #10110f var(--hero-previous-photo, none) center 23% / cover no-repeat;
+        }
+        .hero-visual.hero-rotating > img {
+            position: absolute;
+            inset: 0;
+        }
+        @media (max-width: 760px) {
+            .hero-visual.hero-rotating { background-position: center 24%; }
+        }
+        .hero-rotation {
+            position: absolute;
+            z-index: 3;
+            right: 18px;
+            bottom: 22px;
+            padding: 10px 14px;
+            border: 1px solid var(--muted);
+            background: var(--bg);
+            color: var(--ink);
+        }
+        .hero-rotating .visual-stamp { right: 140px; }
+
+        .hero-channel-noise {
+            position: absolute;
+            inset: 0;
+            z-index: 1;
+            pointer-events: none;
+            opacity: 0;
+            background:
+                repeating-linear-gradient(0deg, #10110f 0 2px, transparent 2px 5px),
+                url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.87' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+        }
+
     </style>
 </head>
 
@@ -2545,6 +2581,8 @@
                 </div>
                 <div class="hero-visual">
                     <img alt="Retrato editorial futurista realizado por Angel Sullyvan: artista con atuendo negro y accesorios translúcidos" fetchpriority="high" src="https://angelsullyvan.com/img/portafolio/Sci-fi%20Series/Luana_Futurist_04_2048px.jpg" />
+                    <button class="hero-rotation" type="button" hidden>Pausar</button>
+                    <span class="hero-channel-noise" aria-hidden="true"></span>
                     <span class="side-label">UNIVERSOS VISUALES / 001</span>
                     <div class="visual-stamp"><span>Selección de portafolio</span><strong>LA IMAGEN TAMBIÉN CUENTA.</strong></div>
                 </div>
@@ -2828,6 +2866,142 @@
             const url = 'https://wa.me/524464086741?text=' + encodeURIComponent(msg);
             window.open(url, '_blank', 'noopener,noreferrer')
         });
+    
+        // La secuencia refleja la selección del portafolio al preparar esta versión.
+        const heroPhotos = [
+            {"src":"img/portafolio/Nixxy/Portafolio/Sesion_Nixxy_CCLaVia_0221_Denoised-2.jpg","alt":"NIXXY · La Vía · Fotografía Denoised-2","fallback":"https://raw.githubusercontent.com/icaogm/Pkp-website/main/img/portafolio/Nixxy/Portafolio/Sesion_Nixxy_CCLaVia_0221_Denoised-2.jpg"},
+            {"src":"img/portafolio/Nixxy/Portafolio/Sesion_Nixxy_Yonke-37_0117.jpg","alt":"NIXXY · El yonke · Fotografía 0117","fallback":"https://raw.githubusercontent.com/icaogm/Pkp-website/main/img/portafolio/Nixxy/Portafolio/Sesion_Nixxy_Yonke-37_0117.jpg"},
+            {"src":"img/portafolio/Nixxy/Portafolio/Sesion_Nixxy_CCLaVia_0008.jpg","alt":"NIXXY · La Vía · Fotografía 0008","fallback":"https://raw.githubusercontent.com/icaogm/Pkp-website/main/img/portafolio/Nixxy/Portafolio/Sesion_Nixxy_CCLaVia_0008.jpg"},
+            {"src":"img/portafolio/Nixxy/Portafolio/Sesion_Nixxy_CCLaVia_0033.jpg","alt":"NIXXY · La Vía · Fotografía 0033","fallback":"https://raw.githubusercontent.com/icaogm/Pkp-website/main/img/portafolio/Nixxy/Portafolio/Sesion_Nixxy_CCLaVia_0033.jpg"},
+            {"src":"img/portafolio/Nixxy/Portafolio/Sesion_Nixxy_Yonke-115_0221.jpg","alt":"NIXXY · El yonke · Fotografía 0221","fallback":"https://raw.githubusercontent.com/icaogm/Pkp-website/main/img/portafolio/Nixxy/Portafolio/Sesion_Nixxy_Yonke-115_0221.jpg"},
+            {"src":"img/portafolio/Nixxy/Portafolio/Sesion_Nixxy_CCLaVia_0106.jpg","alt":"NIXXY · La Vía · Fotografía 0106","fallback":"https://raw.githubusercontent.com/icaogm/Pkp-website/main/img/portafolio/Nixxy/Portafolio/Sesion_Nixxy_CCLaVia_0106.jpg"},
+            {"src":"img/portafolio/Nixxy/Portafolio/Sesion_Nixxy_CCLaVia_0113.jpg","alt":"NIXXY · La Vía · Fotografía 0113","fallback":"https://raw.githubusercontent.com/icaogm/Pkp-website/main/img/portafolio/Nixxy/Portafolio/Sesion_Nixxy_CCLaVia_0113.jpg"},
+            {"src":"https://angelsullyvan.com/img/portafolio/Sci-fi%20Series/Luana_Futurist_04_2048px.jpg","alt":"Retrato futurista con visor translúcido"},
+            {"src":"https://angelsullyvan.com/img/portafolio/Sci-fi%20Series/Luana_Futurist_01_2048px.jpg","alt":"Retrato frontal con cabello recogido y maquillaje creativo"},
+            {"src":"https://angelsullyvan.com/img/portafolio/Sci-fi%20Series/Luana_Futurist_05_2048px.jpg","alt":"Retrato con visor tecnológico sobre fondo rosado"},
+            {"src":"https://angelsullyvan.com/img/portafolio/Sci-fi%20Series/Luana_Futurist_03_2048px.jpg","alt":"Retrato de la serie futurista"},
+            {"src":"https://angelsullyvan.com/img/portafolio/Sci-fi%20Series/Luana_Futurist_07_2048px.jpg","alt":"Variación del retrato futurista"},
+            {"src":"https://angelsullyvan.com/img/portafolio/Sci-fi%20Series/Luana_Futurist_08_2048px.jpg","alt":"Detalle de la serie de ciencia ficción"},
+            {"src":"https://angelsullyvan.com/img/portafolio/STUDIO%20CREW%20SERIES/inffinis_0074.jpg","alt":"Retrato ambiental en estudio de barbería"},
+            {"src":"https://angelsullyvan.com/img/portafolio/STUDIO%20CREW%20SERIES/inffinis_0089.jpg","alt":"Retrato de estilista en espacio de trabajo"},
+            {"src":"https://angelsullyvan.com/img/portafolio/STUDIO%20CREW%20SERIES/inffinis_0231.jpg","alt":"Retrato de integrante de equipo en barbería"},
+            {"src":"https://angelsullyvan.com/img/portafolio/STUDIO%20CREW%20SERIES/inffinis_0050.jpg","alt":"Retrato editorial de barbería"},
+            {"src":"https://angelsullyvan.com/img/portafolio/STUDIO%20CREW%20SERIES/inffinis_0082.jpg","alt":"Retrato de equipo en espacio de trabajo"},
+            {"src":"https://angelsullyvan.com/img/portafolio/STUDIO%20CREW%20SERIES/inffinis_0251.jpg","alt":"Retrato de la serie de barbería"},
+            {"src":"https://angelsullyvan.com/img/portafolio/Concept%20Series/Sesion_Editorial_003.jpg","alt":"Retrato editorial entre vegetación tropical"},
+            {"src":"https://angelsullyvan.com/img/portafolio/Concept%20Series/Sesion_Nicole-Sanchez_006-evoto.jpg","alt":"Retrato editorial con vestuario blanco"},
+            {"src":"https://angelsullyvan.com/img/portafolio/Concept%20Series/Sesion_Editorial_007.jpg","alt":"Retrato de la serie editorial de vegetación"},
+            {"src":"https://angelsullyvan.com/img/portafolio/Concept%20Series/Sesion_Nicole-Sanchez_009-evoto.jpg","alt":"Retrato de concepto con vestuario blanco"},
+            {"src":"https://angelsullyvan.com/img/portafolio/Concept%20Series/Sesion_Editorial_012.jpg","alt":"Retrato editorial de atmósfera verde"},
+            {"src":"https://angelsullyvan.com/img/portafolio/Concept%20Series/Sesion_Nicole-Sanchez_026-evoto.jpg","alt":"Retrato conceptual de la serie editorial"},
+            {"src":"https://angelsullyvan.com/img/portafolio/Sofia Basila/Sesion_Sofia_Basila_0024.jpg","alt":"Retrato editorial"},
+            {"src":"https://angelsullyvan.com/img/portafolio/Sofia Basila/Sesion_Sofia_Basila_0027.jpg","alt":"Retrato editorial"},
+            {"src":"https://angelsullyvan.com/img/portafolio/Sofia Basila/Sesion_Sofia_Basila_0030.jpg","alt":"Retrato editorial"},
+            {"src":"https://angelsullyvan.com/img/portafolio/Sofia Basila/Sesion_Sofia_Basila_0086.jpg","alt":"Retrato editorial"},
+            {"src":"https://angelsullyvan.com/img/portafolio/Sofia Basila/Sesion_Sofia_Basila_0104.jpg","alt":"Retrato editorial"},
+            {"src":"https://angelsullyvan.com/img/portafolio/Sofia Basila/Sesion_Sofia_Basila_0120.jpg","alt":"Retrato editorial"},
+            {"src":"https://angelsullyvan.com/img/portafolio/Sofia Basila/Sesion_Sofia_Basila_0121.jpg","alt":"Retrato editorial"},
+            {"src":"https://angelsullyvan.com/img/portafolio/Sofia Basila/Sesion_Sofia_Basila_0124.jpg","alt":"Retrato editorial"},
+            {"src":"https://angelsullyvan.com/img/portafolio/Sofia Basila/Sesion_Sofia_Basila_0135.jpg","alt":"Retrato editorial"},
+            {"src":"https://angelsullyvan.com/img/portafolio/Sofia Basila/Sesion_Sofia_Basila_0138.jpg","alt":"Retrato editorial"},
+            {"src":"https://angelsullyvan.com/img/portafolio/Sofia Basila/Sesion_Sofia_Basila_0145.jpg","alt":"Retrato editorial"},
+            {"src":"https://angelsullyvan.com/img/portafolio/Sofia Basila/Sesion_Sofia_Basila_0156.jpg","alt":"Retrato editorial"},
+            {"src":"https://angelsullyvan.com/img/portafolio/High%20Key%20Series/SS_001b.jpg","alt":"Retrato de belleza sobre fondo blanco"},
+            {"src":"https://angelsullyvan.com/img/portafolio/High%20Key%20Series/SS_02c.jpg","alt":"Retrato beauty en clave alta"},
+            {"src":"https://angelsullyvan.com/img/portafolio/High%20Key%20Series/SS_03B.jpg","alt":"Retrato de estudio con luz uniforme"},
+            {"src":"https://angelsullyvan.com/img/portafolio/High%20Key%20Series/SS_08.jpg","alt":"Retrato en clave alta de la serie beauty"},
+            {"src":"https://angelsullyvan.com/img/portafolio/High%20Key%20Series/SS_09-web.jpg","alt":"Retrato expresivo en estudio de alta luminosidad"},
+            {"src":"https://angelsullyvan.com/img/portafolio/Strategic%20Portraits/Sesion_Eli_072-evoto.jpg","alt":"Retrato profesional con fondo oscuro y luz cálida"},
+            {"src":"https://angelsullyvan.com/img/portafolio/Strategic%20Portraits/Sesion_Eli_047-evoto.jpg","alt":"Retrato profesional de la serie de perfiles"},
+            {"src":"https://angelsullyvan.com/img/portafolio/Strategic%20Portraits/Sesion_Eli_008-evoto.jpg","alt":"Retrato de marca personal"}
+        ];
+        const heroVisual = document.querySelector('.hero-visual');
+        let heroImage = heroVisual.querySelector('img');
+        const rotationButton = heroVisual.querySelector('.hero-rotation');
+        const channelNoise = heroVisual.querySelector('.hero-channel-noise');
+        const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
+        let playing = !reducedMotion.matches;
+        let slideIndex = heroPhotos.findIndex(photo => photo.src === heroImage.getAttribute('src'));
+        let pendingPhoto;
+        let nextChange = performance.now() + 3000;
+        let loading = false;
+
+        function updateRotationButton() {
+            rotationButton.textContent = playing ? 'Pausar' : 'Reproducir';
+            rotationButton.setAttribute('aria-label', playing
+                ? 'Pausar la rotación de fotografías' : 'Reproducir la rotación de fotografías');
+        }
+
+        function loadHeroPhoto(photo) {
+            return new Promise(resolve => {
+                const image = new Image();
+                image.alt = photo.alt;
+                image.decoding = 'async';
+                image.onload = () => resolve(image);
+                image.onerror = () => {
+                    if (photo.fallback && image.getAttribute('src') !== photo.fallback) {
+                        image.src = photo.fallback;
+                    } else {
+                        resolve(null);
+                    }
+                };
+                image.src = photo.src;
+            });
+        }
+
+        async function prepareNextPhoto() {
+            loading = true;
+            for (let attempt = 0; attempt < heroPhotos.length; attempt++) {
+                slideIndex = (slideIndex + 1) % heroPhotos.length;
+                pendingPhoto = await loadHeroPhoto(heroPhotos[slideIndex]);
+                if (pendingPhoto || !playing || document.hidden) break;
+            }
+            loading = false;
+        }
+
+        function updateHero() {
+            if (!playing || document.hidden) return;
+            if (pendingPhoto && performance.now() >= nextChange) {
+                const previousSource = heroImage.currentSrc || heroImage.src;
+                heroVisual.style.setProperty('--hero-previous-photo', 'url(' + JSON.stringify(previousSource) + ')');
+                heroImage.replaceWith(pendingPhoto);
+                heroImage = pendingPhoto;
+                pendingPhoto = null;
+                if (!reducedMotion.matches && heroImage.animate) {
+                    heroImage.animate([
+                        {transform: 'translateX(-1%) scale(1.04)'},
+                        {transform: 'translateX(1%) scale(1.04)', offset: 0.24},
+                        {transform: 'scale(1.015)', offset: 0.58},
+                        {transform: 'none'}
+                    ], {duration: 270, easing: 'ease-out'});
+                    channelNoise.animate([
+                        {opacity: 0.32, backgroundPosition: '0 0'},
+                        {opacity: 0.23, backgroundPosition: '0 35px', offset: 0.32},
+                        {opacity: 0.12, backgroundPosition: '0 68px', offset: 0.64},
+                        {opacity: 0, backgroundPosition: '0 84px'}
+                    ], {duration: 270, easing: 'steps(3, end)'});
+                }
+                nextChange = performance.now() + 3000;
+            }
+            if (!pendingPhoto && !loading) prepareNextPhoto();
+        }
+
+        rotationButton.addEventListener('click', () => {
+            playing = !playing;
+            nextChange = performance.now() + 3000;
+            updateRotationButton();
+            updateHero();
+        });
+        reducedMotion.addEventListener('change', event => {
+            if (event.matches) playing = false;
+            updateRotationButton();
+        });
+        heroVisual.classList.add('hero-rotating');
+        rotationButton.hidden = false;
+        updateRotationButton();
+        updateHero();
+        setInterval(updateHero, 100);
+
     </script>
 </body>
 

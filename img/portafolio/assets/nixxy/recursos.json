@@ -1,0 +1,42 @@
+{
+  "origen": "Nixxy - novela grafica.pdf, borrador de 28 páginas",
+  "paginas_pdf": [
+    4,
+    9,
+    16,
+    23,
+    26,
+    28
+  ],
+  "fotografias": "Extraídas sin recreación de las imágenes incrustadas del PDF. No son los archivos maestros de Google Drive.",
+  "drive": "No se localizaron imágenes NIXXY accesibles en las búsquedas realizadas.",
+  "archivos": [
+    "assets/nixxy/fotos/pdf-p04-foto-01.jpg",
+    "assets/nixxy/fotos/pdf-p04-foto-02.jpg",
+    "assets/nixxy/fotos/pdf-p04-foto-03.jpg",
+    "assets/nixxy/fotos/pdf-p04-foto-04.jpg",
+    "assets/nixxy/fotos/pdf-p09-foto-01.jpg",
+    "assets/nixxy/fotos/pdf-p09-foto-02.jpg",
+    "assets/nixxy/fotos/pdf-p09-foto-03.jpg",
+    "assets/nixxy/fotos/pdf-p09-foto-04.jpg",
+    "assets/nixxy/fotos/pdf-p16-foto-01.jpg",
+    "assets/nixxy/fotos/pdf-p16-foto-02.jpg",
+    "assets/nixxy/fotos/pdf-p16-foto-03.jpg",
+    "assets/nixxy/fotos/pdf-p23-foto-01.jpg",
+    "assets/nixxy/fotos/pdf-p23-foto-02.jpg",
+    "assets/nixxy/fotos/pdf-p23-foto-03.jpg",
+    "assets/nixxy/fotos/pdf-p23-foto-04.jpg",
+    "assets/nixxy/fotos/pdf-p23-foto-05.jpg",
+    "assets/nixxy/fotos/pdf-p26-foto-01.jpg",
+    "assets/nixxy/fotos/pdf-p26-foto-02.jpg",
+    "assets/nixxy/fotos/pdf-p26-foto-03.jpg",
+    "assets/nixxy/fotos/pdf-p28-foto-01.jpg",
+    "assets/nixxy/fotos/pdf-p28-foto-02.jpg",
+    "assets/nixxy/novela/pagina-04.jpg",
+    "assets/nixxy/novela/pagina-09.jpg",
+    "assets/nixxy/novela/pagina-16.jpg",
+    "assets/nixxy/novela/pagina-23.jpg",
+    "assets/nixxy/novela/pagina-26.jpg",
+    "assets/nixxy/novela/pagina-28.jpg"
+  ]
+}
